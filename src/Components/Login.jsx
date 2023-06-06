@@ -1,8 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../Provider/AuthProvider";
 const Login = () => {
+    const {  singIn , singInWithGoogle} = useContext(AuthContext)
+    // console.log(singIn)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        singIn(data?.email , data?.password)
+        .then(res =>{
+            const loginUsers = res.user
+            console.log(loginUsers)
+        })
+        .then(error => {
+            console.log(error.message)
+        })
+    };
+
+    const handelGoogleSingIn = () =>{
+        singInWithGoogle()
+        .then(res =>{
+            const loginUsers = res.user
+            console.log(loginUsers)
+        })
+        .then(error =>{
+            console.log(error?.message)
+        })
+    }
+
+
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
@@ -39,7 +64,7 @@ const Login = () => {
               <div className="form-control mt-6">
                 <input className="btn btn-primary" type="submit" value="Login" />
                 <div className="divider mt-4 ">OR</div>
-                <input className="btn btn-outline hover:text-black hover:bg-base-100" type="submit" value="Login" />
+                <button onClick={handelGoogleSingIn} className="btn btn-outline hover:text-black hover:bg-base-100">Login With Google</button>
               </div>
             </form>
           </div>

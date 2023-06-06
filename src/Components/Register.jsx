@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../Provider/AuthProvider";
 const Register = () => {
+    const {singUp} = useContext(AuthContext)
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    singUp(data?.email , data?.password)
+    .then(res =>{
+        console.log(res)
+    })
+    .then(error =>{
+        console.log(error?.message)
+    })
+  };
   return (
     <div>
       <div>
