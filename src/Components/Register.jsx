@@ -12,7 +12,8 @@ const Register = () => {
   const onSubmit = (data) => {
     singUp(data?.email , data?.password)
     .then(res =>{
-        console.log(res)
+        const singUpUser = res.user
+        console.log(singUpUser)
     })
     .then(error =>{
         console.log(error?.message)

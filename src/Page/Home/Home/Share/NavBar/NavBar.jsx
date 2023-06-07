@@ -1,9 +1,17 @@
 import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaBars, FaWindowClose } from "react-icons/fa";
+import { AuthContext } from './../../../../../Provider/AuthProvider';
 const NavBar = () => {
-  const user = false;
+  const {user , logOut} = useContext(AuthContext)
   const [open, setOpen] = useState(false);
+
+
+  const handelLogOut = () =>{
+    logOut()
+    .then(()=>{})
+    .then(error =>{})
+  }
 
   const navLinkStyle = ({ isActive }) => {
     return {
@@ -37,6 +45,7 @@ const NavBar = () => {
                 <>
                   <li> <Link className="py-2 px-4 hover:bg-red-500">Dashboard</Link> </li> 
                   <li> <Link className="py-2 px-4 hover:bg-red-500">Profile Picture</Link> </li>
+                  <li> <Link onClick={handelLogOut} className="py-2 px-4 hover:bg-red-500">Log Out</Link> </li>
                 </>
               ) : (
                 <>

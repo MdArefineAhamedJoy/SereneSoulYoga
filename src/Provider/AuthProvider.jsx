@@ -5,6 +5,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signOut,
 } from "firebase/auth";
 import app from "./../firebase/firebase.config";
 import { GoogleAuthProvider } from "firebase/auth";
@@ -41,13 +42,16 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
-
-  console.log(user)
+  const logOut = () => {
+    setLoading(true)
+    return signOut(auth)
+  }
 
   const authInfo = {
     singUp,
     singIn,
     singInWithGoogle,
+    logOut,
     user,
     loading
   };
