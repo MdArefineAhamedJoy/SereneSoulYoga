@@ -1,7 +1,8 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const DeashBoard = () => {
+  const users = "";
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -19,12 +20,47 @@ const DeashBoard = () => {
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
           {/* Sidebar content here */}
-          <li>
-            <a>Sidebar Item 1</a>
-          </li>
-          <li>
-            <a>Sidebar Item 2</a>
-          </li>
+          <div className="w-full flex justify-center mb-10 bg-red-400">
+            <p className="mx-auto">this is person</p>
+          </div>
+          {users === "admin" ? (
+            <>
+              {" "}
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link>Admin Classes</Link>
+              </li>
+              <li>
+                <Link>Admin Classes</Link>
+              </li>
+            </>
+          ) : users === "instructor" ? (
+            <>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link>Instructor Classes</Link>
+              </li>
+              <li>
+                <Link>Instructor Classes</Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link>My Selected Classes</Link>
+              </li>
+              <li>
+                <Link>My Enrolled Classes</Link>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </div>
