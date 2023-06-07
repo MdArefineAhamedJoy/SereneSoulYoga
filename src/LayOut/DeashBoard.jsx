@@ -4,7 +4,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const DeashBoard = () => {
     const {user} = useContext(AuthContext)
-    console.log(user)
+    console.log(user?.photoURL)
   const users = "instructor";
   return (
     <div className="drawer lg:drawer-open">
@@ -23,8 +23,9 @@ const DeashBoard = () => {
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
           {/* Sidebar content here */}
-          <div className="w-full flex justify-center mb-10 bg-red-400">
-            <p className="mx-auto">this is person</p>
+          <div className="w-full flex flex-col justify-center mb-5 ">
+            <img className="w-14 h-14 mx-auto rounded-full" src={user?.photoURL} alt="" />
+            <p className="mx-auto py-4">{user?.displayName}</p>
           </div>
           {users === "admin" ? (
             <>

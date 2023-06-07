@@ -1,20 +1,61 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddClasses = () => {
   const { user } = useContext(AuthContext);
 
-  const displayName = user?.displayName ?? "Name";
-  const email = user?.email ?? "Name";
+//   const displayName = user?.displayName ?? "Name";
+//   const email = user?.email ?? "Name";
 
+  const imag_token = import.meta.env.VITE_image_upload_token ;
+ 
+  
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+
+    const formData = new FormData();
+    formData.append('image', data.classPhoto[0])
+
+    fetch(`https://api.imgbb.com/1/upload?key=${imag_token}`, {
+        method:"POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(image => {
+        if(image.success){
+            const photoUrl = image.data.url ;
+            const {name , email , className, Price}  = data 
+            const InstructorData ={name , email, className, Price , photoUrl}
+            InstructorData.status = 'pending'
+            fetch('http://localhost:5000/instructor', {
+                method:"POST",
+                headers:{
+                    "content-type": 'application/json'
+                },
+                body: JSON.stringify(InstructorData)
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.acknowledged){
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Add Class SuccessFully',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                }
+            })
+        }
+    })
+  };
 
   return (
     <div className="w-full">
@@ -26,8 +67,9 @@ const AddClasses = () => {
             <span className="label-text">Instructor Name</span>
           </label>
           <input
-            value={displayName}
-            {...register("Name", { required: true })}
+            value={ user?.displayName}
+            
+            {...register("name", { required: true })}
             type="text"
             placeholder="name"
             className="input input-bordered"
@@ -39,7 +81,7 @@ const AddClasses = () => {
             <span className="label-text">Email</span>
           </label>
           <input
-            value={email}
+            value={ user?.email}
             { ...register("email", { required: true })}
             type="text"
             placeholder="email"
@@ -81,7 +123,6 @@ const AddClasses = () => {
             {...register("Price", { required: true })}
           />
         </div>
-       
         <div className="form-control mt-6">
           <input className="btn btn-primary" type="submit" value="Login" />
         </div>

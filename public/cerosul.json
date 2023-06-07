@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "title": "Nature's Beauty",
+      "cover_image": "https://img.freepik.com/free-photo/young-beautiful-blonde-girl-practicing-yoga-outside-sunrise_176420-5626.jpg?size=626&ext=jpg&uid=R93783695&ga=GA1.2.2002784595.1682958019&semt=robertav1_2_sidr"
+    },
+    {
+      "id": 2,
+      "title": "Cityscape",
+      "cover_image": "https://img.freepik.com/free-photo/side-view-woman-outdoors-nature-doing-yoga-mat_23-2148769568.jpg?size=626&ext=jpg&uid=R93783695&ga=GA1.2.2002784595.1682958019&semt=robertav1_2_sidr"
+    },
+    {
+      "id": 3,
+      "title": "Abstract Art",
+      "cover_image": "https://img.freepik.com/free-photo/woman-practicing-advanced-yoga-by-water_1157-37124.jpg?size=626&ext=jpg&uid=R93783695&ga=GA1.2.2002784595.1682958019&semt=robertav1_2_sidr"
+    },
+    {
+      "id": 4,
+      "title": "Mountain Peaks",
+      "cover_image": "https://img.freepik.com/free-photo/young-woman-baddha-ardha-samakonasana-pose-grey-studio-background_1163-2499.jpg?size=626&ext=jpg&uid=R93783695&ga=GA1.1.2002784595.1682958019&semt=robertav1_2_sidr"
+    },
+    {
+      "id": 5,
+      "title": "Ocean Waves",
+      "cover_image": "https://img.freepik.com/free-photo/couple-stretching-having-fun-park_23-2147645851.jpg?size=626&ext=jpg&uid=R93783695&ga=GA1.2.2002784595.1682958019&semt=robertav1_2_sidr"
+    }
+  ]
