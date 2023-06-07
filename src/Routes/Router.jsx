@@ -4,6 +4,8 @@ import Main from "../LayOut/Main";
 import Login from "../Components/Login";
 import Register from "../Components/Register";
 import DeashBoard from "../LayOut/DeashBoard";
+import AddClasses from "../Page/DeshBord/Instructor/AddClasses";
+import MyClasses from "../Page/DeshBord/MyClasses";
 
 const router = createBrowserRouter([
   {
@@ -25,11 +27,16 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path: "deashboard",
+    path: "deashBoard",
     element: <DeashBoard></DeashBoard>,
     children:[
       {
-        
+        path: '/deashBoard/addClasses',
+        element: <AddClasses></AddClasses>
+      },
+      {
+        path: '/deashBoard/myClasses',
+        element: <MyClasses></MyClasses>
       }
     ]
   }

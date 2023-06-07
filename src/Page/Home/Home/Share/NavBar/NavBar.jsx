@@ -43,7 +43,7 @@ const NavBar = () => {
               <li > <Link className="py-2 px-4 hover:bg-red-500">Home</Link></li>
               {user ? (
                 <>
-                  <li> <Link to='/deashboard' className="py-2 px-4 hover:bg-red-500">Dashboard</Link> </li> 
+                  <li> <Link to='/deashBoard' className="py-2 px-4 hover:bg-red-500">Dashboard</Link> </li> 
                   <li> <Link className="py-2 px-4 hover:bg-red-500">Profile Picture</Link> </li>
                   <li> <Link onClick={handelLogOut} className="py-2 px-4 hover:bg-red-500">Log Out</Link> </li>
                 </>

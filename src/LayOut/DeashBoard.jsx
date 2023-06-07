@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const DeashBoard = () => {
-  const users = "";
+    const {user} = useContext(AuthContext)
+    console.log(user)
+  const users = "instructor";
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -42,10 +45,10 @@ const DeashBoard = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link>Instructor Classes</Link>
+                <Link to='/deashBoard/addClasses'>Add a Classes</Link>
               </li>
               <li>
-                <Link>Instructor Classes</Link>
+                <Link to='/deashBoard/myClasses'>My Classes</Link>
               </li>
             </>
           ) : (
