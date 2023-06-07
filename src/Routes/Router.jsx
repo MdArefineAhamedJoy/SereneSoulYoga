@@ -3,6 +3,7 @@ import Home from "../Page/Home/Home/Home";
 import Main from "../LayOut/Main";
 import Login from "../Components/Login";
 import Register from "../Components/Register";
+import DeashBoard from "../LayOut/DeashBoard";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,15 @@ const router = createBrowserRouter([
       },
     ]
   },
+  {
+    path: "deashboard",
+    element: <DeashBoard></DeashBoard>,
+    children:[
+      {
+        
+      }
+    ]
+  }
 ]);
 
 export default router
