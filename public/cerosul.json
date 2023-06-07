@@ -1,27 +1,22 @@
 [
-    {
-      "id": 1,
-      "title": "Nature's Beauty",
-      "cover_image": "https://img.freepik.com/free-photo/young-beautiful-blonde-girl-practicing-yoga-outside-sunrise_176420-5626.jpg?size=626&ext=jpg&uid=R93783695&ga=GA1.2.2002784595.1682958019&semt=robertav1_2_sidr"
-    },
-    {
-      "id": 2,
-      "title": "Cityscape",
-      "cover_image": "https://img.freepik.com/free-photo/side-view-woman-outdoors-nature-doing-yoga-mat_23-2148769568.jpg?size=626&ext=jpg&uid=R93783695&ga=GA1.2.2002784595.1682958019&semt=robertav1_2_sidr"
-    },
-    {
-      "id": 3,
-      "title": "Abstract Art",
-      "cover_image": "https://img.freepik.com/free-photo/woman-practicing-advanced-yoga-by-water_1157-37124.jpg?size=626&ext=jpg&uid=R93783695&ga=GA1.2.2002784595.1682958019&semt=robertav1_2_sidr"
-    },
-    {
-      "id": 4,
-      "title": "Mountain Peaks",
-      "cover_image": "https://img.freepik.com/free-photo/young-woman-baddha-ardha-samakonasana-pose-grey-studio-background_1163-2499.jpg?size=626&ext=jpg&uid=R93783695&ga=GA1.1.2002784595.1682958019&semt=robertav1_2_sidr"
-    },
-    {
-      "id": 5,
-      "title": "Ocean Waves",
-      "cover_image": "https://img.freepik.com/free-photo/couple-stretching-having-fun-park_23-2147645851.jpg?size=626&ext=jpg&uid=R93783695&ga=GA1.2.2002784595.1682958019&semt=robertav1_2_sidr"
-    }
-  ]
+  {
+    "title": "Astanga Yoga",
+    "description": "A dynamic and physically demanding practice that synchronizes breath with a progressive series of postures to build strength, flexibility, and focus.",
+    "image": "https://img.freepik.com/premium-photo/sporty-fit-yogini-woman-practices-yoga-pranayama-breath-control_163782-4819.jpg?size=626&ext=jpg&uid=R93783695&ga=GA1.1.2002784595.1682958019&semt=robertav1_2_sidr"
+  },
+  {
+    "title": "Hatha Yoga",
+    "description": "A spiritual practice that combines dynamic movements, breathwork, meditation, and chanting to awaken and channel the dormant energy within.",
+    "image": "https://img.freepik.com/premium-photo/man-woman-practice-acro-yoga-park-meditation_386167-1592.jpg?size=626&ext=jpg&uid=R93783695&ga=GA1.1.2002784595.1682958019&semt=robertav1_2_sidr"
+  },
+  {
+    "title": "Iyengar Yoga",
+    "description": " A precise and alignment-focused practice that uses props to support the body in various poses, promoting balance, stability, and awareness.",
+    "image": "https://img.freepik.com/free-photo/young-blonde-woman-sportswear-is-meditating-yoga-mat-with-closed-eyes_1268-17236.jpg?size=626&ext=jpg&uid=R93783695&ga=GA1.2.2002784595.1682958019&semt=robertav1_2_sidr"
+  },
+  {
+    "title": "Kundalini Yoga",
+    "description": "An ancient practice that emphasizes breath control, meditation, and repetitive movements to awaken the dormant spiritual energy and achieve higher consciousness.",
+    "image": "https://img.freepik.com/free-photo/studio-shot-young-fit-woman-doing-yoga-exercises-green-space_155003-14216.jpg?size=626&ext=jpg&uid=R93783695&ga=GA1.2.2002784595.1682958019&semt=robertav1_2_sidr"
+  }
+]
