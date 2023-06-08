@@ -1,23 +1,59 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 const Register = () => {
-    const {singUp} = useContext(AuthContext)
+  const { singUp } = useContext(AuthContext);
+  
   const {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    singUp(data?.email , data?.password)
-    .then(res =>{
-        const singUpUser = res.user
-        console.log(singUpUser)
-    })
-    .then(error =>{
-        console.log(error?.message)
-    })
+    singUp(data?.email, data?.password)
+      .then((res) => {
+        const singUpUser = res.user;
+        if (singUpUser) {
+          console.log(singUpUser);
+          const existingUser = {
+            name: singUpUser.displayName,
+            email: singUpUser.email,
+            role: "",
+          };
+          fetch(`http://localhost:5000/users`, {
+            method: "post",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(existingUser),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.insertedId ) {
+                reset()
+                Swal.fire({
+                  position: "top-end",
+                  icon: "success",
+                  title: "Your work has been saved",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+              }
+            });
+        }
+      })
+      .catch((error) => {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: `${error?.message}`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
   };
   return (
     <div>
@@ -89,12 +125,6 @@ const Register = () => {
                 <div className="form-control mt-6">
                   <input
                     className="btn btn-primary"
-                    type="submit"
-                    value="Login"
-                  />
-                  <div className="divider mt-4 ">OR</div>
-                  <input
-                    className="btn btn-outline hover:text-black hover:bg-base-100"
                     type="submit"
                     value="Login"
                   />

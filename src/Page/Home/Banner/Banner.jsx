@@ -12,7 +12,6 @@ const Banner = () => {
       .then((res) => res.json())
       .then((data) => {
         setCresol(data);
-        console.log(data);
       });
   }, []);
 
@@ -21,7 +20,7 @@ const Banner = () => {
       <Swiper
         slidesPerView={1}
         autoplay={{
-          delay: 1,
+          delay: 2,
           disableOnInteraction: false,
         }}
         speed={5000}

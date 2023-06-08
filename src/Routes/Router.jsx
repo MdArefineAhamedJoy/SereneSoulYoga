@@ -6,6 +6,8 @@ import Register from "../Components/Register";
 import DeashBoard from "../LayOut/DeashBoard";
 import AddClasses from "../Page/DeshBord/Instructor/AddClasses";
 import MyClasses from "../Page/DeshBord/MyClasses";
+import AllClasses from "../Page/DeshBord/Admin/AllClasses";
+import ManageUsers from "../Page/DeshBord/Admin/ManageUsers";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,7 @@ const router = createBrowserRouter([
     path: "deashBoard",
     element: <DeashBoard></DeashBoard>,
     children:[
+      // instructor section 
       {
         path: '/deashBoard/addClasses',
         element: <AddClasses></AddClasses>
@@ -37,6 +40,15 @@ const router = createBrowserRouter([
       {
         path: '/deashBoard/myClasses',
         element: <MyClasses></MyClasses>
+      },
+      // admin section 
+      {
+        path: '/deashBoard',
+        element: <AllClasses></AllClasses>
+      },
+      {
+        path: '/deashBoard/manageUser',
+        element: <ManageUsers></ManageUsers>
       }
     ]
   }

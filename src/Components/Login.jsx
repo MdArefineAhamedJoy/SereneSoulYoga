@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 const Login = () => {
     const {  singIn , singInWithGoogle} = useContext(AuthContext)
     // console.log(singIn)
@@ -21,9 +22,36 @@ const Login = () => {
         .then(res =>{
             const loginUsers = res.user
             console.log(loginUsers)
+            if (loginUsers) {
+              console.log(loginUsers);
+              const existingUser = {
+                name: loginUsers.displayName,
+                email: loginUsers.email,
+                role: "",
+              };
+              fetch(`http://localhost:5000/users`, {
+                method: "post",
+                headers: {
+                  "content-type": "application/json",
+                },
+                body: JSON.stringify(existingUser),
+              })
+                .then((res) => res.json())
+                .then((data) => {
+                  if (data.insertedId > 0) {
+                    Swal.fire({
+                      position: "top-end",
+                      icon: "success",
+                      title: "Your work has been saved",
+                      showConfirmButton: false,
+                      timer: 1500,
+                    });
+                  }
+                });
+            }
         })
-        .then(error =>{
-            // console.log(error)
+        .catch(error =>{
+            console.log(error)
         })
     }
 

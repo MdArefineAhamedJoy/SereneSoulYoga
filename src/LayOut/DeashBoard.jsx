@@ -1,11 +1,23 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { useQuery } from "@tanstack/react-query";
 
 const DeashBoard = () => {
-    const {user} = useContext(AuthContext)
-    console.log(user?.photoURL)
-  const users = "instructor";
+  const { user } = useContext(AuthContext);
+  const [userRoll, setUserRoll] = useState("");
+  // const userRoll = "admin";
+
+  useEffect(() => {
+    fetch("http://localhost:5000/users")
+      .then((res) => res.json())
+      .then((data) => {
+        const findUser = data?.find((rolls) => rolls?.email === user?.email);
+        const userStatus = findUser?.role;
+        setUserRoll(userStatus);
+      });
+  }, [userRoll , user]);
+
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -24,32 +36,36 @@ const DeashBoard = () => {
         <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
           {/* Sidebar content here */}
           <div className="w-full flex flex-col justify-center mb-5 ">
-            <img className="w-14 h-14 mx-auto rounded-full" src={user?.photoURL} alt="" />
+            <img
+              className="w-14 h-14 mx-auto rounded-full"
+              src={user?.photoURL}
+              alt=""
+            />
             <p className="mx-auto py-4">{user?.displayName}</p>
           </div>
-          {users === "admin" ? (
+          {userRoll === "admin" ? (
             <>
               {" "}
               <li>
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link>Admin Classes</Link>
+                <Link to="/deashBoard">All Classes</Link>
               </li>
               <li>
-                <Link>Admin Classes</Link>
+                <Link to="/deashBoard/manageUser">Manage userRoll</Link>
               </li>
             </>
-          ) : users === "instructor" ? (
+          ) : userRoll === "instructor" ? (
             <>
               <li>
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to='/deashBoard/addClasses'>Add a Classes</Link>
+                <Link to="/deashBoard/addClasses">Add a Classes</Link>
               </li>
               <li>
-                <Link to='/deashBoard/myClasses'>My Classes</Link>
+                <Link to="/deashBoard/myClasses">My Classes</Link>
               </li>
             </>
           ) : (
