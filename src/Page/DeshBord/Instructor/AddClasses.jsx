@@ -32,8 +32,9 @@ const AddClasses = () => {
         if(image.success){
             const photoUrl = image.data.url ;
             const {name , email , className, Price}  = data 
-            const InstructorData ={name , email, className, Price , photoUrl}
+            const InstructorData ={name , email, className, Price , photoUrl , availableSite}
             InstructorData.status = 'pending'
+            InstructorData.enroll = '0'
             fetch('http://localhost:5000/instructor', {
                 method:"POST",
                 headers:{
@@ -112,16 +113,29 @@ const AddClasses = () => {
             className="input input-bordered"
           />
         </div>
-        <div className="form-control w-1/2 mx-auto">
+        <div className="md:flex w-full mx-auto gap-10">
+        <div className="form-control w-3/5">
           <label className="label">
             <span className="label-text">Price</span>
           </label>
           <input
-            type="Price"
+            type="number"
             placeholder="Price"
             className="input input-bordered"
-            {...register("Price", { required: true })}
+            {...register("price", { required: true })}
           />
+        </div>
+        <div className="form-control w-3/5">
+          <label className="label">
+            <span className="label-text">Available Site</span>
+          </label>
+          <input
+            type="number"
+            placeholder="Available Site"
+            className="input input-bordered"
+            {...register("availableSite", { required: true })}
+          />
+        </div>
         </div>
         <div className="form-control mt-6">
           <input className="btn btn-primary" type="submit" value="Login" />

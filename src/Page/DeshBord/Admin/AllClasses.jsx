@@ -71,9 +71,9 @@ const AllClasses = () => {
                   <p>{allInfo.seats}</p>
                 </td>
                 <th>
-                  <button onClick={()=>handelApproved(allInfo._id , allInfo)} className="btn btn-ghost btn-sm"> Approve</button>
+                  <button disabled={allInfo.status=== "approved"} onClick={()=>handelApproved(allInfo._id , allInfo)} className="btn btn-ghost btn-sm"> Approve</button>
                   <br />
-                  <button className="btn btn-ghost btn-sm ">Deny</button>
+                  <button disabled={allInfo.status=== "approved"} className="btn btn-ghost btn-sm ">Deny</button>
                   <br />
                   <button className="btn btn-ghost btn-sm">feedback</button>
                 </th>

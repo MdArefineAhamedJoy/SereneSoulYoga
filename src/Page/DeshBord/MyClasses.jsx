@@ -10,23 +10,19 @@ const MyClasses = () => {
       });
   }, [classes]);
   return (
-    <div className="grid grid-cols-2 w-full gap-4">
+    <div className="w-full gap-4">
+      <h1>Total Student Enroll</h1>
       {classes.map((classData) => (
-        <div key={classData._id} className="card card-side bg-base-100 shadow-xl">
-          <figure>
-            <img
-              src={classData.photoUrl}
-              alt="Movie"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">New movie is released!</h2>
-            <p>Click the button to watch on Jetflix app.</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Watch</button>
-            </div>
+        <div key={classData._id} className="card my-5 bg-base-100 shadow-xl image-full">
+        <figure className="h-52 my-auto w-full"><img className="h-full w-full" src={classData.photoUrl} alt="Shoes" /></figure>
+        <div className="card-body">
+          <h2 className="card-title">Shoes!</h2>
+          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <div className="card-actions justify-end">
+            <button className="btn btn-primary">Buy Now</button>
           </div>
         </div>
+      </div>
       ))}
     </div>
   );

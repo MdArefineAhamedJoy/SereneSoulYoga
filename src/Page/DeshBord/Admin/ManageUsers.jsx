@@ -51,7 +51,7 @@ const ManageUsers = () => {
                   <br />
                   {user.email}
                 </td>
-                <td>{user.role}</td>
+                <td >{user.role ? user.role : "student"}</td>
                 <td >
                 <button
                     onClick={() => handelMakeRoll(user, "admin")}
