@@ -62,7 +62,7 @@ const DeashBoard = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/deashBoard/addClasses">Add a Classes</Link>
+                <Link to="/deashBoard">Add a Classes</Link>
               </li>
               <li>
                 <Link to="/deashBoard/myClasses">My Classes</Link>

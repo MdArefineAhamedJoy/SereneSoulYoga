@@ -39,7 +39,7 @@ const router = createBrowserRouter([
     children:[
       // instructor section 
       {
-        path: '/deashBoard/addClasses',
+        path: '/deashBoard',
         element: <AddClasses></AddClasses>
       },
       {

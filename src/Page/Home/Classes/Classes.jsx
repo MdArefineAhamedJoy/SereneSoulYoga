@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
-  QueryClient,
-  QueryClientProvider,
-  useQuery,
+  useQuery
 } from "@tanstack/react-query";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Classes = () => {
+  const { user} = useContext(AuthContext)
   const { data } = useQuery({
     queryKey: [],
     queryFn: () =>
@@ -34,7 +34,7 @@ const Classes = () => {
             <p>{classes.price}</p>
             <p>{classes.price}</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary w-full">Select </button>
+              <button disabled={`!role === 'admin' && !role === 'instructor' `} className="btn btn-primary w-full">Select </button>
             </div>
           </div>
         </div>
