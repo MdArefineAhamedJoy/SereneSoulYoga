@@ -42,6 +42,7 @@ const NavBar = () => {
             <ul className="ms-auto md:flex ">
               <li > <Link to='/' className="py-2 px-4 hover:bg-red-500">Home</Link></li>
               <li > <Link to='classes' className="py-2 px-4 hover:bg-red-500"> Classes</Link></li>
+              <li > <Link to='instructor' className="py-2 px-4 hover:bg-red-500"> Instructor</Link></li>
               {user ? (
                 <>
                   <li> <Link to='/deashBoard' className="py-2 px-4 hover:bg-red-500">Dashboard</Link> </li> 

@@ -4,6 +4,7 @@ import {
 } from "@tanstack/react-query";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
+
 const Classes = () => {
   const { user} = useContext(AuthContext)
   const { data } = useQuery({
@@ -16,9 +17,26 @@ const Classes = () => {
     (classes) => classes.status === "approved"
   );
   console.log(showAllClasses);
- 
+
+  const handelSelectedClass = (classes) =>{
+    console.log(classes)
+    fetch('http://localhost:5000/allClasses/select',{
+      method:'POST',
+      headers:{
+        "content-type": 'application/json'
+      },
+      body:JSON.stringify(classes)
+    })
+    .then(res => res.json())
+    .then(data =>{
+      console.log(data)
+    })
+    
+  }
+
+
   return (
-    <div className="grid grid-cols-2 px-4 gap-5">
+    <div className="grid grid-cols-3 px-4 gap-5">
       {showAllClasses?.map((classes) => (
         <div key={classes._id} className="card card-side bg-base-100 shadow-xl">
           <figure className="w-1/2 ">
@@ -34,7 +52,7 @@ const Classes = () => {
             <p>{classes.price}</p>
             <p>{classes.price}</p>
             <div className="card-actions justify-end">
-              <button disabled={`!role === 'admin' && !role === 'instructor' `} className="btn btn-primary w-full">Select </button>
+              <button onClick={()=>handelSelectedClass(classes)}  className="btn btn-primary w-full">Select </button>
             </div>
           </div>
         </div>

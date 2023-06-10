@@ -6,8 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 const DeashBoard = () => {
   const { user } = useContext(AuthContext);
   const [userRoll, setUserRoll] = useState("");
-  // const userRoll = "admin";
-
+  
   useEffect(() => {
     fetch("http://localhost:5000/users")
       .then((res) => res.json())
@@ -50,7 +49,7 @@ const DeashBoard = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/deashBoard">All Classes</Link>
+                <Link to="/deashBoard/allClass">All Classes</Link>
               </li>
               <li>
                 <Link to="/deashBoard/manageUser">Manage userRoll</Link>
@@ -62,7 +61,7 @@ const DeashBoard = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/deashBoard">Add a Classes</Link>
+                <Link to="/deashBoard/addClass">Add a Classes</Link>
               </li>
               <li>
                 <Link to="/deashBoard/myClasses">My Classes</Link>
@@ -74,10 +73,10 @@ const DeashBoard = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link>My Selected Classes</Link>
+                <Link to='/deashBoard/selected'>My Selected Classes</Link>
               </li>
               <li>
-                <Link>My Enrolled Classes</Link>
+                <Link to='/deashBoard/enroll' >My Enrolled Classes</Link>
               </li>
             </>
           )}

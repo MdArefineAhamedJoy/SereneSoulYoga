@@ -9,6 +9,9 @@ import MyClasses from "../Page/DeshBord/MyClasses";
 import AllClasses from "../Page/DeshBord/Admin/AllClasses";
 import ManageUsers from "../Page/DeshBord/Admin/ManageUsers";
 import Classes from "../Page/Home/Classes/Classes";
+import Instructor from "../Page/Home/Instructor/Instructor";
+import SelectedClass from "../Page/DeshBord/Students/SelectedClass";
+import EnrollClass from "../Page/DeshBord/Students/EnrollClass";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "classes",
         element: <Classes></Classes>
+      },
+      {
+        path: "instructor",
+        element: <Instructor></Instructor>
       }
     ]
   },
@@ -39,7 +46,7 @@ const router = createBrowserRouter([
     children:[
       // instructor section 
       {
-        path: '/deashBoard',
+        path: '/deashBoard/addClass',
         element: <AddClasses></AddClasses>
       },
       {
@@ -48,12 +55,23 @@ const router = createBrowserRouter([
       },
       // admin section 
       {
-        path: '/deashBoard',
+        path: '/deashBoard/allClass',
         element: <AllClasses></AllClasses>
       },
       {
         path: '/deashBoard/manageUser',
         element: <ManageUsers></ManageUsers>
+      }
+      // student section 
+      ,
+      {
+        path: '/deashBoard/selected',
+        element:<SelectedClass></SelectedClass>
+      }
+      ,
+      {
+        path: '/deashBoard/enroll',
+        element:<EnrollClass></EnrollClass>
       }
     ]
   }

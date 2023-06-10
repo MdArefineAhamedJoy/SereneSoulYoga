@@ -72,7 +72,7 @@ const AddClasses = () => {
               <span className="label-text">Instructor Name</span>
             </label>
             <input
-              value={user?.displayName}
+              value={user?.displayName ? user?.displayName : "User Name"}
               {...register("name", { required: true })}
               type="text"
               placeholder="name"

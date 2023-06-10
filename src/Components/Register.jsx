@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 const Register = () => {
-  const { singUp } = useContext(AuthContext);
-  
+  const { singUp, updateUsers } = useContext(AuthContext);
+
   const {
     register,
     handleSubmit,
@@ -13,14 +13,25 @@ const Register = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
+    // firebase sing up system
+
     singUp(data?.email, data?.password)
       .then((res) => {
         const singUpUser = res.user;
+        //  user data update system
+        console.log(data?.name, data?.photoUrl);
+        updateUsers(data?.name, data?.photoUrl)
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
         if (singUpUser) {
-          console.log(singUpUser);
           const existingUser = {
             name: singUpUser.displayName,
             email: singUpUser.email,
+            image: singUp.photoURL,
             role: "",
           };
           fetch(`http://localhost:5000/users`, {
@@ -32,8 +43,8 @@ const Register = () => {
           })
             .then((res) => res.json())
             .then((data) => {
-              if (data.insertedId ) {
-                reset()
+              if (data.insertedId) {
+                // reset();
                 Swal.fire({
                   position: "top-end",
                   icon: "success",
@@ -67,7 +78,7 @@ const Register = () => {
                     <span className="label-text">Name</span>
                   </label>
                   <input
-                    {...register("Name", { required: true })}
+                    {...register("name", { required: true })}
                     type="text"
                     placeholder="name"
                     className="input input-bordered"
@@ -106,7 +117,7 @@ const Register = () => {
                     {...register("password", { required: true })}
                   />
                 </div>
-                <div className="form-control">
+                {/* <div className="form-control">
                   <label className="label">
                     <span className="label-text">Confirm Password</span>
                   </label>
@@ -121,7 +132,7 @@ const Register = () => {
                       Forgot password?
                     </a>
                   </label>
-                </div>
+                </div> */}
                 <div className="form-control mt-6">
                   <input
                     className="btn btn-primary"
