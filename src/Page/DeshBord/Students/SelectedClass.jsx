@@ -1,12 +1,10 @@
 import React from "react";
-import {
-  useQuery,
-} from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
+
 
 const SelectedClass = () => {
-  //
-
-  const { isLoading, error, data } = useQuery({
+  const { isLoading, error, data , refetch } = useQuery({
     queryKey: ["selected"],
     queryFn: () =>
       fetch("http://localhost:5000/allClasses/selected").then((res) =>
@@ -14,56 +12,59 @@ const SelectedClass = () => {
       ),
   });
 
+  const handelDelete = (id) =>{
+    fetch(`http://localhost:5000/classDelete/${id}`,{
+        method:'DELETE'
+    })
+    .then(res => res.json())
+    .then(data =>{
+        refetch()
+    })
+  }
+
   return (
     <div className="w-full">
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
-          <thead>
+          <thead className="text-center">
             <tr>
               <th>#</th>
               <th>image</th>
-              <th>Price </th>
-              <th>Class Name </th>
-              <th>Show</th>
+              <th>Price & Site </th>
+              <th>Name </th>
+              <th>Method</th>
             </tr>
           </thead>
 
-          {data?.map((selectedClass) => (
-            <tbody key={selectedClass._id}>
+          {data?.map((selectedClass, index) => (
+            <tbody key={selectedClass._id} className="text-center">
               {/* row 1 */}
               <tr>
-                <th>
-                  <label>
-                    <input type="checkbox" className="checkbox" />
-                  </label>
-                </th>
+                <th>{index + 1}</th>
                 <td>
-                  <div className="flex items-center space-x-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <img
-                          src="/tailwind-css-component-profile-2@56w.png"
-                          alt="Avatar Tailwind CSS Component"
-                        />
-                      </div>
+                    <div className="  h-28">
+                    <img
+                    className="w-full h-full rounded mx-auto"
+                      src={selectedClass.photoUrl}
+                      alt={selectedClass.className}
+                    />
                     </div>
-                    <div>
-                      <div className="font-bold">Hart Hagerty</div>
-                      <div className="text-sm opacity-50">United States</div>
-                    </div>
-                  </div>
                 </td>
                 <td>
-                  Zemlak, Daniel and Leannon
-                  <br />
-                  <span className="badge badge-ghost badge-sm">
-                    Desktop Support Technician
-                  </span>
+                   <p> <span>Price : </span> {selectedClass.price}</p>
                 </td>
-                <td>Purple</td>
+                <td>
+                   <p> <span>ClassName :</span> {selectedClass.className} </p>
+                    <p><span>InstructorName:</span> {selectedClass.name} </p>
+                    
+                </td>
                 <th>
-                  <button className="btn btn-ghost btn-xs">details</button>
+                  <Link to={`/deashBoard/payment/${selectedClass._id}`}>
+                  <button className="btn btn-success block mx-auto ">Enroll</button>
+                  </Link>
+
+                  <button onClick={()=>handelDelete(selectedClass._id)} className="btn  btn-error block mt-1 ">Delete</button>
                 </th>
               </tr>
             </tbody>

@@ -12,6 +12,7 @@ import Classes from "../Page/Home/Classes/Classes";
 import Instructor from "../Page/Home/Instructor/Instructor";
 import SelectedClass from "../Page/DeshBord/Students/SelectedClass";
 import EnrollClass from "../Page/DeshBord/Students/EnrollClass";
+import Payment from "../Page/DeshBord/Students/Payment";
 
 const router = createBrowserRouter([
   {
@@ -72,9 +73,15 @@ const router = createBrowserRouter([
       {
         path: '/deashBoard/enroll',
         element:<EnrollClass></EnrollClass>
+      },
+      {
+        path: '/deashBoard/payment/:id',
+        loader: ({params}) =>fetch(`http://localhost:5000/allClasses/selected/${params.id}`) ,
+        element:<Payment></Payment>
       }
     ]
   }
 ]);
 
 export default router
+

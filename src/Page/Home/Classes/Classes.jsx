@@ -1,12 +1,9 @@
 import React, { useContext } from "react";
-import {
-  useQuery
-} from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
-
 const Classes = () => {
-  const { user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
   const { data } = useQuery({
     queryKey: [],
     queryFn: () =>
@@ -16,24 +13,22 @@ const Classes = () => {
   const showAllClasses = data?.filter(
     (classes) => classes.status === "approved"
   );
-  console.log(showAllClasses);
 
-  const handelSelectedClass = (classes) =>{
-    console.log(classes)
-    fetch('http://localhost:5000/allClasses/select',{
-      method:'POST',
-      headers:{
-        "content-type": 'application/json'
+  const handelSelectedClass = (classes ) => {
+    const classId = classes._id 
+    delete classes._id 
+    fetch("http://localhost:5000/allClasses/select", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
       },
-      body:JSON.stringify(classes)
+      body: JSON.stringify({...classes , classId}),
     })
-    .then(res => res.json())
-    .then(data =>{
-      console.log(data)
-    })
-    
-  }
-
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
 
   return (
     <div className="grid grid-cols-3 px-4 gap-5">
@@ -52,7 +47,12 @@ const Classes = () => {
             <p>{classes.price}</p>
             <p>{classes.price}</p>
             <div className="card-actions justify-end">
-              <button onClick={()=>handelSelectedClass(classes)}  className="btn btn-primary w-full">Select </button>
+              <button
+                onClick={() => handelSelectedClass(classes )}
+                className="btn btn-primary w-full"
+              >
+                Select{" "}
+              </button>
             </div>
           </div>
         </div>
