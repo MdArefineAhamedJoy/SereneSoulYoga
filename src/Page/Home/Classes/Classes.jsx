@@ -16,13 +16,14 @@ const Classes = () => {
 
   const handelSelectedClass = (classes ) => {
     const classId = classes._id 
+       // TODO : old id remove not stored database
     delete classes._id 
     fetch("http://localhost:5000/allClasses/select", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({...classes , classId}),
+      body: JSON.stringify({...classes }),
     })
       .then((res) => res.json())
       .then((data) => {

@@ -12,7 +12,7 @@ const Login = () => {
             const loginUsers = res.user
             console.log(loginUsers)
         })
-        .then(error => {
+        .catch(error => {
             console.log(error.message)
         })
     };

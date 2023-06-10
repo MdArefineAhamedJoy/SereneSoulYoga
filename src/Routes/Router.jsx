@@ -5,14 +5,15 @@ import Login from "../Components/Login";
 import Register from "../Components/Register";
 import DeashBoard from "../LayOut/DeashBoard";
 import AddClasses from "../Page/DeshBord/Instructor/AddClasses";
-import MyClasses from "../Page/DeshBord/MyClasses";
 import AllClasses from "../Page/DeshBord/Admin/AllClasses";
 import ManageUsers from "../Page/DeshBord/Admin/ManageUsers";
 import Classes from "../Page/Home/Classes/Classes";
 import Instructor from "../Page/Home/Instructor/Instructor";
 import SelectedClass from "../Page/DeshBord/Students/SelectedClass";
 import EnrollClass from "../Page/DeshBord/Students/EnrollClass";
-import Payment from "../Page/DeshBord/Students/Payment";
+import Payment from "../Page/DeshBord/Students/Payment/Payment";
+import MyClasses from './../Page/DeshBord/Instructor/MyClasses';
+
 
 const router = createBrowserRouter([
   {

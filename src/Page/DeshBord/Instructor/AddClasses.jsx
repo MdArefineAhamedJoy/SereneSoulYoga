@@ -6,7 +6,6 @@ import Swal from "sweetalert2";
 const AddClasses = () => {
   const { user } = useContext(AuthContext);
   const [userEmail, setUserEmail] = useState("");
-
   const imag_token = import.meta.env.VITE_image_upload_token;
 
   const {
@@ -28,12 +27,12 @@ const AddClasses = () => {
       .then((image) => {
         if (image.success) {
           const photoUrl = image.data.url;
-          const { name, email, className, Price } = data;
+          const { name, email, className, price , availableSite } = data;
           const InstructorData = {
             name,
             email,
             className,
-            Price,
+            price,
             photoUrl,
             availableSite,
           };
