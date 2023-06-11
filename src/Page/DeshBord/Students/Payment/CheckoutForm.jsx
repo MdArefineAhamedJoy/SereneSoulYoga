@@ -9,11 +9,10 @@ const CheckoutForm = ({ selectedClass }) => {
   const { user } = useContext(AuthContext);
   const [paymentError, setPaymentError] = useState("");
   const [clientSecret, setClientSecret] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const stripe = useStripe();
   const elements = useElements();
   const { price } = selectedClass;
-
 
   useEffect(() => {
     if (price) {
@@ -66,18 +65,18 @@ const CheckoutForm = ({ selectedClass }) => {
           },
         },
       });
+
     if (paymentError) {
       console.log("[paymentError]", paymentError);
       setPaymentError(paymentError?.message);
     } else {
-        
       if (paymentIntent.status === "succeeded") {
-        // TODO : Class id remove and new id set
-        const classId = selectedClass._id
-        delete selectedClass._id
-        console.log(selectedClass)
+        const classId = selectedClass._id;
+        delete selectedClass._id;
+        console.log(selectedClass);
         const paymentClass = {
-          ...selectedClass,classId,
+          ...selectedClass,
+          classId,
           transitionId: paymentIntent.id,
         };
         fetch(`http://localhost:5000/enrollClasses`, {
@@ -89,14 +88,50 @@ const CheckoutForm = ({ selectedClass }) => {
         })
           .then((res) => res.json())
           .then((data) => {
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'You Payment SuccessFull',
+            if (data.error) {
+              console.log("[databaseError]", data.error);
+              setPaymentError("An error occurred while updating the class.");
+            } else {
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Your payment was successful",
                 showConfirmButton: false,
-                timer: 1500
+                timer: 1500,
+              });
+              
+              // update availableSeat and update Enroll classes
+
+              const updatedAvailableSeat = parseInt(paymentClass.availableSeat) - 1;
+              const updatedEnroll = parseInt(paymentClass.enroll) + 1;
+              
+              fetch(`http://localhost:5000/updateClass/${classId}`, {
+                method: "PUT",
+                headers: {
+                  "content-type": "application/json",
+                },
+                body: JSON.stringify({
+                  availableSeat: updatedAvailableSeat,
+                  enroll: updatedEnroll,
+                }),
               })
-              navigate('/deashBoard/enroll')
+                .then((res) => res.json())
+                .then((data) => {
+                  if (data.error) {
+                    console.log("[databaseError]", data.error);
+                    setPaymentError("An error occurred while updating the class.");
+                  } else {
+                    Swal.fire({
+                      position: "top-end",
+                      icon: "success",
+                      title: "Your payment was successful",
+                      showConfirmButton: false,
+                      timer: 1500,
+                    });
+                    navigate("/deashBoard/enroll");
+                  }
+                })
+            }
           });
       }
     }
@@ -127,6 +162,7 @@ const CheckoutForm = ({ selectedClass }) => {
       >
         Pay
       </button>
+      {paymentError && <div>{paymentError}</div>}
     </form>
   );
 };

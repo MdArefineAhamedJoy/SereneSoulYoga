@@ -15,7 +15,7 @@ const AddClasses = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-  
+   console.log(data)
     const formData = new FormData();
     formData.append("image", data.classPhoto[0]);
 
