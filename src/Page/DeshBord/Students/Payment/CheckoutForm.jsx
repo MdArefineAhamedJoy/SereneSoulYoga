@@ -65,9 +65,6 @@ const CheckoutForm = ({ selectedClass }) => {
         },
       });
 
-      // 64857d9a4b3200df907a8875
-      // 64857d9a4b3200df907a8875
-
 
     if (paymentError) {
       console.log("[paymentError]", paymentError);
@@ -75,9 +72,10 @@ const CheckoutForm = ({ selectedClass }) => {
     } else {
       if (paymentIntent.status === "succeeded") {
         const classId =selectedClass?.classId
+        const paymentUser = user?.email
         delete selectedClass._id
         const paymentClass = {
-          ...selectedClass,
+          ...selectedClass, paymentUser,
           transitionId: paymentIntent.id,
         };
         fetch(`http://localhost:5000/enrollClasses`, {
@@ -106,7 +104,8 @@ const CheckoutForm = ({ selectedClass }) => {
       
               const updatedAvailableSeat = parseInt(paymentClass.availableSite) - 1;
               const updatedEnroll = parseInt(paymentClass.enroll) + 1;
-              console.log(updatedAvailableSeat , updatedEnroll)
+
+              console.log(classId)
        
               fetch(`http://localhost:5000/updateClass/${classId}`, {
                 method: "PUT",

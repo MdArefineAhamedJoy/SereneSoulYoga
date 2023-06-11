@@ -1,9 +1,8 @@
 import React from "react";
-
-import SuccessClasses from "../../../Hooks/SuccesClasses";
+import usePayment from "../../../Hooks/usePayment";
 
 const EnrollClass = () => {
- const [data] = SuccessClasses()
+ const [paymentData] = usePayment()
 
   return (
     <div className="w-full">
@@ -20,32 +19,32 @@ const EnrollClass = () => {
             </tr>
           </thead>
 
-          {data?.map((selectedClass, index) => (
-            <tbody key={selectedClass._id} className="text-center">
+          {paymentData?.map((data, index) => (
+            <tbody key={data._id} className="text-center">
               <tr>
                 <th>{index + 1}</th>
                 <td>
                   <div className="  h-28">
                     <img
                       className="w-full h-full rounded mx-auto"
-                      src={selectedClass.photoUrl}
-                      alt={selectedClass.className}
+                      src={data.photoUrl}
+                      alt={data.className}
                     />
                   </div>
                 </td>
                 <td>
                   <p>
                     {" "}
-                    <span>Price : </span> {selectedClass.price}
+                    <span>Price : </span> {data.price}
                   </p>
                 </td>
                 <td>
                   <p>
                     {" "}
-                    <span>ClassName :</span> {selectedClass.className}{" "}
+                    <span>ClassName :</span> {data.className}{" "}
                   </p>
                   <p>
-                    <span>InstructorName:</span> {selectedClass.name}{" "}
+                    <span>InstructorName:</span> {data.name}{" "}
                   </p>
                 </td>
                 <th>
