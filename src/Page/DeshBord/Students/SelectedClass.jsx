@@ -53,6 +53,7 @@ const SelectedClass = () => {
                 </td>
                 <td>
                    <p> <span>Price : </span> {selectedClass.price}</p>
+                   <p> <span>Site : </span> {selectedClass.availableSite}</p>
                 </td>
                 <td>
                    <p> <span>ClassName :</span> {selectedClass.className} </p>

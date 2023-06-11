@@ -2,8 +2,6 @@ import React from "react";
 
 import SuccessClasses from "../../../Hooks/SuccesClasses";
 
-
-
 const EnrollClass = () => {
  const [data] = SuccessClasses()
 
@@ -24,7 +22,6 @@ const EnrollClass = () => {
 
           {data?.map((selectedClass, index) => (
             <tbody key={selectedClass._id} className="text-center">
-              {/* row 1 */}
               <tr>
                 <th>{index + 1}</th>
                 <td>

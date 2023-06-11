@@ -25,7 +25,6 @@ const CheckoutForm = ({ selectedClass }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data.clientSecret);
           setClientSecret(data.clientSecret);
         });
     }
@@ -66,17 +65,19 @@ const CheckoutForm = ({ selectedClass }) => {
         },
       });
 
+      // 64857d9a4b3200df907a8875
+      // 64857d9a4b3200df907a8875
+
+
     if (paymentError) {
       console.log("[paymentError]", paymentError);
       setPaymentError(paymentError?.message);
     } else {
       if (paymentIntent.status === "succeeded") {
-        const classId = selectedClass._id;
-        delete selectedClass._id;
-        console.log(selectedClass);
+        const classId =selectedClass?.classId
+        delete selectedClass._id
         const paymentClass = {
           ...selectedClass,
-          classId,
           transitionId: paymentIntent.id,
         };
         fetch(`http://localhost:5000/enrollClasses`, {
@@ -99,12 +100,14 @@ const CheckoutForm = ({ selectedClass }) => {
                 showConfirmButton: false,
                 timer: 1500,
               });
-              
+              navigate("/deashBoard/enroll");
               // update availableSeat and update Enroll classes
-
-              const updatedAvailableSeat = parseInt(paymentClass.availableSeat) - 1;
-              const updatedEnroll = parseInt(paymentClass.enroll) + 1;
               
+      
+              const updatedAvailableSeat = parseInt(paymentClass.availableSite) - 1;
+              const updatedEnroll = parseInt(paymentClass.enroll) + 1;
+              console.log(updatedAvailableSeat , updatedEnroll)
+       
               fetch(`http://localhost:5000/updateClass/${classId}`, {
                 method: "PUT",
                 headers: {
@@ -128,7 +131,7 @@ const CheckoutForm = ({ selectedClass }) => {
                       showConfirmButton: false,
                       timer: 1500,
                     });
-                    navigate("/deashBoard/enroll");
+                    
                   }
                 })
             }
