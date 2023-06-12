@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
+import PageTitle from "../../../Components/PageTitle";
 const PopularInstructor = () => {
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["data"],
@@ -8,26 +9,30 @@ const PopularInstructor = () => {
         res.json()
       ),
   });
-  console.log(data , " ......................");
+
   return (
-    <div className="grid md:grid-cols-3 grid-cols-1">
-      {data?.map((instructor) => (
-        <div key={instructor._id} className="card w-96 glass">
-          <figure>
-            <img
-              src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-              alt="car!"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Life hack</h2>
-            <p>How to park your car at your garage?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Learn now!</button>
+    <div>
+      <PageTitle
+        title="Popular Instructor"
+        subTitle="Popular instructor inspires students with engaging teaching methods, fostering a love for learning and nurturing their talents."
+      ></PageTitle>
+      <div className="grid md:grid-cols-3 gap-8 grid-cols-1 px-10 group  min-h-screen">
+        {data?.map((instructor) => (
+          <div className="card w-96 bg-base-100 shadow-xl duration-300 group-hover:blur-sm hover:!blur-none group-hover:scale-105 cursor-pointer">
+            <figure className="px-10 pt-8">
+              <img
+                src={instructor.image}
+                alt="instructor image"
+                className="w-40 h-40 rounded-full transition duration-300 ease-in-out transform group-hover:scale-90 hover:scale-100"
+              />
+            </figure>
+            <div className="card-body items-center text-center">
+              <h2 className="card-title">{instructor.name}</h2>
+              <h2 className="card-title">{instructor.email}</h2>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
