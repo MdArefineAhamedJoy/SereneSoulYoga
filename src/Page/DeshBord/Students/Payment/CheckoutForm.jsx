@@ -6,14 +6,13 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 const CheckoutForm = ({ selectedClass }) => {
-  console.log(selectedClass)
   const { user } = useContext(AuthContext);
   const [paymentError, setPaymentError] = useState("");
   const [clientSecret, setClientSecret] = useState("");
   const navigate = useNavigate();
   const stripe = useStripe();
   const elements = useElements();
-  const { price } = selectedClass;
+  const { price , _id } = selectedClass;
   console.log(price)
 
   useEffect(() => {
@@ -90,7 +89,7 @@ const CheckoutForm = ({ selectedClass }) => {
           transitionId: paymentIntent.id,
         };
 
-        fetch(`http://localhost:5000/enrollClasses`, {
+        fetch(`http://localhost:5000/enrollClasses/?id=${_id}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
