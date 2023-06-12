@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useQuery } from "@tanstack/react-query";
 const useUsers = () => {
     const { isLoading, error, data:allUser , refetch } = useQuery({

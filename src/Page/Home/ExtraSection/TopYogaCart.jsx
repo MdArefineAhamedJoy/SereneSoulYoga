@@ -3,7 +3,7 @@ import React from "react";
 const TopYogaCart = ({ yoga }) => {
   const { title, image, description } = yoga;
   return (
-    <div className="card card-compact text-center   ">
+    <div className="card card-compact text-center">
       <div className="card-body">
         <h2 className="text-3xl font-semibold pb-8">{title}</h2>
         <figure>

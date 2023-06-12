@@ -13,6 +13,7 @@ import SelectedClass from "../Page/DeshBord/Students/SelectedClass";
 import EnrollClass from "../Page/DeshBord/Students/EnrollClass";
 import Payment from "../Page/DeshBord/Students/Payment/Payment";
 import MyClasses from './../Page/DeshBord/Instructor/MyClasses';
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
   },
   {
     path: "deashBoard",
-    element: <DeashBoard></DeashBoard>,
+    element:<PrivateRoute><DeashBoard></DeashBoard></PrivateRoute> ,
     children:[
       // instructor section 
       {

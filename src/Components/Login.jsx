@@ -2,8 +2,12 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { useLocation } from "react-router-dom";
 const Login = () => {
     const {  singIn , singInWithGoogle , user}  = useContext(AuthContext)
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || "/";
+  
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -45,6 +49,7 @@ const Login = () => {
                       showConfirmButton: false,
                       timer: 1500,
                     });
+                    navigate(from, { replace: true });
                   }
                 });
             }
