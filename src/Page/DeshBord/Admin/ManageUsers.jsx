@@ -1,18 +1,21 @@
 import React, { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
 import { GrUserAdmin } from 'react-icons/gr';
 import { FaUserAlt } from "react-icons/fa";
+import useUsers from "../../../Hooks/useUsers";
 
 
 const ManageUsers = () => {
 
   const [userRoll , setUserRoll] = useState('Student')
 
-  const { isLoading, error, data , refetch } = useQuery({
-    queryKey: ["users"],
-    queryFn: () =>
-      fetch("http://localhost:5000/users").then((res) => res.json()),
-  });
+  // const { isLoading, error, data , refetch } = useQuery({
+  //   queryKey: ["users"],
+  //   queryFn: () =>
+  //     fetch("http://localhost:5000/users").then((res) => res.json()),
+  // });
+
+  const [allUser] = useUsers()
+  
 
   const handelMakeRoll = (user, roll) => {
     fetch(`http://localhost:5000/users/roll/${user._id}`, {
@@ -30,22 +33,24 @@ const ManageUsers = () => {
 
   return (
     <div className=" w-full">
-      <h1 className="py-10 text-center">Available User {data?.length}</h1>
+      <h1 className="py-10 text-center">Available User {allUser?.length}</h1>
       <div className="overflow-x-auto">
         <table className="table">
           <thead>
             <tr className="text-center font-bold text-xl border-b-4">
-              <th>#</th>
+              <th>Photo</th>
               <th>User Info </th>
               <th> Roll </th>
               <th>Set Roll 
               </th>
             </tr>
           </thead>
-          {data?.map((user, index) => (
+          {allUser?.map((user, index) => (
             <tbody className="text-center text-lg" key={user._id}>
               <tr>
-                <th>{index + 1}</th>
+                <th>
+                  <img className="w-20 h-20 mx-auto rounded-full" src={user.image} alt="" />
+                </th>
                 <td>
                   {user?.name}
                   <br />

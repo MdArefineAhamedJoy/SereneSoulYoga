@@ -10,7 +10,7 @@ const Classes = () => {
   const { data } = useQuery({
     queryKey: ["data"],
     queryFn: () =>
-      fetch(`http://localhost:5000/allClasses/?status=approved`).then((res) =>
+      fetch(`http://localhost:5000/approveClass/?status=approved`).then((res) =>
         res.json()
       ),
   });
@@ -19,10 +19,10 @@ const Classes = () => {
     const classId = classes._id;
     delete classes._id;
     const userEmail = user?.email
-    console.log(classId ,'------------------------')
+
     // TODO : set email to backend
     
-    fetch("http://localhost:5000/allClasses/select", {
+    fetch(`http://localhost:5000/allClasses/select`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -59,6 +59,7 @@ const Classes = () => {
             <p>Price {classes.price}</p>
             <div className="card-actions justify-end">
               <button
+                disabled={user?.role === "instructor" || user?.role === "admin" }
                 onClick={() => handelSelectedClass(classes)}
                 className="btn btn-primary w-full"
               >

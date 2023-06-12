@@ -19,7 +19,7 @@ const Register = () => {
       .then((res) => {
         const singUpUser = res.user;
         //  user data update system
-        console.log(data?.name, data?.photoUrl);
+        console.log();
         updateUsers(data?.name, data?.photoUrl)
           .then((res) => {
             console.log(res);
@@ -29,9 +29,9 @@ const Register = () => {
           });
         if (singUpUser) {
           const existingUser = {
-            name: singUpUser.displayName,
+            name: data?.name ,
             email: singUpUser.email,
-            image: singUp.photoURL,
+            image: data?.photoUrl,
             role: "",
           };
           fetch(`http://localhost:5000/users`, {

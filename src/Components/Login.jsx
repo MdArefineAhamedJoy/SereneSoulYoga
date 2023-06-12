@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 const Login = () => {
-    const {  singIn , singInWithGoogle} = useContext(AuthContext)
-    // console.log(singIn)
+    const {  singIn , singInWithGoogle , user}  = useContext(AuthContext)
+
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         singIn(data?.email , data?.password)
@@ -21,13 +21,12 @@ const Login = () => {
         singInWithGoogle()
         .then(res =>{
             const loginUsers = res.user
-            console.log(loginUsers)
             if (loginUsers) {
-              console.log(loginUsers);
               const existingUser = {
                 name: loginUsers.displayName,
                 email: loginUsers.email,
                 role: "",
+                image: loginUsers?.photoURL
               };
               fetch(`http://localhost:5000/users`, {
                 method: "post",

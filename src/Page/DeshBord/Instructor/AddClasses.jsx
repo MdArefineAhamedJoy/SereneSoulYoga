@@ -7,18 +7,17 @@ const AddClasses = () => {
   const { user } = useContext(AuthContext);
   const [userEmail, setUserEmail] = useState("");
   const imag_token = import.meta.env.VITE_image_upload_token;
-
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
+    reset,
   } = useForm();
+  
   const onSubmit = (data) => {
-   console.log(data)
     const formData = new FormData();
     formData.append("image", data.classPhoto[0]);
-
     fetch(`https://api.imgbb.com/1/upload?key=${imag_token}`, {
       method: "POST",
       body: formData,
@@ -27,7 +26,7 @@ const AddClasses = () => {
       .then((image) => {
         if (image.success) {
           const photoUrl = image.data.url;
-          const { name, email, className, price , availableSite } = data;
+          const { name, email, className, price, availableSite } = data;
           const InstructorData = {
             name,
             email,
@@ -55,6 +54,7 @@ const AddClasses = () => {
                   showConfirmButton: false,
                   timer: 1500,
                 });
+                reset();
               }
             });
         }

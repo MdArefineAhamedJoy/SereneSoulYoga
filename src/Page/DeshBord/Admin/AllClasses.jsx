@@ -8,6 +8,7 @@ const AllClasses = () => {
     )
   );
 
+  console.log(data)
   const handelApproved = (id , allClass) => {
 
    const status =  allClass.status 
@@ -50,7 +51,6 @@ const AllClasses = () => {
               <tr>
                 <th>{index + 1}</th>
                 <td>
-                  <p>{allInfo.className}</p>
                   <div className="rounded w-32 mx-auto h-20">
                     <img
                       className="w-full h-full"
@@ -66,9 +66,10 @@ const AllClasses = () => {
                   </span>
                 </td>
                 <td>
-                  <p>{allInfo.price}</p>
-                  <p>{allInfo.status}</p>
-                  <p>{allInfo.seats}</p>
+                  <p>Price : {allInfo.price}</p>
+                  <p>Status : {allInfo.status}</p>
+                  <p>Site : {allInfo.availableSite}</p>
+                  <p>Name : {allInfo.className}</p>
                 </td>
                 <th>
                   <button disabled={allInfo.status=== "approved"} onClick={()=>handelApproved(allInfo._id , allInfo)} className="btn btn-ghost btn-sm"> Approve</button>
