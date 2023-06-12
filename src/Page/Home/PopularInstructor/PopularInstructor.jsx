@@ -16,14 +16,14 @@ const PopularInstructor = () => {
         title="Popular Instructor"
         subTitle="Popular instructor inspires students with engaging teaching methods, fostering a love for learning and nurturing their talents."
       ></PageTitle>
-      <div className="grid md:grid-cols-3 gap-8 grid-cols-1 px-10 group  min-h-screen">
+      <div  className="grid md:grid-cols-3 gap-8  grid-cols-1 w-11/12 mx-auto group  min-h-screen">
         {data?.map((instructor) => (
-          <div className="card w-96 bg-base-100 shadow-xl duration-300 group-hover:blur-sm hover:!blur-none group-hover:scale-105 cursor-pointer">
+          <div key={instructor._id} className="card w-96 bg-base-100 shadow-xl duration-500 group-hover:blur-sm hover:!blur-none group-hover:scale-105 cursor-pointer">
             <figure className="px-10 pt-8">
               <img
                 src={instructor.image}
                 alt="instructor image"
-                className="w-40 h-40 rounded-full transition duration-300 ease-in-out transform group-hover:scale-90 hover:scale-100"
+                className="w-40 h-40 rounded-full transition duration-300 ease-in-out transform group-hover:scale-90 hover:scale-105"
               />
             </figure>
             <div className="card-body items-center text-center">
