@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 const CheckoutForm = ({ selectedClass }) => {
+  console.log(selectedClass)
   const { user } = useContext(AuthContext);
   const [paymentError, setPaymentError] = useState("");
   const [clientSecret, setClientSecret] = useState("");
@@ -13,22 +14,27 @@ const CheckoutForm = ({ selectedClass }) => {
   const stripe = useStripe();
   const elements = useElements();
   const { price } = selectedClass;
+  console.log(price)
 
   useEffect(() => {
     if (price) {
       fetch(`http://localhost:5000/create-payment-intent`, {
         method: "POST",
         headers: {
-          "content-type": "application/json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ price }),
       })
         .then((res) => res.json())
         .then((data) => {
           setClientSecret(data.clientSecret);
+        })
+        .catch((error) => {
+          console.log("[clientSecretError]", error);
+          setPaymentError("An error occurred while fetching the payment information.");
         });
     }
-  }, []);
+  }, [price]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -50,38 +56,44 @@ const CheckoutForm = ({ selectedClass }) => {
 
     if (error) {
       console.log("[error]", error);
-    } else {
-      //   console.log("[PaymentMethod]", paymentMethod);
+      setPaymentError(error.message);
+      return;
     }
 
-    const { paymentIntent, error: paymentError } =
-      await stripe.confirmCardPayment(clientSecret, {
-        payment_method: {
-          card: card,
-          billing_details: {
-            name: user?.displayName || "unwon",
-            email: user?.email || "unwon@email.com",
+    try {
+      const { paymentIntent, error: paymentError } = await stripe.confirmCardPayment(
+        clientSecret,
+        {
+          payment_method: {
+            card: card,
+            billing_details: {
+              name: user?.displayName || "unwon",
+              email: user?.email || "unwon@example.com",
+            },
           },
-        },
-      });
+        }
+      );
 
+      if (paymentError) {
+        console.log("[paymentError]", paymentError);
+        setPaymentError(paymentError.message);
+        return;
+      }
 
-    if (paymentError) {
-      console.log("[paymentError]", paymentError);
-      setPaymentError(paymentError?.message);
-    } else {
       if (paymentIntent.status === "succeeded") {
-        const classId =selectedClass?.classId
-        const paymentUser = user?.email
-        delete selectedClass._id
+        const classId = selectedClass?.classId;
+        const paymentUser = user?.email;
+        delete selectedClass._id;
         const paymentClass = {
-          ...selectedClass, paymentUser,
+          ...selectedClass,
+          paymentUser,
           transitionId: paymentIntent.id,
         };
+
         fetch(`http://localhost:5000/enrollClasses`, {
           method: "POST",
           headers: {
-            "content-type": "application/json",
+            "Content-Type": "application/json",
           },
           body: JSON.stringify(paymentClass),
         })
@@ -99,18 +111,14 @@ const CheckoutForm = ({ selectedClass }) => {
                 timer: 1500,
               });
               navigate("/deashBoard/enroll");
-              // update availableSeat and update Enroll classes
-              
-      
-              const updatedAvailableSeat = parseInt(paymentClass.availableSite) - 1;
-              const updatedEnroll = parseInt(paymentClass.enroll) + 1;
 
-              console.log(classId)
-       
+              const updatedAvailableSeat = selectedClass.availableSeat - 1;
+              const updatedEnroll = selectedClass.enroll + 1;
+
               fetch(`http://localhost:5000/updateClass/${classId}`, {
                 method: "PUT",
                 headers: {
-                  "content-type": "application/json",
+                  "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
                   availableSeat: updatedAvailableSeat,
@@ -130,12 +138,14 @@ const CheckoutForm = ({ selectedClass }) => {
                       showConfirmButton: false,
                       timer: 1500,
                     });
-                    
                   }
-                })
+                });
             }
           });
       }
+    } catch (error) {
+      console.log("[paymentError]", error);
+      setPaymentError("An error occurred while processing the payment.");
     }
   };
 
@@ -157,11 +167,7 @@ const CheckoutForm = ({ selectedClass }) => {
           },
         }}
       />
-      <button
-        className="btn btn-primary w-1/2"
-        type="submit"
-        disabled={!stripe}
-      >
+      <button className="btn btn-primary w-1/2" type="submit" disabled={!stripe}>
         Pay
       </button>
       {paymentError && <div>{paymentError}</div>}

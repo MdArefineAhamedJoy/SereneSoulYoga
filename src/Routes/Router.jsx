@@ -77,7 +77,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/deashBoard/payment/:id',
-        loader: ({params}) =>fetch(`http://localhost:5000/allClasses/selected/${params.id}`) ,
+        loader: ({params}) =>fetch(`http://localhost:5000/all/selected/class/${params.id}`) ,
         element:<Payment></Payment>
       }
     ]

@@ -27,7 +27,7 @@ const Classes = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({ ...classes, classId }),
+      body: JSON.stringify({ ...classes, classId , userEmail}),
     })
       .then((res) => res.json())
       .then((data) => {

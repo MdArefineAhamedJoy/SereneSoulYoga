@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import usePayment from "../../../Hooks/usePayment";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const SelectedClass = () => {
-
-  const [paymentData] = usePayment()
+  const [paymentData] = usePayment();
+  const { user } = useContext(AuthContext);
 
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["data"],
     queryFn: () =>
-      fetch("http://localhost:5000/allClasses/selected").then((res) =>
+      fetch(`http://localhost:5000/allClasses/selected/${user?.email}`).then((res) =>
         res.json()
       ),
   });
@@ -43,9 +44,7 @@ const SelectedClass = () => {
           {data?.map((selectedClass, index) => (
             <tbody key={selectedClass._id} className="text-center">
               {/* row 1 */}
-              {
-                console.log(selectedClass._id)
-              }
+              {console.log(selectedClass._id)}
               <tr>
                 <th>{index + 1}</th>
                 <td>
