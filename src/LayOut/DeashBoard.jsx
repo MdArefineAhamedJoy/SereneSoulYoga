@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 const DeashBoard = () => {
   const { user } = useContext(AuthContext);
   const [userRoll, setUserRoll] = useState("");
-  
+
   useEffect(() => {
     fetch("http://localhost:5000/users")
       .then((res) => res.json())
@@ -15,14 +15,15 @@ const DeashBoard = () => {
         const userStatus = findUser?.role;
         setUserRoll(userStatus);
       });
-  }, [userRoll , user]);
+  }, [userRoll, user]);
 
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center justify-center">
         {/* Page content here */}
-        <Outlet></Outlet>
+          <Outlet></Outlet>
+
         <label
           htmlFor="my-drawer-2"
           className="btn btn-primary drawer-button lg:hidden"
@@ -42,12 +43,11 @@ const DeashBoard = () => {
             />
             <p className="mx-auto py-4">{user?.displayName}</p>
           </div>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
           {userRoll === "admin" ? (
             <>
-              {" "}
-              <li>
-                <Link to="/">Home</Link>
-              </li>
               <li>
                 <Link to="/deashBoard/allClass">All Classes</Link>
               </li>
@@ -58,9 +58,6 @@ const DeashBoard = () => {
           ) : userRoll === "instructor" ? (
             <>
               <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
                 <Link to="/deashBoard/addClass">Add a Classes</Link>
               </li>
               <li>
@@ -70,13 +67,13 @@ const DeashBoard = () => {
           ) : (
             <>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/deashBoard/selected">My Selected Classes</Link>
               </li>
               <li>
-                <Link to='/deashBoard/selected'>My Selected Classes</Link>
+                <Link to="/deashBoard/enroll">My Enrolled Classes</Link>
               </li>
               <li>
-                <Link to='/deashBoard/enroll' >My Enrolled Classes</Link>
+                <Link to="/deashBoard/paymentHistory">Payment History</Link>
               </li>
             </>
           )}

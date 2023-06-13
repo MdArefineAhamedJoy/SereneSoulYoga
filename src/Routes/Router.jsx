@@ -14,6 +14,7 @@ import EnrollClass from "../Page/DeshBord/Students/EnrollClass";
 import Payment from "../Page/DeshBord/Students/Payment/Payment";
 import MyClasses from './../Page/DeshBord/Instructor/MyClasses';
 import PrivateRoute from "./PrivateRoute";
+import PaymentHistory from "../Page/DeshBord/Students/PaymentHistory";
 
 
 const router = createBrowserRouter([
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
         path: '/deashBoard/payment/:id',
         loader: ({params}) =>fetch(`http://localhost:5000/all/selected/class/${params.id}`) ,
         element:<Payment></Payment>
+      },
+      {
+        path:"/deashBoard/paymentHistory",
+        element:<PaymentHistory></PaymentHistory>
       }
     ]
   }
