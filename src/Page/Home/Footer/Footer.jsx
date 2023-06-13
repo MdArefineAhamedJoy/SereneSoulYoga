@@ -3,15 +3,15 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="mt-20">
-      <footer className="md:flex    text-base-content w-full bg-red-300">
-        <div className="  w-[30%] p-5 text-right flex flex-col bg-[#d4ad76] h-96">
+      <footer className="md:flex text-base-content w-full bg-red-300">
+        <div className="  md:w-[30%] w-full p-5 md:text-right flex flex-col bg-[#d4ad76] h-96">
           <span className="footer-title">Services</span>
           <a className="link link-hover">Branding</a>
           <a className="link link-hover">Design</a>
           <a className="link link-hover">Marketing</a>
           <a className="link link-hover">Advertisement</a>
         </div>
-        <div className="  w-[40%] mx-auto p-5 bg-[#c9a470]">
+        <div className="  md:w-[40%] w-full mx-auto p-5 bg-[#c9a470]">
           <div className="text-center">
           <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ const Footer = () => {
             Proin semper suscipit magna, nec imperdiet lacus semper.
           </p>
         </div>
-        <div className="w-[30%] p-5 text-right flex flex-col bg-[#d4ad76] h-96 ">
+        <div className="md:w-[30%] w-full p-5 text-right flex flex-col bg-[#d4ad76] h-96 ">
           <span className="footer-title">Social</span>
           <div className=" gap-4">
             <a>
