@@ -6,6 +6,7 @@ const EnrollClass = () => {
 
   return (
     <div className="w-full">
+      <h1 className="text-center mb-10 font-semibold text-2xl">Your Total Enroll Classes : {paymentData.length} </h1>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
@@ -13,9 +14,8 @@ const EnrollClass = () => {
             <tr>
               <th>#</th>
               <th>image</th>
-              <th>Price & Site </th>
+              <th>Purchase Account </th>
               <th>Name </th>
-              <th>Method</th>
             </tr>
           </thead>
 
@@ -35,7 +35,7 @@ const EnrollClass = () => {
                 <td>
                   <p>
                     {" "}
-                    <span>Price : </span> {data.price}
+                    <span> </span> {data.paymentUser}
                   </p>
                 </td>
                 <td>
@@ -47,8 +47,6 @@ const EnrollClass = () => {
                     <span>InstructorName:</span> {data.name}{" "}
                   </p>
                 </td>
-                <th>
-                </th>
               </tr>
             </tbody>
           ))}

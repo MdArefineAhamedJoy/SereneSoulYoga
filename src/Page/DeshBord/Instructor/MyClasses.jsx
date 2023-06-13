@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const MyClasses = () => {
   const [classes, setClasses] = useState([]);
+  const {user} = useContext(AuthContext)
   useEffect(() => {
-    fetch(`http://localhost:5000/instructor`)
+    fetch(`http://localhost:5000/instructor/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setClasses(data);
@@ -20,7 +22,7 @@ const MyClasses = () => {
             <p><span>Instructor Email :</span> {classData.email} </p>
             <p><span>Class Price :</span> {classData.price} </p>
             <p><span>Class Status :</span> {classData.status}</p> 
-            <p><span>Available Sites :</span> {classData.site} </p>
+            <p><span>Available Sites :</span> {classData.availableSite} </p>
             <p><span>Total Enroll:</span> {classData.site? classData.site : 0} </p>
   
             <div className="card-actions mx-auto">

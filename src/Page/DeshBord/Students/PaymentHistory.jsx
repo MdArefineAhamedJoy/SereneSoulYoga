@@ -14,7 +14,7 @@ const PaymentHistory = () => {
               <th>#</th>
               <th>Transition ID</th>
               <th>Payment Email </th>
-              <th>Price</th>
+              <th>Buy Class</th>
             </tr>
           </thead>
           {paymentData?.map((payment, index) => (

@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
+import DayButton from "../../../Components/Modal";
 
 const AllClasses = () => {
   const { data, isLoading, error , refetch} = useQuery([], () =>
@@ -77,6 +78,17 @@ const AllClasses = () => {
                   <button disabled={allInfo.status=== "approved"} className="btn btn-ghost btn-sm ">Deny</button>
                   <br />
                   <button className="btn btn-ghost btn-sm">feedback</button>
+
+
+{/* feedback */}
+
+
+<DayButton id={allInfo._id} />
+
+
+{/* feedback */}
+
+
                 </th>
               </tr>
             </tbody>
