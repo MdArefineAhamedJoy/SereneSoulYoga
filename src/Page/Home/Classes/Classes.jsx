@@ -4,14 +4,14 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import useUsers from "../../../Hooks/useUsers";
 import PrivateRoute from "../../../Routes/PrivateRoute";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate} from "react-router-dom";
 
 const Classes = () => {
   const status = "approved";
   const { user } = useContext(AuthContext);
   const [allUser] = useUsers();
-  const navigate = useNavigate()
-
+  const location = useLocation()
+  const navigator = useNavigate()
 
   const { data } = useQuery({
     queryKey: ["data"],
@@ -23,7 +23,14 @@ const Classes = () => {
 
   const handelSelectedClass = (classes) => {
     if(!user?.email){
-      return navigate('/login')
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Place Login Fist ',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      return navigator('/login')
     }
     const classId = classes._id;
     delete classes._id;
