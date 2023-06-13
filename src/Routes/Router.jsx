@@ -12,85 +12,86 @@ import Instructor from "../Page/Home/Instructor/Instructor";
 import SelectedClass from "../Page/DeshBord/Students/SelectedClass";
 import EnrollClass from "../Page/DeshBord/Students/EnrollClass";
 import Payment from "../Page/DeshBord/Students/Payment/Payment";
-import MyClasses from './../Page/DeshBord/Instructor/MyClasses';
+import MyClasses from "./../Page/DeshBord/Instructor/MyClasses";
 import PrivateRoute from "./PrivateRoute";
 import PaymentHistory from "../Page/DeshBord/Students/PaymentHistory";
 import ErrorPage from "../Components/ErrorPage";
-
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
     errorElement: <ErrorPage />,
-    children:[
+    children: [
       {
-        path: '/',
-        element:<Home></Home>
+        path: "/",
+        element: <Home></Home>,
       },
       {
         path: "/login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
         path: "/register",
-        element: <Register></Register>
+        element: <Register></Register>,
       },
       {
         path: "classes",
-        element: <Classes></Classes>
+        element: <Classes></Classes>,
       },
       {
         path: "instructor",
-        element: <Instructor></Instructor>
-      }
-    ]
+        element: <Instructor></Instructor>,
+      },
+    ],
   },
   {
-    path: "deashBoard",
-    element:<PrivateRoute><DeashBoard></DeashBoard></PrivateRoute> ,
-    children:[
-      // instructor section 
+    path: "/deashBoard",
+    element: (
+      <PrivateRoute>
+        <DeashBoard></DeashBoard>
+      </PrivateRoute>
+    ),
+    children: [
+      // instructor section
       {
-        path: '/deashBoard/addClass',
-        element: <AddClasses></AddClasses>
+        path: "/deashBoard/addClass",
+        element: <AddClasses></AddClasses>,
       },
       {
-        path: '/deashBoard/myClasses',
-        element: <MyClasses></MyClasses>
+        path: "/deashBoard/myClasses",
+        element: <MyClasses></MyClasses>,
       },
-      // admin section 
+      // admin section
       {
-        path: '/deashBoard/allClass',
-        element: <AllClasses></AllClasses>
-      },
-      {
-        path: '/deashBoard/manageUser',
-        element: <ManageUsers></ManageUsers>
-      }
-      // student section 
-      ,
-      {
-        path: '/deashBoard/selected',
-        element:<SelectedClass></SelectedClass>
-      }
-      ,
-      {
-        path: '/deashBoard/enroll',
-        element:<EnrollClass></EnrollClass>
+        path: "/deashBoard/allClass",
+        element: <AllClasses></AllClasses>,
       },
       {
-        path: '/deashBoard/payment/:id',
-        loader: ({params}) =>fetch(`http://localhost:5000/all/selected/class/${params.id}`) ,
-        element:<Payment></Payment>
+        path: "/deashBoard/manageUser",
+        element: <ManageUsers></ManageUsers>,
+      },
+      // student section
+      {
+        path: "/deashBoard/selected",
+        element: <SelectedClass></SelectedClass>,
       },
       {
-        path:"/deashBoard/paymentHistory",
-        element:<PaymentHistory></PaymentHistory>
-      }
-    ]
-  }
+        path: "/deashBoard/enroll",
+        element: <EnrollClass></EnrollClass>,
+      },
+      {
+        path: "/deashBoard/payment/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/all/selected/class/${params.id}`),
+        element: <Payment></Payment>,
+      },
+      {
+        path: "/deashBoard/paymentHistory",
+        element: <PaymentHistory></PaymentHistory>,
+      },
+    ],
+  },
 ]);
 
-export default router
-
+export default router;

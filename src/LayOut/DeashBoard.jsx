@@ -2,11 +2,16 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
+import Admin from "../Page/DeshBord/DeashBoardHome/Admin";
+import InstructorHome from "../Page/DeshBord/DeashBoardHome/InstructorHome";
+import StudentHome from "../Page/DeshBord/DeashBoardHome/StudentHome";
 
 const DeashBoard = () => {
   const { user } = useContext(AuthContext);
   const [userRoll, setUserRoll] = useState("");
+  const [loading, setLoading] = useState(true);
 
+  console.log(userRoll);
   useEffect(() => {
     fetch("http://localhost:5000/users")
       .then((res) => res.json())
@@ -17,12 +22,28 @@ const DeashBoard = () => {
       });
   }, [userRoll, user]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      const fetchedUserRoll = "admin";
+      setUserRoll(fetchedUserRoll);
+      setLoading(false);
+    }, 2000);
+  }, []);
+
+  if (loading) {
+    return <span className="loading loading-bars loading-lg"></span>
+  }
+
+
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center justify-center">
         {/* Page content here */}
-          <Outlet></Outlet>
+
+        {userRoll === "admin" ? ( <Admin /> ) : userRoll === "instructor" ? (<InstructorHome />) : <StudentHome></StudentHome>}
+
+        <Outlet></Outlet>
 
         <label
           htmlFor="my-drawer-2"
