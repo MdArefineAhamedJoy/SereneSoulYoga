@@ -5,7 +5,6 @@ import Swal from "sweetalert2";
 import useUsers from "../../../Hooks/useUsers";
 import { useLocation, useNavigate } from "react-router-dom";
 import PageTitle from "../../../Components/PageTitle";
-import ClasssSlider from "../../../Components/ClasssSlider";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -71,18 +70,18 @@ const Classes = () => {
             delay: 2,
             disableOnInteraction: false,
           }}
-          speed={5000}
+          speed={3000}
           loop={true}
           pagination={{
             clickable: true,
           }}
-          // navigation={true}
+     
           modules={[Autoplay, Pagination, Navigation]}
         >
-          {data.map((slider) => (
-            <SwiperSlide key={slider._id}>
+          {data?.map((slider) => (
+            <SwiperSlide key={slider?._id}>
               <div className="relative">
-              <img  className="h-[400px]" src={slider.photoUrl} alt="" />
+              <img  className="h-[400px]" src={slider?.photoUrl} alt="" />
               <h3 className="font-semibold  absolute bottom-0  left-20 text-white text-2xl">{slider.className}</h3>
               </div>
 
@@ -92,7 +91,7 @@ const Classes = () => {
       </div>
 
       <PageTitle
-        title="All Class  "
+        title="Building a Strong Foundation in Yoga Fundamentals"
         subTitle="Cultivating Harmony, Strength, and Flexibility through Mindful Movement, Breath Control, and Meditation Techniques for Overall Well-being and Inner Balance"
       ></PageTitle>
       <div className="grid grid-cols-3 px-4 gap-5">

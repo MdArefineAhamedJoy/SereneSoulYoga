@@ -16,9 +16,9 @@ const PopularInstructor = () => {
         title="Popular Instructor"
         subTitle="Popular instructor inspires students with engaging teaching methods, fostering a love for learning and nurturing their talents."
       ></PageTitle>
-      <div  className="grid md:grid-cols-3 md:gap-8 gap-3 w-full  grid-cols-1 md:w-11/12 mx-auto   min-h-screen">
+      <div  className="grid md:grid-cols-3 md:gap-8 gap-3 w-full grid-cols-1 md:w-11/12 mx-auto   ">
         {data?.map((instructor) => (
-          <div key={instructor._id} className="card w-96 bg-base-100 shadow-xl duration-500   cursor-pointer">
+          <div key={instructor._id} className="card  bg-base-100 shadow-xl duration-500   cursor-pointer">
             <figure className="px-10 pt-8">
               <img
                 src={instructor.image}
