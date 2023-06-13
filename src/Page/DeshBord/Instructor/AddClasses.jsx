@@ -37,6 +37,7 @@ const AddClasses = () => {
           };
           InstructorData.status = "pending";
           InstructorData.enroll = "0";
+          InstructorData.feedback = "";
           fetch("http://localhost:5000/instructor", {
             method: "POST",
             headers: {

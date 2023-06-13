@@ -1,33 +1,41 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import DayButton from "../../../Components/Modal";
+import Feedback from './../../../Components/Feedback';
 
 const AllClasses = () => {
-  const { data, isLoading, error , refetch} = useQuery([], () =>
+  const { data, isLoading, error, refetch } = useQuery([], () =>
     fetch("http://localhost:5000/allClasses").then((response) =>
       response.json()
     )
   );
 
-  console.log(data)
-  const handelApproved = (id , allClass) => {
 
-   const status =  allClass.status 
-   console.log({updateStunts: 'approv'})
-    
-    fetch(`http://localhost:5000/allClasses/status/${id}`,{
-      method:'PATCH',
-      headers:{
-        'Content-Type': 'application/json'
+  const handelApproved = (id, allClass, button ) => {
+    const status = allClass.status;
+    if(button === 'approved'){
+      fetch(`http://localhost:5000/allClasses/status/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ status: "approved" }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          refetch();
+        });
+    }
+    fetch(`http://localhost:5000/allClasses/status/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
       },
-      body:JSON.stringify({status : "approved"})
+      body: JSON.stringify({ status: "deny" }),
     })
-    .then(res => res.json())
-    .then(data => {
-      refetch()
-      console.log(data)
-      
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        refetch();
+      });
   };
 
   return (
@@ -73,22 +81,30 @@ const AllClasses = () => {
                   <p>Name : {allInfo.className}</p>
                 </td>
                 <th>
-                  <button disabled={allInfo.status=== "approved"} onClick={()=>handelApproved(allInfo._id , allInfo)} className="btn btn-ghost btn-sm"> Approve</button>
+                  <button
+                    disabled={allInfo.status === "approved" || allInfo.status === "deny" }
+                    onClick={() => handelApproved(allInfo._id, allInfo , "approved")}
+                    className="btn btn-ghost btn-sm"
+                  >
+                    {" "}
+                    Approve
+                  </button>
                   <br />
-                  <button disabled={allInfo.status=== "approved"} className="btn btn-ghost btn-sm ">Deny</button>
+                  <button
+                     onClick={() => handelApproved(allInfo._id, allInfo , "deny")}
+                    disabled={allInfo.status === "approved" || allInfo.status === "deny" }
+                    className="btn btn-ghost btn-sm "
+                  >
+                    Deny
+                  </button>
                   <br />
-                  <button className="btn btn-ghost btn-sm">feedback</button>
+                  {/* feedback */}
 
-
-{/* feedback */}
-
-
-<DayButton id={allInfo._id} />
-
-
-{/* feedback */}
-
-
+                  {
+                    allInfo.status === 'approved'? <button  className="bg-blue-500  text-white font-bold py-2 px-4 rounded" disabled>Feedback</button>: <Feedback   id={allInfo._id} />
+                  }
+ 
+                  {/* feedback */}
                 </th>
               </tr>
             </tbody>

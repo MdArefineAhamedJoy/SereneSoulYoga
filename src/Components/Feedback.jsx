@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 
-const DayButton = ({id}) => {
+const Feedback = ({ id }) => {
   const [showModal, setShowModal] = useState(false);
   const [feedback, setFeedback] = useState('');
-
-  console.log(id)
 
   const handleClick = () => {
     setShowModal(true);
@@ -13,8 +11,8 @@ const DayButton = ({id}) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch('http://localhost:5000/admin/feedBack', {
-      method: 'POST',
+    fetch(`http://localhost:5000/admin/feedBack/${id}`, {
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -22,11 +20,11 @@ const DayButton = ({id}) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data); 
-        setShowModal(false); 
+        console.log(data);
+        setShowModal(false);
       })
       .catch((error) => {
-        console.error(error); 
+        console.error(error);
       });
     setFeedback('');
   };
@@ -35,7 +33,9 @@ const DayButton = ({id}) => {
     setFeedback(event.target.value);
   };
 
-
+  const handleClose = () => {
+    setShowModal(false);
+  };
 
   return (
     <div>
@@ -46,10 +46,10 @@ const DayButton = ({id}) => {
         Day Button
       </button>
       {showModal && (
-        <div className="fixed  inset-0 flex items-center justify-center z-50">
+        <div className="fixed inset-0 flex items-center justify-center z-50">
           <div className="bg-white p-4 shadow-lg rounded">
             <form onSubmit={handleSubmit}>
-              <textarea 
+              <textarea
                 value={feedback}
                 placeholder="Enter your feedback"
                 required
@@ -58,12 +58,19 @@ const DayButton = ({id}) => {
                 id=""
                 cols="30"
                 rows="10"
+                className="p-4 block"
               ></textarea>
               <button
                 type="submit"
-                className="bg-blue-500 block mx-auto hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                className="bg-blue-500  mx-auto hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >
                 Submit
+              </button>
+              <button
+                onClick={handleClose}
+                className="bg-red-500 mt-4 mx-3  hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Close
               </button>
             </form>
           </div>
@@ -73,6 +80,6 @@ const DayButton = ({id}) => {
   );
 };
 
-export default DayButton;
+export default Feedback;
 
 
