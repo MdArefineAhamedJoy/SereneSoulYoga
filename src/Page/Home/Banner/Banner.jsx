@@ -32,8 +32,14 @@ const Banner = () => {
         modules={[Autoplay, Pagination, Navigation]}
       >
         {creosol.map((data) => (
-          <SwiperSlide key={data.id}>
-            <img className="w-full h-screen" src={data.cover_image} alt="" />
+          <SwiperSlide key={data._id}>
+            <div className="relative">
+              <img className="w-full h-screen" src={data.image} alt="" />
+              <div className="absolute top-20 left-10 right-20">
+                <h2>{data.title}</h2>
+                <p>{data.description}</p>
+              </div>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>

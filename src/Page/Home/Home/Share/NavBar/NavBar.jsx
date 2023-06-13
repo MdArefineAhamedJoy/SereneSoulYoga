@@ -69,12 +69,6 @@ const NavBar = () => {
           </li>
           <li>
             {" "}
-            <Link className="py-2 px-4 hover:underline decoration-sky-800">
-              Profile Picture
-            </Link>{" "}
-          </li>
-          <li>
-            {" "}
             <Link onClick={handelLogOut} className="py-2 px-4 hover:underline decoration-sky-800">
               Log Out
             </Link>{" "}
