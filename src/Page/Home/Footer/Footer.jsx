@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="  md:w-[40%] w-full md:pt-16   mx-auto p-5 bg-[#c9a470]">
           <img className="w-20 h-20 mx-auto pb-5" src={logo} alt="" />
           <p>
-            We at SereneSoulYoga provide various services to the nature of the clients.
+            We at <span className="text-xl font-semibold text-white">SereneSoulYoga</span> provide various services to the nature of the clients.
             Wish how you would like to spend the time here we can talk and come
             to a conclusion. Phasellus et nisl tellus. Etiam facilisis eu nisi
             scelerisque faucibus. Proin semper suscipit magna, nec imperdiet

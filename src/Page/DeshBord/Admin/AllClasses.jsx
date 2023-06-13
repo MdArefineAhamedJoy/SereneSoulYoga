@@ -41,7 +41,7 @@ const AllClasses = () => {
     <div className="w-full">
       <div className="text-center pb-10 font-bold ">
         <h1 className=" text-3xl">This is all Classes Section</h1>
-        <p>Available Class : {data.length} </p>
+        <p>Available Class : {data?.length} </p>
       </div>
 
       <div className="">
