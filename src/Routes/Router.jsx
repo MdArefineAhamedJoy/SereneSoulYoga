@@ -15,12 +15,14 @@ import Payment from "../Page/DeshBord/Students/Payment/Payment";
 import MyClasses from './../Page/DeshBord/Instructor/MyClasses';
 import PrivateRoute from "./PrivateRoute";
 import PaymentHistory from "../Page/DeshBord/Students/PaymentHistory";
+import ErrorPage from "../Components/ErrorPage";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage />,
     children:[
       {
         path: '/',
