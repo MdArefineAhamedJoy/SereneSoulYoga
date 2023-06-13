@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import Feedback from './../../../Components/Feedback';
+import Feedback from "./../../../Components/Feedback";
 
 const AllClasses = () => {
   const { data, isLoading, error, refetch } = useQuery([], () =>
@@ -9,10 +9,9 @@ const AllClasses = () => {
     )
   );
 
-
-  const handelApproved = (id, allClass, button ) => {
+  const handelApproved = (id, allClass, button) => {
     const status = allClass.status;
-    if(button === 'approved'){
+    if (button === "approved") {
       fetch(`http://localhost:5000/allClasses/status/${id}`, {
         method: "PATCH",
         headers: {
@@ -40,9 +39,11 @@ const AllClasses = () => {
 
   return (
     <div className="w-full">
-      <h1 className="text-center pb-10 font-bold text-3xl">
-        This is all user Section
-      </h1>
+      <div className="text-center pb-10 font-bold ">
+        <h1 className=" text-3xl">This is all Classes Section</h1>
+        <p>Available Class : {data.length} </p>
+      </div>
+
       <div className="">
         <table className="table">
           {/* head */}
@@ -82,8 +83,12 @@ const AllClasses = () => {
                 </td>
                 <th>
                   <button
-                    disabled={allInfo.status === "approved" || allInfo.status === "deny" }
-                    onClick={() => handelApproved(allInfo._id, allInfo , "approved")}
+                    disabled={
+                      allInfo.status === "approved" || allInfo.status === "deny"
+                    }
+                    onClick={() =>
+                      handelApproved(allInfo._id, allInfo, "approved")
+                    }
                     className="btn btn-ghost btn-sm"
                   >
                     {" "}
@@ -91,8 +96,10 @@ const AllClasses = () => {
                   </button>
                   <br />
                   <button
-                     onClick={() => handelApproved(allInfo._id, allInfo , "deny")}
-                    disabled={allInfo.status === "approved" || allInfo.status === "deny" }
+                    onClick={() => handelApproved(allInfo._id, allInfo, "deny")}
+                    disabled={
+                      allInfo.status === "approved" || allInfo.status === "deny"
+                    }
                     className="btn btn-ghost btn-sm "
                   >
                     Deny
@@ -100,10 +107,17 @@ const AllClasses = () => {
                   <br />
                   {/* feedback */}
 
-                  {
-                    allInfo.status === 'approved'? <button  className="bg-blue-500  text-white font-bold py-2 px-4 rounded" disabled>Feedback</button>: <Feedback   id={allInfo._id} />
-                  }
- 
+                  {allInfo.status === "approved" ? (
+                    <button
+                      className="bg-blue-500  text-white font-bold py-2 px-4 rounded"
+                      disabled
+                    >
+                      Feedback
+                    </button>
+                  ) : (
+                    <Feedback id={allInfo._id} />
+                  )}
+
                   {/* feedback */}
                 </th>
               </tr>

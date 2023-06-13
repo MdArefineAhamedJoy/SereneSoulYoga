@@ -20,7 +20,9 @@ const MyClasses = () => {
 
   return (
     <div className="w-full gap-4">
-      <h1 className="text-center my-10 font-semibold text-2xl">Total  Enroll Student : {totalEnrollStudent}</h1>
+      <h1 className="text-center my-10 font-semibold text-2xl">
+        Total Enroll Student : {totalEnrollStudent}
+      </h1>
       {classes.map((classData) => (
         <div
           key={classData._id}
@@ -50,6 +52,7 @@ const MyClasses = () => {
             <div className="card-actions mx-auto">
               <button className="btn btn-primary"> Update</button>
               <button
+                onClick={() => window.my_modal_1.showModal()}
                 disabled={
                   classData.status === "pending" ||
                   classData.status === "approved"
@@ -58,6 +61,17 @@ const MyClasses = () => {
               >
                 open admin feedback
               </button>
+              <dialog id="my_modal_1" className="modal">
+                <form method="dialog" className="modal-box">
+                  <h3 className="font-bold text-lg text-center">
+                    Admin Feedback
+                  </h3>
+                  <p className="py-4">{classData?.feedback}</p>
+                  <div className="modal-action">
+                    <button className="btn">Close</button>
+                  </div>
+                </form>
+              </dialog>
             </div>
           </div>
           <figure className="h-96 w-6/12">
