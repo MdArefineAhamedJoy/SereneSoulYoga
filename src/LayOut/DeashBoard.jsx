@@ -1,16 +1,19 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 import Admin from "../Page/DeshBord/DeashBoardHome/Admin";
 import InstructorHome from "../Page/DeshBord/DeashBoardHome/InstructorHome";
 import StudentHome from "../Page/DeshBord/DeashBoardHome/StudentHome";
 import { FaHome } from "react-icons/fa";
+import { AiOutlineMenu } from 'react-icons/ai';
 
 const DeashBoard = () => {
   const { user } = useContext(AuthContext);
   const [userRoll, setUserRoll] = useState("");
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
+
 
   console.log(userRoll);
   useEffect(() => {
@@ -32,30 +35,41 @@ const DeashBoard = () => {
   }, []);
 
   if (loading) {
-    return <span className="loading loading-bars loading-lg"></span>
+    return <span className="loading loading-bars loading-lg"></span>;
   }
 
+  const dashboardHome = location.pathname.endsWith("/deashBoard");
 
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center justify-center">
         {/* Page content here */}
-
-        {userRoll === "admin" ? ( <Admin /> ) : userRoll === "instructor" ? (<InstructorHome />) : <StudentHome></StudentHome>}
+        <label
+          htmlFor="my-drawer-2"
+          className="btn btn-primary drawer-button lg:hidden "
+        >
+           <AiOutlineMenu />
+        </label>
+        {dashboardHome && (
+          <>
+            {userRoll === "admin" ? (
+              <Admin />
+            ) : userRoll === "instructor" ? (
+              <InstructorHome />
+            ) : (
+              <StudentHome></StudentHome>
+            )}
+          </>
+        )}
 
         <Outlet></Outlet>
 
-        <label
-          htmlFor="my-drawer-2"
-          className="btn btn-primary drawer-button lg:hidden"
-        >
-          Open drawer
-        </label>
+
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-80 h-full bg-[#7e8446] text-white text-base-content">
+        <ul className="menu p-4 w-80 h-full bg-[#7e8446] text-white ">
           {/* Sidebar content here */}
           <div className="w-full flex flex-col justify-center mb-5 pt-8">
             <img
@@ -72,7 +86,7 @@ const DeashBoard = () => {
           {userRoll === "admin" ? (
             <>
               <li className="text-lg font-semibold ">
-                <Link  to="/deashBoard/allClass">All Classes</Link>
+                <Link to="/deashBoard/allClass">All Classes</Link>
               </li>
               <li className="text-lg font-semibold ">
                 <Link to="/deashBoard/manageUser">Manage userRoll</Link>
