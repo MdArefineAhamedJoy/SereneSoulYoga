@@ -17,7 +17,7 @@ const Classes = () => {
   const location = useLocation();
   const { user } = useContext(AuthContext);
   const navigator = useNavigate();
-  const [userRoll, setUserRoll] = useState('student');
+  const [userRoll, setUserRoll] = useState("student");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -26,9 +26,15 @@ const Classes = () => {
     setUserRoll(userStatus);
   }, [allUser, user]);
 
+  console.log(userRoll)
   useEffect(() => {
     setTimeout(() => {
-      const fetchedUserRoll = 'admin';
+      const fetchedUserRoll =
+        userRoll === "admin"
+          ? "admin"
+          : userRoll === "instructor"
+          ? "instructor"
+          : "student";
       setUserRoll(fetchedUserRoll);
       setLoading(false);
     }, 2000);
@@ -37,39 +43,43 @@ const Classes = () => {
   const { data } = useQuery({
     queryKey: ["data"],
     queryFn: () =>
-      fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/approveClass/?status=approved`)
-        .then((res) => res.json()),
+      fetch(
+        `https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/approveClass/?status=approved`
+      ).then((res) => res.json()),
   });
 
   const handleSelectedClass = (classes) => {
     if (!user?.email) {
       Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Please Login First',
+        position: "center",
+        icon: "success",
+        title: "Please Login First",
         showConfirmButton: false,
         timer: 1500,
       });
-      return navigator('/login');
+      return navigator("/login");
     }
 
     const classId = classes._id;
     delete classes._id;
     const userEmail = user?.email;
 
-    fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/allClasses/select`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({ ...classes, classId, userEmail }),
-    })
+    fetch(
+      `https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/allClasses/select`,
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ ...classes, classId, userEmail }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         Swal.fire({
-          position: 'center',
-          icon: 'success',
-          title: 'Confirm Select This Class',
+          position: "center",
+          icon: "success",
+          title: "Confirm Select This Class",
           showConfirmButton: false,
           timer: 1500,
         });
@@ -100,7 +110,9 @@ const Classes = () => {
             <SwiperSlide key={slider?._id}>
               <div className="relative">
                 <img className="h-[400px]" src={slider?.photoUrl} alt="" />
-                <h3 className="font-semibold absolute bottom-0 left-20 text-white text-2xl">{slider.className}</h3>
+                <h3 className="font-semibold absolute bottom-0 left-20 text-white text-2xl">
+                  {slider.className}
+                </h3>
               </div>
             </SwiperSlide>
           ))}
@@ -117,20 +129,24 @@ const Classes = () => {
           <div
             key={classes?._id}
             className={`card bg-base-100 shadow-xl ${
-              parseInt(classes.availableSite) === 0 ? 'bg-red-500' : ''
+              parseInt(classes.availableSite) === 0 ? "bg-red-500" : ""
             }`}
           >
             <figure>
-              <img className="w-full h-64" src={classes?.photoUrl} alt="Movie" />
+              <img
+                className="w-full h-64"
+                src={classes?.photoUrl}
+                alt="Movie"
+              />
             </figure>
             <div className="card-body">
               <h2 className="card-title">Class Name : {classes?.className}</h2>
-              <p>Instructor Name :  {classes?.name}</p>
-              <p>Available Site :  Site {classes?.availableSite}</p>
-              <p>Price :  ${classes?.price}</p>
+              <p>Instructor Name : {classes?.name}</p>
+              <p>Available Site : Site {classes?.availableSite}</p>
+              <p>Price : ${classes?.price}</p>
               <div className="card-actions justify-center">
                 <button
-                  disabled={userRoll === 'instructor' || userRoll === 'admin'}
+                  disabled={userRoll === "instructor" || userRoll === "admin"}
                   onClick={() => handleSelectedClass(classes)}
                   className="btn"
                 >
