@@ -1,3 +1,6 @@
+-- Website Name : SereneSoulYoga
+
+** Futures
 - this is a Yoga full stack web application
 - you buy toys
 - student buying class and instructor sell class
@@ -5,6 +8,10 @@
 - admin control admin approved instructor class
 - show top instructor and popular classes 
 
-## Live Site Link
+** Use Technology
+- tailwind css , daisy ul , react.js , express js , mongodb , tenStackQuery 
+- firebase authentication 
+- deploy firebase and vercel 
 
-- [BabyCarCruise]()
+## Live Site Link
+- [BabyCarCruise](https://serenesoulyoga-7e3d8.web.app/)
