@@ -12,7 +12,7 @@ import {
 const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <div className="bg-slate-200">
+  <div className="bg-slate-200 max-w-screen-xl mx-auto">
     <QueryClientProvider client={queryClient}>
       <React.StrictMode>
         <AuthProvider>
