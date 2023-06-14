@@ -6,7 +6,7 @@ const useUsers = () => {
         queryFn: () =>
           fetch("https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/users").then((res) => res.json()),
       });
-     return[allUser]    
+     return[allUser , refetch]    
 };
 
 export default useUsers;

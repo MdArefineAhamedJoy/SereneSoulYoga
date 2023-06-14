@@ -2,11 +2,13 @@ import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
-  const { signUp, updateUsers } = useContext(AuthContext);
+  const {   singUp , updateUsers } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const navigate = useNavigate()
+
 
   const {
     register,
@@ -19,7 +21,7 @@ const Register = () => {
   const onSubmit = (data) => {
     // firebase sign up system
     if (data.password === data.confirmPassword) {
-      signUp(data?.email, data?.password)
+      singUp(data?.email, data?.password)
         .then((res) => {
           const signUpUser = res.user;
           // user data update system
@@ -48,14 +50,15 @@ const Register = () => {
               .then((res) => res.json())
               .then((data) => {
                 if (data.insertedId) {
-                  // reset();
+                  reset();
                   Swal.fire({
-                    position: "top-end",
+                    position: "center",
                     icon: "success",
-                    title: "Your work has been saved",
+                    title: "Login successfully",
                     showConfirmButton: false,
                     timer: 1500,
                   });
+                  navigate('/')
                 }
               });
           }

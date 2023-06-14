@@ -5,7 +5,7 @@ import useUsers from "../../../Hooks/useUsers";
 
 const ManageUsers = () => {
   const [userRoll, setUserRoll] = useState("Student");
-  const [allUser] = useUsers();
+  const [allUser , refetch] = useUsers();
 
   const handelMakeRoll = (user, roll) => {
     fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/users/roll/${user._id}`, {
@@ -17,7 +17,7 @@ const ManageUsers = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        refetch();
+        refetch()
       });
   };
 

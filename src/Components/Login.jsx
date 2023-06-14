@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 const Login = () => {
     const {  singIn , singInWithGoogle , user}  = useContext(AuthContext)
     const location = useLocation();
@@ -14,7 +14,14 @@ const Login = () => {
         singIn(data?.email , data?.password)
         .then(res =>{
             const loginUsers = res.user
-            console.log(loginUsers)
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Your work has been saved",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            navigate(from, { replace: true });
         })
         .catch(error => {
             console.log(error.message)
@@ -98,6 +105,12 @@ const Login = () => {
                 <div className="divider mt-4 ">OR</div>
                 <button onClick={handelGoogleSingIn} className="btn btn-outline hover:text-black hover:bg-base-100">Login With Google</button>
               </div>
+              <span>
+                  Fist time  Visits?{" "}
+                  <Link to="/register" className="link link-info">
+                    place register 
+                  </Link>
+                </span>
             </form>
           </div>
         </div>

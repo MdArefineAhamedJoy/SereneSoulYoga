@@ -21,7 +21,7 @@ const PopularClass = () => {
         subTitle="Discover the joy of yoga in our popular class. Strengthen your body, calm your mind, and find balance through invigorating poses and mindful practices. Join us on the mat today"
         url=""
       ></PageTitle>
-      <div className="flex  items-center justify-center">
+      <div className="flex  items-center justify-center md:mx-10">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {popularClass?.map((classes) => (
             <div
