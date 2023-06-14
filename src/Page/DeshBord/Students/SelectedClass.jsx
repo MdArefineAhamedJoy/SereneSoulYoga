@@ -31,7 +31,7 @@ const SelectedClass = () => {
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
-          <thead className="text-center">
+          <thead className="text-center bg-[#c9a470]">
             <tr>
               <th>#</th>
               <th>image</th>
@@ -45,7 +45,7 @@ const SelectedClass = () => {
             <tbody key={selectedClass._id} className="text-center">
               {/* row 1 */}
               {console.log(selectedClass._id)}
-              <tr>
+              <tr className="border-b-4">
                 <th>{index + 1}</th>
                 <td>
                   <div className="  h-28">

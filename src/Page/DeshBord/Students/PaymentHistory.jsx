@@ -9,7 +9,7 @@ const PaymentHistory = () => {
       <div className="overflow-x-auto">
         <table className="table table-zebra">
           {/* head */}
-          <thead className="text-center bg-red-300">
+          <thead className="text-center bg-[#c9a470]">
             <tr>
               <th>#</th>
               <th>Transition ID</th>
@@ -19,7 +19,7 @@ const PaymentHistory = () => {
           </thead>
           {paymentData?.map((payment, index) => (
             <tbody className="text-center">
-              <tr>
+              <tr className="border-b-4">
                 <th>{index + 1}</th>
                 <td>{payment?.transitionId}</td>
                 <td>{payment?.paymentUser}</td>

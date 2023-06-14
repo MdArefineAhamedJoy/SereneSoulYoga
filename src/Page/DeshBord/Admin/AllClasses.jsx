@@ -39,15 +39,15 @@ const AllClasses = () => {
 
   return (
     <div className="w-full">
-      <div className="text-center pb-10 font-bold ">
-        <h1 className=" text-3xl">This is all Classes Section</h1>
+      <div className="text-center pb-10 font-semibold ">
+        <h1 className=" text-2xl">This is all Classes Section</h1>
         <p>Available Class : {data?.length} </p>
       </div>
 
       <div className="">
         <table className="table">
           {/* head */}
-          <thead>
+          <thead className="bg-[#c9a470]">
             <tr className="font-bold text-xl border-b-4 text-center">
               <th>#</th>
               <th>Image & Name</th>
@@ -58,7 +58,7 @@ const AllClasses = () => {
           </thead>
           {data?.map((allInfo, index) => (
             <tbody className=" text-center" key={allInfo._id}>
-              <tr>
+              <tr className="border-b-4 border-bg-[#c9a470]">
                 <th>{index + 1}</th>
                 <td>
                   <div className="rounded w-32 mx-auto h-20">
@@ -89,7 +89,7 @@ const AllClasses = () => {
                     onClick={() =>
                       handelApproved(allInfo._id, allInfo, "approved")
                     }
-                    className="btn btn-ghost btn-sm"
+                    className="btn btn-success text-white btn-sm"
                   >
                     {" "}
                     Approve
@@ -100,7 +100,7 @@ const AllClasses = () => {
                     disabled={
                       allInfo.status === "approved" || allInfo.status === "deny"
                     }
-                    className="btn btn-ghost btn-sm "
+                    className="btn btn-warning btn-sm  text-white my-2"
                   >
                     Deny
                   </button>

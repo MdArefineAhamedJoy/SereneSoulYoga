@@ -26,7 +26,7 @@ const ManageUsers = () => {
       <h1 className="py-10 text-center font-semibold text-2xl">Available User {allUser?.length}</h1>
       <div className="overflow-x-auto">
         <table className="table">
-          <thead>
+          <thead className="bg-[#c9a470]">
             <tr className="text-center font-bold text-xl border-b-4">
               <th>Photo</th>
               <th>User Info </th>
@@ -36,7 +36,7 @@ const ManageUsers = () => {
           </thead>
           {allUser?.map((user, index) => (
             <tbody className="text-center text-lg" key={user._id}>
-              <tr>
+              <tr className="border-b-4">
                 <th>
                   <img
                     className="w-20 h-20 mx-auto rounded-full"
