@@ -1,21 +1,11 @@
 import React, { useState } from "react";
-import { GrUserAdmin } from 'react-icons/gr';
+import { GrUserAdmin } from "react-icons/gr";
 import { FaUserAlt } from "react-icons/fa";
 import useUsers from "../../../Hooks/useUsers";
 
-
 const ManageUsers = () => {
-
-  const [userRoll , setUserRoll] = useState('Student')
-
-  // const { isLoading, error, data , refetch } = useQuery({
-  //   queryKey: ["users"],
-  //   queryFn: () =>
-  //     fetch("http://localhost:5000/users").then((res) => res.json()),
-  // });
-
-  const [allUser] = useUsers()
-  
+  const [userRoll, setUserRoll] = useState("Student");
+  const [allUser] = useUsers();
 
   const handelMakeRoll = (user, roll) => {
     fetch(`http://localhost:5000/users/roll/${user._id}`, {
@@ -27,13 +17,13 @@ const ManageUsers = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        refetch()
+        refetch();
       });
   };
 
   return (
     <div className=" w-full">
-      <h1 className="py-10 text-center">Available User {allUser?.length}</h1>
+      <h1 className="py-10 text-center font-semibold text-2xl">Available User {allUser?.length}</h1>
       <div className="overflow-x-auto">
         <table className="table">
           <thead>
@@ -41,31 +31,34 @@ const ManageUsers = () => {
               <th>Photo</th>
               <th>User Info </th>
               <th> Roll </th>
-              <th>Set Roll 
-              </th>
+              <th>Set Roll</th>
             </tr>
           </thead>
           {allUser?.map((user, index) => (
             <tbody className="text-center text-lg" key={user._id}>
               <tr>
                 <th>
-                  <img className="w-20 h-20 mx-auto rounded-full" src={user.image} alt="" />
+                  <img
+                    className="w-20 h-20 mx-auto rounded-full"
+                    src={user.image}
+                    alt=""
+                  />
                 </th>
                 <td>
                   {user?.name}
                   <br />
                   {user.email}
                 </td>
-                <td >{user.role ? user.role : "student"}</td>
-                <td >
-                <button
+                <td>{user.role ? user.role : "student"}</td>
+                <td>
+                  <button
                     onClick={() => handelMakeRoll(user, "admin")}
                     className="btn btn-outline btn-secondary mx-5"
                   >
                     <GrUserAdmin className=""></GrUserAdmin>
                     Admin
                   </button>
-       
+
                   <button
                     onClick={() => handelMakeRoll(user, "instructor")}
                     className="btn btn-outline btn-accent "
@@ -73,8 +66,6 @@ const ManageUsers = () => {
                     <FaUserAlt></FaUserAlt>
                     Instructor
                   </button>
-                
- 
                 </td>
               </tr>
             </tbody>

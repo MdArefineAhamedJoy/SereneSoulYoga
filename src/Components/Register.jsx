@@ -1,9 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
+
 const Register = () => {
-  const { singUp, updateUsers } = useContext(AuthContext);
+  const { signUp, updateUsers } = useContext(AuthContext);
+  const [error, setError] = useState("");
 
   const {
     register,
@@ -12,66 +15,71 @@ const Register = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
-    // firebase sing up system
 
-    singUp(data?.email, data?.password)
-      .then((res) => {
-        const singUpUser = res.user;
-        //  user data update system
-        console.log();
-        updateUsers(data?.name, data?.photoUrl)
-          .then((res) => {
-            console.log(res);
-          })
-          .catch((error) => {
-            console.log(error.message);
-          });
-        if (singUpUser) {
-          const existingUser = {
-            name: data?.name ,
-            email: singUpUser.email,
-            image: data?.photoUrl,
-            role: "",
-          };
-          fetch(`http://localhost:5000/users`, {
-            method: "post",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(existingUser),
-          })
-            .then((res) => res.json())
-            .then((data) => {
-              if (data.insertedId) {
-                // reset();
-                Swal.fire({
-                  position: "top-end",
-                  icon: "success",
-                  title: "Your work has been saved",
-                  showConfirmButton: false,
-                  timer: 1500,
-                });
-              }
+  const onSubmit = (data) => {
+    // firebase sign up system
+    if (data.password === data.confirmPassword) {
+      signUp(data?.email, data?.password)
+        .then((res) => {
+          const signUpUser = res.user;
+          // user data update system
+          console.log();
+          updateUsers(data?.name, data?.photoUrl)
+            .then((res) => {
+              console.log(res);
+            })
+            .catch((error) => {
+              console.log(error.message);
             });
-        }
-      })
-      .catch((error) => {
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: `${error?.message}`,
-          showConfirmButton: false,
-          timer: 1500,
+          if (signUpUser) {
+            const existingUser = {
+              name: data?.name,
+              email: signUpUser.email,
+              image: data?.photoUrl,
+              role: "",
+            };
+            fetch(`http://localhost:5000/users`, {
+              method: "post",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(existingUser),
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.insertedId) {
+                  // reset();
+                  Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Your work has been saved",
+                    showConfirmButton: false,
+                    timer: 1500,
+                  });
+                }
+              });
+          }
+        })
+        .catch((error) => {
+          Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: `${error?.message}`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
         });
-      });
+    } else {
+      setError("Passwords do not match");
+    }
   };
+
   return (
     <div>
       <div>
-        <div className="hero min-h-screen bg-base-200">
-          <div className=" flex justify-center  w-full">
-            <div className="card w-5/12  shadow-2xl bg-base-100">
+        <div className="hero h-full py-20 bg-base-200">
+          <div className="flex justify-center w-full">
+            <div className="card w-5/12 shadow-2xl bg-base-100">
               <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                 <div className="form-control">
                   <label className="label">
@@ -113,33 +121,68 @@ const Register = () => {
                   <input
                     type="password"
                     placeholder="password"
-                    className="input input-bordered"
-                    {...register("password", { required: true })}
+                    className={`input input-bordered ${
+                      errors.password ? "input-error" : ""
+                    }`}
+                    {...register("password", {
+                      required: "Password is required",
+                      minLength: {
+                        value: 6,
+                        message: "Password should be at least 6 characters long",
+                      },
+                      pattern: {
+                        value: /^(?=.*[A-Z])(?=.*[!@#$%^&*]).{6,}$/,
+                        message:
+                          "Password should include at least one capital letter and one special character",
+                      },
+                    })}
                   />
+                  {errors.password && (
+                    <label className="label">
+                      <small className="label-text-alt text-error">
+                        {errors.password.message}
+                      </small>
+                    </label>
+                  )}
                 </div>
-                {/* <div className="form-control">
+                <div className="form-control">
                   <label className="label">
                     <span className="label-text">Confirm Password</span>
                   </label>
                   <input
                     type="password"
                     placeholder="Confirm Password"
-                    className="input input-bordered"
-                    {...register("confirmPassword", { required: true })}
+                    className={`input input-bordered ${
+                      errors.confirmPassword ? "input-error" : ""
+                    }`}
+                    {...register("confirmPassword", {
+                      required: "Confirm Password is required",
+                      validate: (value) =>
+                        value === watch("password") || "Passwords do not match",
+                    })}
                   />
-                  <label className="label">
-                    <a href="#" className="label-text-alt link link-hover">
-                      Forgot password?
-                    </a>
-                  </label>
-                </div> */}
+                  {errors.confirmPassword && (
+                    <label className="label">
+                      <small className="label-text-alt text-error">
+                        {errors.confirmPassword.message}
+                      </small>
+                    </label>
+                  )}
+                </div>
+
                 <div className="form-control mt-6">
                   <input
                     className="btn btn-primary"
                     type="submit"
-                    value="Login"
+                    value="Register"
                   />
                 </div>
+                <span>
+                  Already a user?{" "}
+                  <Link to="/login" className="link link-info">
+                    Login
+                  </Link>
+                </span>
               </form>
             </div>
           </div>
@@ -150,3 +193,4 @@ const Register = () => {
 };
 
 export default Register;
+

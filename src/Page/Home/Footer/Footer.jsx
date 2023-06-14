@@ -4,7 +4,7 @@ import { FaPhoneAlt, FaSearchLocation } from "react-icons/fa";
 import { MdEmail } from 'react-icons/md';
 const Footer = () => {
   return (
-    <footer className="mt-20">
+    <footer className="pt-20">
       <div className="md:flex text-base-content w-full bg-red-300">
         <div className="  md:w-[30%]  md:pt-20 w-full p-5 md:text-right flex flex-col bg-[#d4ad76] h-96">
           <div className=" flex flex-col gap-2">
