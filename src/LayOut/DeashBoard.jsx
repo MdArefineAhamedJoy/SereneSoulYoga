@@ -17,7 +17,7 @@ const DeashBoard = () => {
 
   console.log(userRoll);
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/users")
       .then((res) => res.json())
       .then((data) => {
         const findUser = data?.find((rolls) => rolls?.email === user?.email);

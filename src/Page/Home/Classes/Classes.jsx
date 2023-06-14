@@ -23,7 +23,7 @@ const Classes = () => {
   const { data } = useQuery({
     queryKey: ["data"],
     queryFn: () =>
-      fetch(`http://localhost:5000/approveClass/?status=approved`).then((res) =>
+      fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/approveClass/?status=approved`).then((res) =>
         res.json()
       ),
   });
@@ -42,7 +42,7 @@ const Classes = () => {
     const classId = classes._id;
     delete classes._id;
     const userEmail = user?.email;
-    fetch(`http://localhost:5000/allClasses/select`, {
+    fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/allClasses/select`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -11,13 +11,13 @@ const SelectedClass = () => {
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["data"],
     queryFn: () =>
-      fetch(`http://localhost:5000/allClasses/selected/${user?.email}`).then((res) =>
+      fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/allClasses/selected/${user?.email}`).then((res) =>
         res.json()
       ),
   });
 
   const handelDelete = (id) => {
-    fetch(`http://localhost:5000/classDelete/${id}`, {
+    fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/classDelete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

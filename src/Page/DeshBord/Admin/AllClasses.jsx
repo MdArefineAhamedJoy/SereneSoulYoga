@@ -4,7 +4,7 @@ import Feedback from "./../../../Components/Feedback";
 
 const AllClasses = () => {
   const { data, isLoading, error, refetch } = useQuery([], () =>
-    fetch("http://localhost:5000/allClasses").then((response) =>
+    fetch("https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/allClasses").then((response) =>
       response.json()
     )
   );
@@ -12,7 +12,7 @@ const AllClasses = () => {
   const handelApproved = (id, allClass, button) => {
     const status = allClass.status;
     if (button === "approved") {
-      fetch(`http://localhost:5000/allClasses/status/${id}`, {
+      fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/allClasses/status/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -24,7 +24,7 @@ const AllClasses = () => {
           refetch();
         });
     }
-    fetch(`http://localhost:5000/allClasses/status/${id}`, {
+    fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/allClasses/status/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

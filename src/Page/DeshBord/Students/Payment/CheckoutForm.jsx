@@ -17,7 +17,7 @@ const CheckoutForm = ({ selectedClass }) => {
 
   useEffect(() => {
     if (price) {
-      fetch(`http://localhost:5000/create-payment-intent`, {
+      fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/create-payment-intent`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -89,7 +89,7 @@ const CheckoutForm = ({ selectedClass }) => {
           transitionId: paymentIntent.id,
         };
 
-        fetch(`http://localhost:5000/enrollClasses/?id=${_id}`, {
+        fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/enrollClasses/?id=${_id}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -114,7 +114,7 @@ const CheckoutForm = ({ selectedClass }) => {
               const updatedAvailableSeat = selectedClass.availableSeat - 1;
               const updatedEnroll = selectedClass.enroll + 1;
 
-              fetch(`http://localhost:5000/updateClass/${classId}`, {
+              fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/updateClass/${classId}`, {
                 method: "PUT",
                 headers: {
                   "Content-Type": "application/json",

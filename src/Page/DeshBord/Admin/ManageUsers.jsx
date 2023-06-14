@@ -8,7 +8,7 @@ const ManageUsers = () => {
   const [allUser] = useUsers();
 
   const handelMakeRoll = (user, roll) => {
-    fetch(`http://localhost:5000/users/roll/${user._id}`, {
+    fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/users/roll/${user._id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

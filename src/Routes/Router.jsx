@@ -83,7 +83,7 @@ const router = createBrowserRouter([
       {
         path: "/deashBoard/payment/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/all/selected/class/${params.id}`),
+          fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/all/selected/class/${params.id}`),
         element: <Payment></Payment>,
       },
       {

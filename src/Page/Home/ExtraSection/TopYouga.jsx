@@ -5,7 +5,7 @@ import PageTitle from "../../../Components/PageTitle";
 const TopYouga = () => {
   const [yogas, setYogas] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/topYoga")
+    fetch("https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/topYoga")
       .then((res) => res.json())
       .then((data) => {
         setYogas(data);

@@ -10,7 +10,7 @@ const Banner = () => {
   const [creosol, setCresol] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/banner")
+    fetch("https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/banner")
       .then((res) => res.json())
       .then((data) => {
         setCresol(data);

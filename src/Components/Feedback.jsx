@@ -11,7 +11,7 @@ const Feedback = ({ id }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch(`http://localhost:5000/admin/feedBack/${id}`, {
+    fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/admin/feedBack/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

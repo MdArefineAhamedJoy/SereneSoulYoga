@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const Instructor = () => {
   const [instructors, setInstructors] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/users")
       .then((res) => res.json())
       .then((data) => {
         const findInstructor = data.filter((Instructor) => Instructor.role === "instructor");

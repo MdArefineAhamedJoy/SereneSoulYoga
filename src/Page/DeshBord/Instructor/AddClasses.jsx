@@ -38,7 +38,7 @@ const AddClasses = () => {
           InstructorData.status = "pending";
           InstructorData.enroll = "0";
           InstructorData.feedback = "";
-          fetch("http://localhost:5000/instructor", {
+          fetch("https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/instructor", {
             method: "POST",
             headers: {
               "content-type": "application/json",

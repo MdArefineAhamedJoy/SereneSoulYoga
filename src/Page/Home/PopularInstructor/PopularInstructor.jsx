@@ -7,7 +7,7 @@ const PopularInstructor = () => {
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["data"],
     queryFn: () =>
-      fetch(`http://localhost:5000/popular/instructor`).then((res) =>
+      fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/popular/instructor`).then((res) =>
         res.json()
       ),
   });

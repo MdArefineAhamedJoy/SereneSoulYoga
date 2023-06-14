@@ -11,7 +11,7 @@ const PopularClass = () => {
   } = useQuery({
     queryKey: [],
     queryFn: () =>
-      fetch(`http://localhost:5000/popularClass`).then((res) => res.json()),
+      fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/popularClass`).then((res) => res.json()),
   });
 
   return (

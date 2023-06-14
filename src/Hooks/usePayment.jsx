@@ -6,7 +6,7 @@ const usePayment = () => {
     const { isLoading, error, data:paymentData } = useQuery({
         queryKey: ["repoData" , user?.email],
         queryFn: () =>
-          fetch(`http://localhost:5000/enrollClasses/${user?.email}`).then((res) => res.json()),
+          fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/enrollClasses/${user?.email}`).then((res) => res.json()),
       });
       return[paymentData]
 };

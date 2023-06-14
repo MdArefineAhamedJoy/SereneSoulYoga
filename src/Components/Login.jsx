@@ -32,7 +32,7 @@ const Login = () => {
                 role: "",
                 image: loginUsers?.photoURL
               };
-              fetch(`http://localhost:5000/users`, {
+              fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/users`, {
                 method: "post",
                 headers: {
                   "content-type": "application/json",

@@ -6,7 +6,7 @@ const MyClasses = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/instructor/${user?.email}`)
+    fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/instructor/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setClasses(data);
