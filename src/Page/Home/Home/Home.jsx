@@ -4,6 +4,7 @@ import TopYouga from '../ExtraSection/TopYouga';
 import PopularClass from '../PopularClass/PopularClass';
 import PopularInstructor from '../PopularInstructor/PopularInstructor';
 import MemberShip from '../MemberShip/MemberShip';
+import BenefitsYoga from '../BenefitsYoga/BenefitsYoga';
 
 
 
@@ -12,6 +13,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <TopYouga></TopYouga>
+            <BenefitsYoga></BenefitsYoga>
             <PopularClass></PopularClass>
             <PopularInstructor></PopularInstructor>
             <MemberShip></MemberShip>

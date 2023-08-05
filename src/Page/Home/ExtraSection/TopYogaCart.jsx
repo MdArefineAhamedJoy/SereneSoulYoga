@@ -14,7 +14,7 @@ const TopYogaCart = ({ yoga }) => {
           />
         </figure>
         <div className="divider mt-10 border-t-2 border-dotted border-amber-700"></div>
-        <p>{description}</p>
+        <p>{description}  </p>
       </div>
     </div>
   );
