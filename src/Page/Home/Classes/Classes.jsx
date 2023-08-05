@@ -11,6 +11,7 @@ import "swiper/css/autoplay";
 
 import { Autoplay, Navigation, Pagination } from "swiper";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import ClassesBanner from "./ClassesBanner";
 
 const Classes = () => {
   const [allUser] = useUsers();
@@ -92,33 +93,7 @@ const Classes = () => {
 
   return (
     <div>
-      <div>
-        <Swiper
-          slidesPerView={3}
-          autoplay={{
-            delay: 2,
-            disableOnInteraction: false,
-          }}
-          speed={3000}
-          loop={true}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Autoplay, Pagination, Navigation]}
-        >
-          {data?.map((slider) => (
-            <SwiperSlide key={slider?._id}>
-              <div className="relative">
-                <img className="h-[400px]" src={slider?.photoUrl} alt="" />
-                <h3 className="font-semibold absolute bottom-0 left-20 text-white text-2xl">
-                  {slider.className}
-                </h3>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-
+      <ClassesBanner></ClassesBanner>
       <PageTitle
         title="Building a Strong Foundation in Yoga Fundamentals"
         subTitle="Cultivating Harmony, Strength, and Flexibility through Mindful Movement, Breath Control, and Meditation Techniques for Overall Well-being and Inner Balance"
