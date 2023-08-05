@@ -1,50 +1,47 @@
 [
   {
-    "type": "free",
-    "access": "Access to limited AD-FREE yoga and meditation classes",
-    "exclusiveAccess": "Exclusive access to selected new releases",
-    "curatedPrograms": "Access to a few curated programs & challenges",
-    "livestreamDiscount": "No discount on livestream events",
-    "favoriteTeachers": "Follow up to 1 favorite teacher",
-    "curatedClasses": "Curate a small collection of favorite classes",
-    "appAccess": "Access to Mobile app only",
-    "trialPeriod": "7 days",
-    "isFreeTrial": true,
-    "style": {
-      "text": "text-green-500",
-      "bg": "bg-green-500"
-    }
+    "access": "Try free for 7 days",
+    "monthly": "true",
+    "annual": "true"
   },
   {
-    "type": "annuals",
-    "access": "Access 1000s of AD-FREE yoga, meditation and movement classes",
-    "exclusiveAccess": "Exclusive access to all new releases and premium content",
-    "curatedPrograms": "Access our complete collection of curated programs & challenges",
-    "livestreamDiscount": "25% off livestream events",
-    "favoriteTeachers": "Follow your favorite teachers",
-    "curatedClasses": "Curate your own collection of favorite classes",
-    "appAccess": "Access to our Mobile and TV app",
-    "favoriteClasses": "Create your list of favorite classes for the year",  
-    "price": 119.99 ,
-    "style": {
-      "text": "text-red-500",
-      "bg": "bg-red-500"
-    }           
+    "access": "12 months of membership for the price of 9",
+    "monthly": "false",
+    "annual": "true"
   },
   {
-    "type": "monthly",
-    "access": "1000s of AD-FREE yoga, meditation, and movement classes",
-    "exclusiveAccess": "Exclusive access to all new releases and premium content",
-    "curatedPrograms": "Access our complete collection of curated programs & challenges",
-    "livestreamDiscount": "25% off livestream events",
-    "favoriteTeachers": "Follow your favorite teachers",
-    "curatedClasses": "Curate your own collection of favorite classes",
-    "appAccess": "Access to our Mobile and TV app",
-    "favoriteClasses": "Select your favorite classes each month",     
-    "price": 13.99 ,
-    "style": {
-      "text": "text-yellow-500",
-      "bg": "bg-yellow-500"
-    }          
+    "access": "Save $70.88 annually over the monthly plan",
+    "monthly": "false",
+    "annual": "true"
+  },
+  {
+    "access": "Free digital practice journal to inspire your growth",
+    "monthly": "false",
+    "annual": "true"
+  },
+  {
+    "access": "Unlimited access to 3000+ on demand yoga practices from top teachers",
+    "monthly": "true",
+    "annual": "true"
+  },
+  {
+    "access": "Unlimited access to 700+ audio and video meditations",
+    "monthly": "true",
+    "annual": "true"
+  },
+  {
+    "access": "Unlimited access to 2700+ articles, podcasts and resources to expand your knowledge",
+    "monthly": "true",
+    "annual": "true"
+  },
+  {
+    "access": "Unlimited access to 300+ courses and challenges to help your journey",
+    "monthly": "true",
+    "annual": "true"
+  },
+  {
+    "access": "Discount on select trainings",
+    "monthly": "discount",
+    "annual": "discount"
   }
 ]
