@@ -38,7 +38,7 @@ const ClassesBanner = () => {
           <SwiperSlide key={slider?._id}>
             <div className="relative">
               <img className="h-[400px]" src={slider?.photoUrl} alt="" />
-              <h3 className="font-semibold absolute bottom-0 left-20 text-white text-2xl">
+              <h3 className="font-semibold absolute  bottom-0 left-20 text-white text-2xl">
                 {slider.className}
               </h3>
             </div>

@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Kundalini Yoga",
+    "description": "An ancient practice that emphasizes breath control, meditation, and repetitive movements to awaken the dormant spiritual energy and achieve higher consciousness.",
+    "image": "https://img.freepik.com/free-photo/studio-shot-young-fit-woman-doing-yoga-exercise_23-2148208597.jpg?size=626&ext=jpg",
+    "border": "border-blue-500",
+    "textColor": "text-blue-500"
+  },
+  {
+    "title": "Vinyasa Yoga",
+    "description": "A dynamic and fluid style of yoga that links breath with movement, transitioning through various poses in a continuous flow to build strength, stamina, and mindfulness.",
+    "image": "https://img.freepik.com/free-photo/woman-practicing-yoga-studio_23-2148153185.jpg?size=626&ext=jpg",
+    "border": "border-sky-300",
+    "textColor": "text-sky-300"
+  },
+  {
+    "title": "Bikram Yoga",
+    "description": "A style of yoga practiced in a heated room, consisting of a fixed sequence of 26 postures and two breathing exercises, designed to promote detoxification, flexibility, and mental focus.",
+    "image": "https://img.freepik.com/free-photo/young-woman-practicing-bikram-yoga_1150-37184.jpg?size=626&ext=jpg",
+    "border": "border-green-500",
+    "textColor": "text-green-500"
+  },
+  {
+    "title": "Yin Yoga",
+    "description": "A slow-paced and meditative style of yoga that involves holding passive postures for an extended duration to target deep connective tissues, promoting relaxation and flexibility.",
+    "image": "https://img.freepik.com/free-photo/woman-doing-yoga-lotus-position_23-2148246369.jpg?size=626&ext=jpg",
+    "border": "border-cyan-500",
+    "textColor": "text-cyan-500"
+  }
+]
