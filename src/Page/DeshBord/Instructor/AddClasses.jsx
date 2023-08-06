@@ -63,8 +63,8 @@ const AddClasses = () => {
   };
 
   return (
-    <div className="w-full">
-      <h1 className="text-center mt-8 text-2xl font-semibold">Add Yoga  Class  </h1>
+    <div className="w-full h-full">
+      <h1 className="text-center  font-semibold uppercase text-2xl mt-10 mb-7">Add Yoga  Class  </h1>
       <form onSubmit={handleSubmit(onSubmit)} className="card-body">
         <div className="md:flex gap-4">
           <div className="form-control w-1/2">

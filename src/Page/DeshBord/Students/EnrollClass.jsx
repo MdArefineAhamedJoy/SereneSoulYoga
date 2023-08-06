@@ -3,19 +3,19 @@ import usePayment from "../../../Hooks/usePayment";
 
 const EnrollClass = () => {
  const [paymentData] = usePayment()
-
   return (
-    <div className="w-full">
-      <h1 className="text-center mb-10 font-semibold text-2xl">Your Total Enroll Classes : {paymentData.length} </h1>
+    <div className="w-full h-full">
+      <h1 className="text-center  font-semibold uppercase text-2xl mt-10 mb-7">Your Total Enroll Classes : {paymentData?.length} </h1>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
-          <thead className="text-center">
+          <thead className="text-center uppercase">
             <tr>
-              <th>#</th>
+              <th>NO</th>
               <th>image</th>
               <th>Purchase Account </th>
               <th>Name </th>
+              <th>Your FeedBack </th>
             </tr>
           </thead>
 
@@ -46,6 +46,9 @@ const EnrollClass = () => {
                   <p>
                     <span>InstructorName:</span> {data.name}{" "}
                   </p>
+                </td>
+                <td>
+                  <button className="bg-blue-500  text-white font-bold py-2 px-4 rounded">Send Feedback</button>
                 </td>
               </tr>
             </tbody>

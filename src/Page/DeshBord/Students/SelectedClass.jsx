@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { Fragment, useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import usePayment from "../../../Hooks/usePayment";
@@ -11,40 +11,53 @@ const SelectedClass = () => {
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["data"],
     queryFn: () =>
-      fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/allClasses/selected/${user?.email}`).then((res) =>
-        res.json()
-      ),
+      fetch(
+        `https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/allClasses/selected/${user?.email}`
+      ).then((res) => res.json()),
   });
 
   const handelDelete = (id) => {
-    fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/classDelete/${id}`, {
-      method: "DELETE",
-    })
+    fetch(
+      `https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/classDelete/${id}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         refetch();
       });
   };
-
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
+      <h1 className="text-center font-bold text-3xl mt-10 mb-7 uppercase">
+        {" "}
+        Your Selected Classes{" "}
+      </h1>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
-          <thead className="text-center bg-[#c9a470]">
-            <tr>
-              <th>#</th>
-              <th>image</th>
-              <th>Price & Site </th>
-              <th>Name </th>
-              <th>Method</th>
-            </tr>
-          </thead>
+          {data !== [] ? (
+            <thead className="text-center uppercase bg-[#c9a470]">
+              <tr>
+                <th>SL</th>
+                <th>image</th>
+                <th>Price & Site </th>
+                <th>Name </th>
+                <th>Method</th>
+              </tr>
+            </thead>
+          ) : (
+            <tbody>
+              <tr>
+                <td  className="text-center capitalize text-red-400 text-lg">you have not select any class</td>
+              </tr>
+            </tbody>
+          )}
 
           {data?.map((selectedClass, index) => (
             <tbody key={selectedClass._id} className="text-center">
               {/* row 1 */}
-              {console.log(selectedClass._id)}
               <tr className="border-b-4">
                 <th>{index + 1}</th>
                 <td>

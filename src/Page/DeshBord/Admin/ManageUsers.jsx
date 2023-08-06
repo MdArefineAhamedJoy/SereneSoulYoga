@@ -22,7 +22,7 @@ const ManageUsers = () => {
   };
 
   return (
-    <div className=" w-full">
+    <div className=" w-full h-full">
       <h1 className="py-10 text-center font-semibold text-2xl">Available User {allUser?.length}</h1>
       <div className="overflow-x-auto">
         <table className="table">

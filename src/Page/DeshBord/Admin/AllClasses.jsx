@@ -38,7 +38,7 @@ const AllClasses = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
       <div className="text-center pb-7 font-semibold ">
         <h1 className=" text-2xl py-4">This Is All Classes Control Page </h1>
         <p>Available Class : {data?.length} </p>
