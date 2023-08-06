@@ -19,7 +19,7 @@ const MyClasses = () => {
   );
 
   return (
-    <div className="w-full h-full gap-4">
+    <div className="w-full h-full gap-4"> 
       <h1 className="text-center my-10 font-semibold text-2xl">
         Total Enroll Student : {totalEnrollStudent}
       </h1>
