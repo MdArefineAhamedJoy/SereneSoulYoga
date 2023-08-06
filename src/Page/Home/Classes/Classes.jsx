@@ -8,10 +8,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
-
+import { AiOutlineSearch } from "react-icons/ai";
 import { Autoplay, Navigation, Pagination } from "swiper";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import ClassesBanner from "./ClassesBanner";
+
+
+
+
+
 
 const Classes = () => {
   const [allUser] = useUsers();
@@ -27,7 +32,7 @@ const Classes = () => {
     setUserRoll(userStatus);
   }, [allUser, user]);
 
-  console.log(userRoll)
+  console.log(userRoll);
   useEffect(() => {
     setTimeout(() => {
       const fetchedUserRoll =
@@ -94,11 +99,19 @@ const Classes = () => {
   return (
     <div>
       <ClassesBanner></ClassesBanner>
-      <PageTitle
-        title="Building a Strong Foundation in Yoga Fundamentals"
-        subTitle="Cultivating Harmony, Strength, and Flexibility through Mindful Movement, Breath Control, and Meditation Techniques for Overall Well-being and Inner Balance"
-      />
-
+      <div className="my-20 text-center">
+        <h1 className="font-semibold mb-3 text-2xl "> Yoga Classes</h1>
+        <div className="font-bold w-8/12 mx-auto relative">
+          <input
+            className="w-full text-lg capitalize font-semibold rounded-md border mt-5 focus:outline-blue-500 focus:outline-2 text-black   p-3 bg-gray-300"
+            type="text"
+            placeholder="Search Yoga Classes "
+          />
+          <div className="absolute top-9 right-3">
+            <AiOutlineSearch className="text-2xl"></AiOutlineSearch>
+          </div>
+        </div>
+      </div>
       <div className="grid grid-cols-3 px-4 gap-5">
         {data?.map((classes) => (
           <div
