@@ -18,7 +18,6 @@ const NavBar = () => {
     }
   };
 
-
   useEffect(() => {
     localStorage.setItem("theme", theme);
     const localTheme = localStorage.getItem("theme");
@@ -41,7 +40,7 @@ const NavBar = () => {
     <>
       <li>
         {" "}
-        <Link to="/" className="py-2 px-4 hover:underline decoration-sky-800">
+        <Link to="/" className="py-2 px-4   decoration-sky-800">
           Home
         </Link>
       </li>
@@ -49,7 +48,7 @@ const NavBar = () => {
         {" "}
         <Link
           to="classes"
-          className="py-2 px-4 hover:underline decoration-sky-800"
+          className=" py-2 px-4  decoration-sky-800"
         >
           {" "}
           Classes
@@ -59,7 +58,7 @@ const NavBar = () => {
         {" "}
         <Link
           to="instructor"
-          className="py-2 px-4 hover:underline decoration-sky-800"
+          className="py-2 px-4   decoration-sky-800"
         >
           {" "}
           Instructor
@@ -71,7 +70,7 @@ const NavBar = () => {
             {" "}
             <Link
               to="/deashBoard"
-              className="py-2 px-4 hover:underline decoration-sky-800 "
+              className="py-2 px-4   decoration-sky-800 "
             >
               Dashboard
             </Link>{" "}
@@ -80,7 +79,7 @@ const NavBar = () => {
             {" "}
             <Link
               onClick={handelLogOut}
-              className="py-2 px-4 hover:underline decoration-sky-800"
+              className="py-2 px-4   decoration-sky-800"
             >
               Log Out
             </Link>{" "}
@@ -92,7 +91,7 @@ const NavBar = () => {
             {" "}
             <Link
               to="/login"
-              className="py-2 px-4 hover:underline decoration-sky-800"
+              className="py-2 px-4   decoration-sky-800"
             >
               Login
             </Link>{" "}
@@ -101,7 +100,7 @@ const NavBar = () => {
             {" "}
             <Link
               to="/register"
-              className="py-2 px-4 hover:underline decoration-sky-800"
+              className="py-2 px-4   decoration-sky-800"
             >
               Register
             </Link>{" "}
@@ -112,7 +111,7 @@ const NavBar = () => {
   );
   return (
     <div>
-      <div className="navbar bg-[#7e8446] md:text-white">
+      <div className="navbar bg-base-200 md:text-neutral-700 ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -133,7 +132,7 @@ const NavBar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-6 rounded-none w-60 z-50  bg-base-100 "
+              className="menu menu-sm dropdown-content font-semibold mt-6 rounded-none w-60 z-50  bg-base-100 "
             >
               {navItem}
             </ul>
@@ -143,11 +142,11 @@ const NavBar = () => {
             src={logo}
             alt=""
           />
-          <Link className="md:text-3xl text-xl text-white font-bold">
+          <Link className="md:text-3xl text-xl text-neutral-700 font-bold">
             SereneSoulYoga
           </Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden font-semibold lg:flex">
           <ul className="menu menu-horizontal px-1">{navItem}</ul>
         </div>
         <div className="navbar-end">
