@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -17,21 +18,23 @@ const Banner = () => {
       });
   }, []);
 
-  const slideAnimation = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.5 }
-  };
+  useEffect(() => {
+    AOS.init({
+      duration: 1500,
+      once: true,
+      easing: "ease-in-out",
+    });
+  }, []);
 
   return (
     <>
       <Swiper
         slidesPerView={1}
         autoplay={{
-          delay: 2,
+          delay: 2000,
           disableOnInteraction: false,
         }}
-        speed={5000}
+        speed={6000}
         loop={true}
         pagination={{
           clickable: true,
@@ -41,37 +44,38 @@ const Banner = () => {
         {creosol.map((data) => (
           <SwiperSlide key={data._id}>
             <div className="relative">
-              <motion.img
-                className="w-full h-screen opacity-80" // Add the opacity class here
+              <img
+                className="w-full h-screen opacity-80"
                 src={data.image}
                 alt=""
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
+                data-aos="fade-down"
+                data-aos-duration="1500"
               />
-              <motion.div
-                className="absolute top-20 left-10 right-20"
-                initial={slideAnimation.initial}
-                animate={slideAnimation.animate}
-                transition={slideAnimation.transition}
-              >
-                <motion.h2
-                  className="text-4xl text-white italic font-serif"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  {data.title}
-                </motion.h2>
-                <motion.p
-                  className="text-xl pt-5 w-1/2 text-[#7e8446] italic font-sans"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.4 }}
-                >
-                  {data.description}
-                </motion.p>
-              </motion.div>
+              <div className="absolute w-5/7 mx-auto flex items-center justify-center bottom-0 left-0 right-0 top-0">
+                <div className="text-center">
+                  <h2
+                    data-aos="fade-down"
+                    data-aos-easing="linear"
+                    data-aos-duration="1500"
+                    className="text-2xl font-extrabold text-white italic font-serif  w-4/5 mx-auto"
+                  >
+                    {data.title}
+                  </h2>
+                  <div className="text-xl text-center pt-5   text-sky-300 font-semibold italic font-sans">
+                    <p
+                      data-aos="fade-down"
+                      data-aos-easing="linear"
+                      data-aos-duration="1500"
+                      className="text-center"
+                    >
+                      {data.description}
+                    </p>
+                  </div>
+                  <button className="bg-sky-500 mx-auto w-fit block text-white p-2 px-4 uppercase mt-5 rounded-lg">
+                    Learn More
+                  </button>
+                </div>
+              </div>
             </div>
           </SwiperSlide>
         ))}
@@ -81,4 +85,3 @@ const Banner = () => {
 };
 
 export default Banner;
-
