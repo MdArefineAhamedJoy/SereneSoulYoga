@@ -31,10 +31,10 @@ const Banner = () => {
       <Swiper
         slidesPerView={1}
         autoplay={{
-          delay: 2000,
+          delay: 500,
           disableOnInteraction: false,
         }}
-        speed={6000}
+        speed={2000}
         loop={true}
         pagination={{
           clickable: true,
@@ -43,9 +43,9 @@ const Banner = () => {
       >
         {creosol.map((data) => (
           <SwiperSlide key={data._id}>
-            <div className="relative">
+            <div className="relative  ">
               <img
-                className="w-full h-screen opacity-80"
+                className="w-full h-screen "
                 src={data.image}
                 alt=""
                 data-aos="fade-down"

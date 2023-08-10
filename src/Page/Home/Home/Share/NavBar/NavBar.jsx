@@ -132,7 +132,7 @@ const NavBar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content font-semibold mt-6 rounded-none w-60 z-50  bg-base-100 "
+              className="menu menu-sm uppercase dropdown-content font-semibold mt-6 rounded-none w-60 z-50  bg-base-100 "
             >
               {navItem}
             </ul>
@@ -146,7 +146,7 @@ const NavBar = () => {
             SereneSoulYoga
           </Link>
         </div>
-        <div className="navbar-center hidden font-semibold lg:flex">
+        <div className="navbar-center hidden font-semibold uppercase lg:flex">
           <ul className="menu menu-horizontal px-1">{navItem}</ul>
         </div>
         <div className="navbar-end">

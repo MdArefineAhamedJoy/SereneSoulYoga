@@ -6,7 +6,7 @@ const MemberShip = () => {
   const [packages, setPackages] = useState([]);
   const [colors , setColors] = useState("")
   useEffect(() => {
-    fetch(`http://localhost:5000/memberShip/package`)
+    fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/memberShip`)
       .then((res) => res.json())
       .then((data) => {
         setPackages(data);
