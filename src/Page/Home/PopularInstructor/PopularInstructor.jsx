@@ -41,7 +41,7 @@ const PopularInstructor = () => {
             <div key={Instructor?._id} className="grid md:grid-cols-4 gap-3 rounded-none  ">
               <SwiperSlide >
                 <motion.div
-                  className=" shadow-xl duration-500 cursor-pointer h-96 bg-gray-400 mx-1"
+                  className=" shadow-xl text-white duration-500 cursor-pointer h-96 bg-sky-500 hover:bg-sky-400 mx-1"
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -54,8 +54,8 @@ const PopularInstructor = () => {
                     />
                   </figure>
                   <div className="card-body items-center text-center">
-                    <h2 className="card-title">{Instructor?.name}</h2>
-                    <h2 className="card-title">{Instructor?.email}</h2>
+                    <h2 className="">{Instructor?.name}</h2>
+                    <h2 className="">{Instructor?.email}</h2>
                   </div>
                 </motion.div>
               </SwiperSlide>

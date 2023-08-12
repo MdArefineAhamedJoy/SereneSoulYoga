@@ -33,10 +33,10 @@ const BenefitsYoga = () => {
           <img className="w-full h-screen" src={imageUrl} alt="" />
         </div>
         <div className="mx-auto">
-            <p className="font-bold text-3xl mb-5">Benefited of Yoga </p>
+            <p className="font-bold text-sky-500 text-3xl mb-5">Benefited of Yoga </p>
           <ul >
             {benefits.map((benefit , index) => (
-              <li key={index} className="my-1 text-lg font-semibold flex items-center gap-3"><BsCircle className="h-3 w-3 text-blue-700"></BsCircle>  {benefit}</li>
+              <li key={index} className="my-1 text-lg font-semibold flex items-center gap-3"><BsCircle className="h-3 w-3 text-sky-500"></BsCircle>  {benefit}</li>
             ))}
           </ul>
         </div>

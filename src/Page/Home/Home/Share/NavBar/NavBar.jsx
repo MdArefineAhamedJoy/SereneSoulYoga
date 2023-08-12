@@ -46,20 +46,14 @@ const NavBar = () => {
       </li>
       <li>
         {" "}
-        <Link
-          to="classes"
-          className=" py-2 px-4  decoration-sky-800"
-        >
+        <Link to="classes" className=" py-2 px-4  decoration-sky-800">
           {" "}
           Classes
         </Link>
       </li>
       <li>
         {" "}
-        <Link
-          to="instructor"
-          className="py-2 px-4   decoration-sky-800"
-        >
+        <Link to="instructor" className="py-2 px-4   decoration-sky-800">
           {" "}
           Instructor
         </Link>
@@ -68,10 +62,7 @@ const NavBar = () => {
         <>
           <li>
             {" "}
-            <Link
-              to="/deashBoard"
-              className="py-2 px-4   decoration-sky-800 "
-            >
+            <Link to="/deashBoard" className="py-2 px-4   decoration-sky-800 ">
               Dashboard
             </Link>{" "}
           </li>
@@ -89,19 +80,13 @@ const NavBar = () => {
         <>
           <li>
             {" "}
-            <Link
-              to="/login"
-              className="py-2 px-4   decoration-sky-800"
-            >
+            <Link to="/login" className="py-2 px-4   decoration-sky-800">
               Login
             </Link>{" "}
           </li>
           <li>
             {" "}
-            <Link
-              to="/register"
-              className="py-2 px-4   decoration-sky-800"
-            >
+            <Link to="/register" className="py-2 px-4   decoration-sky-800">
               Register
             </Link>{" "}
           </li>
@@ -111,7 +96,7 @@ const NavBar = () => {
   );
   return (
     <div>
-      <div className="navbar bg-base-200 md:text-neutral-700 ">
+      <div className="navbar bg-base-200 text-neutral-700 ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -137,14 +122,16 @@ const NavBar = () => {
               {navItem}
             </ul>
           </div>
-          <img
-            className="w-20 h-20 rounded-md  md:block hidden"
-            src={logo}
-            alt=""
-          />
-          <Link className="md:text-3xl text-xl text-neutral-700 font-bold">
-            SereneSoulYoga
-          </Link>
+          <div className="flex flex-col">
+            <img
+              className="w-16 h-16 rounded-full mx-auto text-sky-500 md:block hidden"
+              src={logo}
+              alt=""
+            />
+            <Link className=" text-sky-500 font-bold">
+              SereneSoulYoga
+            </Link>
+          </div>
         </div>
         <div className="navbar-center hidden font-semibold uppercase lg:flex">
           <ul className="menu menu-horizontal px-1">{navItem}</ul>
@@ -174,7 +161,7 @@ const NavBar = () => {
               alt=""
             />
           )}
-          <img className="w-20 h-20 rounded-md  md:hidden " src={logo} alt="" />
+          <img className="w-16 h-16 rounded-md md:hidden " src={logo} alt="" />
         </div>
       </div>
     </div>

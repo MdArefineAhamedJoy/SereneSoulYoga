@@ -74,7 +74,7 @@ const Information = () => {
   }, []);
 
   return (
-    <div className=" bg-blue-900 mt-24 text-white">
+    <div className=" bg-sky-900 mt-24 text-white">
       <h1 className="pt-20 pb-10 text-center font-bold text-3xl">
         YOGA INTERNATIONAL MEMBERSHIP INCLUDES
       </h1>
