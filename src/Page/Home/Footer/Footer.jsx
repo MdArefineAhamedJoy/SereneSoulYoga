@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="mt-20 ">
       <div className="md:flex text-base-content w-full ">
-        <div className="  md:w-[30%]  md:pt-20 w-full p-5 md:text-right flex flex-col h-96 text-white bg-sky-700 ">
+        <div className="  md:w-[30%]  md:pt-20 w-full p-5 md:text-right flex flex-col h-96 text-white bg-sky-950 ">
           <div className=" flex flex-col gap-2">
             <span className="font-extrabold border-b py-2 border-white pb-2 font-3xl">
               WORK HOURS
@@ -25,7 +25,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="  md:w-[40%] w-full md:pt-16   mx-auto p-5 bg-sky-500 ">
+        <div className="  md:w-[40%] w-full md:pt-16   mx-auto p-5 bg-sky-800 ">
           <img className="w-20 h-20 mx-auto pb-5" src={logo} alt="" />
           <p>
             We at <span className="text-xl font-semibold text-white">SereneSoulYoga</span> provide various services to the nature of the clients.
@@ -37,7 +37,7 @@ const Footer = () => {
             Proin semper suscipit magna, nec imperdiet lacus semper.
           </p>
         </div>
-        <div className="md:w-[30%] text-left w-full md:pt-20 p-5   flex flex-col h-96 bg-sky-700 text-white ">
+        <div className="md:w-[30%] text-left w-full md:pt-20 p-5   flex flex-col h-96 bg-sky-950 text-white ">
           <span className="font-bold  text-left text-lg mb-2 pb-2 border-b border-white">CONTACT US</span>
           <div className="py-2">
             <p  className="flex gap-2 items-center"><FaPhoneAlt></FaPhoneAlt> Toll Free: 1224 2234 </p>

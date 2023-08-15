@@ -3,7 +3,7 @@ import PageTitle from '../../../Components/PageTitle';
 
 const YogaExperienceSection = () => {
   return (
-    <section className="bg-base-300 my-8">
+    <section className="bg-base-100 py-8 mt-10">
       <div className="container mx-auto px-10 py-14 text-center">
         <h2 className="text-2xl font-semibold mb-8 uppercase text-center">Discover a World of Yoga with Yoga International</h2>
         <p className="text-gray-700 text-xl font-light mb-4">

@@ -58,6 +58,13 @@ const NavBar = () => {
           Instructor
         </Link>
       </li>
+      <li>
+        {" "}
+        <Link to="services" className="py-2 px-4   decoration-sky-800">
+          {" "}
+          Your Services 
+        </Link>
+      </li>
       {user ? (
         <>
           <li>
@@ -96,7 +103,7 @@ const NavBar = () => {
   );
   return (
     <div>
-      <div className="navbar bg-base-200 text-neutral-700 ">
+      <div className="navbar bg-sky-500 text-white ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -124,11 +131,11 @@ const NavBar = () => {
           </div>
           <div className="flex flex-col">
             <img
-              className="w-16 h-16 rounded-full mx-auto text-sky-500 md:block hidden"
+              className="w-16 h-16 rounded-full mx-auto md:block hidden"
               src={logo}
               alt=""
             />
-            <Link className=" text-sky-500 font-bold">
+            <Link className=" text-white font-bold">
               SereneSoulYoga
             </Link>
           </div>

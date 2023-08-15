@@ -16,6 +16,7 @@ import MyClasses from "./../Page/DeshBord/Instructor/MyClasses";
 import PrivateRoute from "./PrivateRoute";
 import PaymentHistory from "../Page/DeshBord/Students/PaymentHistory";
 import ErrorPage from "../Components/ErrorPage";
+import Services from "../Page/Home/Home/Services/Services";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "instructor",
         element: <Instructor></Instructor>,
+      },
+      {
+        path: "services",
+        element: <Services></Services>
       },
     ],
   },
