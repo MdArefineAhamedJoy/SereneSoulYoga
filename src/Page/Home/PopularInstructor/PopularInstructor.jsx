@@ -41,7 +41,7 @@ const PopularInstructor = () => {
             <div key={Instructor?._id} className="grid md:grid-cols-4 gap-3 rounded-none  ">
               <SwiperSlide >
                 <motion.div
-                  className=" shadow-xl text-white duration-500 cursor-pointer h-96 bg-sky-500 hover:bg-sky-400 mx-1"
+                  className=" shadow-xl text-white duration-500 cursor-pointer h-96 bg-sky-500 hover:bg-sky-600 mx-1 rounded-md"
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.95 }}
                 >

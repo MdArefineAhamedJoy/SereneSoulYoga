@@ -23,11 +23,10 @@ const Instructor = () => {
             />
           </figure>
           <div className="card-body items-center  ">
-            <h2 className="card-title">Name : {instructor.name}</h2>
-            <h2 className="card-title">Name : {instructor.email}</h2>
-            <p>Roll  {instructor.email}</p>
+          <h2 className="card-title">Name : {instructor.name}</h2>
+            <h2 className="card-title">Email  : {instructor.email}</h2>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">see classes</button>
+              <button className="text-white bg-sky-500 hover:bg-sky-600 duration-300  py-3 px-4 rounded uppercase font-medium">see classes</button>
             </div>
           </div>
         </div>

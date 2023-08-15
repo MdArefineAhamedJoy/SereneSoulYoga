@@ -29,6 +29,7 @@ const Banner = () => {
   return (
     <>
       <Swiper
+        className="h-screen"
         slidesPerView={1}
         autoplay={{
           delay: 500,
@@ -57,11 +58,11 @@ const Banner = () => {
                     data-aos="fade-down"
                     data-aos-easing="linear"
                     data-aos-duration="1500"
-                    className="text-2xl font-extrabold text-white italic font-serif  w-4/5 mx-auto"
+                    className="text-2xl font-extrabold text-neutral-600 italic font-serif  w-4/5 mx-auto"
                   >
                     {data.title}
                   </h2>
-                  <div className="text-xl text-center pt-5   text-sky-300 font-semibold italic font-sans">
+                  <div className="text-xl text-center pt-5  text-neutral-600 font-semibold italic font-sans">
                     <p
                       data-aos="fade-down"
                       data-aos-easing="linear"

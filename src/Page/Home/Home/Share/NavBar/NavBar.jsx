@@ -1,14 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { FaBars, FaWindowClose } from "react-icons/fa";
 import { AuthContext } from "./../../../../../Provider/AuthProvider";
 import logo from "../../../../../assets/logo.png";
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
+  const location = useLocation()
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
+  const dashboardLocation = location.pathname.includes('/deashBoard')
+
 
   const handleToggle = (e) => {
     if (e.target.checked) {
@@ -103,7 +106,7 @@ const NavBar = () => {
   );
   return (
     <div>
-      <div className="navbar bg-sky-500 text-white ">
+      <div className={`  bg-sky-500 navbar  text-white `}>
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -131,7 +134,7 @@ const NavBar = () => {
           </div>
           <div className="flex flex-col">
             <img
-              className="w-16 h-16 rounded-full mx-auto md:block hidden"
+              className={`w-16  h-16 rounded-full mx-auto md:block hidden`}
               src={logo}
               alt=""
             />
@@ -141,7 +144,9 @@ const NavBar = () => {
           </div>
         </div>
         <div className="navbar-center hidden font-semibold uppercase lg:flex">
-          <ul className="menu menu-horizontal px-1">{navItem}</ul>
+          <ul className="menu menu-horizontal px-1">
+          {  !dashboardLocation && navItem}
+          </ul>
         </div>
         <div className="navbar-end">
           <label className="swap swap-rotate px-4">
@@ -161,13 +166,15 @@ const NavBar = () => {
               <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
             </svg>
           </label>
-          {user?.email && (
-            <img
-              className="w-16 h-16 rounded-full md:block hidden"
-              src={user?.photoURL}
-              alt=""
-            />
-          )}
+          {
+           !dashboardLocation && user?.email && (
+              <img
+                className="w-16 h-16 rounded-full md:block hidden"
+                src={user?.photoURL}
+                alt=""
+              />
+            ) 
+          }
           <img className="w-16 h-16 rounded-md md:hidden " src={logo} alt="" />
         </div>
       </div>
