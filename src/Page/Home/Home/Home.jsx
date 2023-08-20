@@ -19,7 +19,6 @@ const Home = () => {
             <BenefitsYoga></BenefitsYoga>
             <PopularClass></PopularClass>
             <PopularInstructor></PopularInstructor>
-            <MemberShip></MemberShip>
             <Information></Information>
             <YogaExperienceSection></YogaExperienceSection>
         </div>

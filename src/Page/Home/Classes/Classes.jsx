@@ -13,11 +13,6 @@ import { Autoplay, Navigation, Pagination } from "swiper";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import ClassesBanner from "./ClassesBanner";
 
-
-
-
-
-
 const Classes = () => {
   const [allUser] = useUsers();
   const location = useLocation();
@@ -32,7 +27,6 @@ const Classes = () => {
     setUserRoll(userStatus);
   }, [allUser, user]);
 
-  console.log(userRoll);
   useEffect(() => {
     setTimeout(() => {
       const fetchedUserRoll =
@@ -112,31 +106,37 @@ const Classes = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-3 px-4 gap-5">
+      <div className="grid grid-cols-3 px-4 gap-7">
         {data?.map((classes) => (
           <div
             key={classes?._id}
-            className={`card bg-base-100 shadow-xl ${
+            className={`shadow-md rounded ${
               parseInt(classes.availableSite) === 0 ? "bg-red-500" : ""
-            }`}
+            } hover:shadow-lg hover:bg-gray-100 hover:scale-105 transition duration-300`}
           >
             <figure>
               <img
-                className="w-full h-64"
+                className="w-full h-44"
                 src={classes?.photoUrl}
                 alt="Movie"
               />
             </figure>
-            <div className="card-body">
-              <h2 className="card-title">Class Name : {classes?.className}</h2>
-              <p>Instructor Name : {classes?.name}</p>
-              <p>Available Site : Site {classes?.availableSite}</p>
-              <p>Price : ${classes?.price}</p>
-              <div className="card-actions justify-center">
+            <div className="p-2">
+              <h2 className="text-[#227179] text-xl font-semibold">
+                {classes?.className}
+              </h2>
+              <p className="uppercase">{classes?.name}</p>
+              <div className="flex justify-between">
+                <p className="uppercase">Site: {classes?.availableSite}</p>
+                <p className="uppercase">
+                  Price: <span className="font-bold">${classes?.price}</span>
+                </p>
+              </div>
+              <div>
                 <button
                   disabled={userRoll === "instructor" || userRoll === "admin"}
                   onClick={() => handleSelectedClass(classes)}
-                  className="btn"
+                  className="bg-[#227179] px-7 font-semibold hover:bg-[#153f44] duration-300  py-2 my-2 uppercase text-sm text-white rounded-ss-xl rounded-ee-xl"
                 >
                   selected
                 </button>

@@ -57,10 +57,10 @@ const MemberShip = () => {
                 </td>
               </tr>
             ))}
-            <div className={`bg-base-200 px-16 shadow-md duration-300 rounded-md py-5 text-center absolute top-[-50px] right-[207px] font-semibold ${colors === "monthly" ? "bg-green-600 text-white" : "bg-base-200 text-black" } `} onClick={()=>setColors("monthly")}>
+            <div className={`bg-base-200 px-16 shadow-md duration-300 rounded-md py-5 text-center absolute top-[-50px] right-[207px] font-semibold ${colors === "monthly" ? "bg-[#227179] text-white" : "bg-base-200 text-black" } `} onClick={()=>setColors("monthly")}>
               Monthly
             </div>
-            <div className={`bg-base-200 px-16 shadow-md duration-300 rounded-md py-5 text-center absolute top-[-50px] right-[10px] ${colors === "annually"? "bg-green-600 text-white": "bg-base-200 text-black " }`} onClick={()=>setColors("annually")}>
+            <div className={`bg-base-200 px-16 shadow-md duration-300 rounded-md py-5 text-center absolute top-[-50px] right-[10px] ${colors === "annually"? "bg-[#227179] text-white": "bg-base-200 text-black " }`} onClick={()=>setColors("annually")}>
             <div className="relative" >
             <p className="absolute px-11 py-1 rounded-md top-[-47px] right-[-48px] bg-yellow-400"> saved20% </p>
             </div>
