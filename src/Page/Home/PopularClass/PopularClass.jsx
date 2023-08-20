@@ -37,7 +37,7 @@ const PopularClass = () => {
               </div>
               <div className="my-hover-effect"></div>
               <div className="cards-body">
-                <h1 className="font-dmserif text-2xl font-bold text-white ">
+                <h1 className="font-dmserif text-2xl font-bold text-[#5abec9]">
                   {classes?.className}
                 </h1>
  

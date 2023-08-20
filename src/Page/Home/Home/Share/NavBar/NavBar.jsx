@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { FaBars, FaWindowClose } from "react-icons/fa";
 import { AuthContext } from "./../../../../../Provider/AuthProvider";
 import logo from "../../../../../assets/logo.png";
 const NavBar = () => {
@@ -43,27 +42,27 @@ const NavBar = () => {
     <>
       <li>
         {" "}
-        <Link to="/" className="py-2 px-4   decoration-sky-800">
+        <Link to="/" className="py-2 px-4 decoration-sky-800 ">
           Home
         </Link>
       </li>
       <li>
-        {" "}
-        <Link to="classes" className=" py-2 px-4  decoration-sky-800">
-          {" "}
+
+        <Link to="classes" className=" py-2 px-4 decoration-sky-800">
+     
           Classes
         </Link>
       </li>
       <li>
         {" "}
-        <Link to="instructor" className="py-2 px-4   decoration-sky-800">
+        <Link to="instructor" className="py-2 px-4  ">
           {" "}
           Instructor
         </Link>
       </li>
       <li>
         {" "}
-        <Link to="services" className="py-2 px-4   decoration-sky-800">
+        <Link to="services" className="py-2 px-4  ">
           {" "}
           Your Services 
         </Link>
@@ -72,7 +71,7 @@ const NavBar = () => {
         <>
           <li>
             {" "}
-            <Link to="/deashBoard" className="py-2 px-4   decoration-sky-800 ">
+            <Link to="/deashBoard" className="py-2 px-4 decoration-sky-800  ">
               Dashboard
             </Link>{" "}
           </li>
@@ -80,7 +79,7 @@ const NavBar = () => {
             {" "}
             <Link
               onClick={handelLogOut}
-              className="py-2 px-4   decoration-sky-800"
+              className="py-2 px-4 decoration-sky-800 "
             >
               Log Out
             </Link>{" "}
@@ -90,13 +89,13 @@ const NavBar = () => {
         <>
           <li>
             {" "}
-            <Link to="/login" className="py-2 px-4   decoration-sky-800">
+            <Link to="/login" className="py-2 px-4 decoration-sky-800 ">
               Login
             </Link>{" "}
           </li>
           <li>
             {" "}
-            <Link to="/register" className="py-2 px-4   decoration-sky-800">
+            <Link to="/register" className="py-2 px-4 decoration-sky-800 ">
               Register
             </Link>{" "}
           </li>
@@ -106,7 +105,7 @@ const NavBar = () => {
   );
   return (
     <div>
-      <div className={`  bg-sky-500 navbar  text-white `}>
+      <div className={`  bg-[#227179] navbar text-white `}>
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -138,7 +137,7 @@ const NavBar = () => {
               src={logo}
               alt=""
             />
-            <Link className=" text-white font-bold">
+            <Link className="text-white font-bold">
               SereneSoulYoga
             </Link>
           </div>

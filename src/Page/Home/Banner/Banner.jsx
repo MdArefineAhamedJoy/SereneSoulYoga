@@ -72,7 +72,7 @@ const Banner = () => {
                       {data.description}
                     </p>
                   </div>
-                  <button className="bg-sky-500 mx-auto w-fit block text-white p-2 px-4 uppercase mt-5 rounded-lg">
+                  <button className="bg-[#227179] mx-auto w-fit block text-white p-2 px-4 uppercase mt-5 rounded-lg">
                     Learn More
                   </button>
                 </div>

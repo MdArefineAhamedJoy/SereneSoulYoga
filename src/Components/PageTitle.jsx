@@ -3,7 +3,7 @@ import React from "react";
 const PageTitle = ({ title, url, subTitle }) => {
   return (
     <div className="mt-24 pb-10 ">
-      <div className="w-10/12 text-sky-500 mx-auto text-center ">
+      <div className="w-10/12 text-[#227179] mx-auto text-center ">
         <h1
           style={{ wordSpacing: "2px", letterSpacing: "6px" }}
           className=" text-2xl  font-bold"
