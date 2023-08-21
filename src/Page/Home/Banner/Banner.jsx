@@ -37,6 +37,7 @@ const Banner = () => {
         }}
         speed={2000}
         loop={true}
+        navigation={true}
         pagination={{
           clickable: true,
         }}

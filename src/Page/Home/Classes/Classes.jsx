@@ -94,17 +94,10 @@ const Classes = () => {
     <div>
       <ClassesBanner></ClassesBanner>
       <div className="my-20 text-center">
-        <h1 className="font-semibold mb-3 text-2xl "> Yoga Classes</h1>
-        <div className="font-bold w-8/12 mx-auto relative">
-          <input
-            className="w-full text-lg capitalize font-semibold rounded-md border mt-5 focus:outline-blue-500 focus:outline-2 text-black   p-3 bg-gray-300"
-            type="text"
-            placeholder="Search Yoga Classes "
-          />
-          <div className="absolute top-9 right-3">
-            <AiOutlineSearch className="text-2xl"></AiOutlineSearch>
-          </div>
-        </div>
+        <PageTitle
+          title={"Your Spacial SereneSoul Yoga Class "}
+          subTitle={`Welcome to Serene Soul Yoga, where tranquility and vitality converge. Our classes offer more than just physical postures, our skilled instructors guide you through a harmonious blend of poses, fostering strength, flexibility, and inner peace.`}
+        ></PageTitle>
       </div>
       <div className="grid grid-cols-3 px-4 gap-7">
         {data?.map((classes) => (
