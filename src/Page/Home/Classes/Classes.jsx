@@ -98,7 +98,7 @@ const Classes = () => {
             key={classes?._id}
             className={`shadow-md rounded ${
               parseInt(classes.availableSite) === 0 ? "bg-red-500" : ""
-            } hover:shadow-lg hover:bg-gray-100 hover:scale-105 transition duration-300`}
+            } hover:shadow-lg group hover:bg-gray-100 hover:scale-105 transition duration-300`}
           >
             <figure>
               <img
@@ -122,9 +122,10 @@ const Classes = () => {
                 <button
                   disabled={userRoll === "instructor" || userRoll === "admin"}
                   onClick={() => handleSelectedClass(classes)}
-                  className="bg-[#227179] px-7 font-semibold hover:bg-[#153f44] duration-300  py-2 my-2 uppercase text-sm text-white rounded-ss-xl rounded-ee-xl"
+                  className="relative text-center   overflow-hidden  bg-[#227179] px-7 font-semibold hover:bg-[#153f44] duration-300  py-2 my-2 uppercase text-sm text-white rounded-ss-xl rounded-ee-xl"
                 >
                   selected
+                  <span class="absolute inset-x-0 bottom-0 h-1 bg-[#d31c3e] transform transition-transform duration-500 translate-x-[-110%] group-hover:translate-x-0"></span>
                 </button>
               </div>
             </div>

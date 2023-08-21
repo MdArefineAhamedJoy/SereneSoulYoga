@@ -6,6 +6,8 @@ import Footer from "../Page/Home/Footer/Footer";
 
 
 
+
+
 const Main = () => {
   return (
     <div>

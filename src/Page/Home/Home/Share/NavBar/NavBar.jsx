@@ -133,7 +133,7 @@ const NavBar = () => {
           </div>
           <div className="flex flex-col">
             <img
-              className={`w-16  h-16 rounded-full mx-auto md:block hidden`}
+              className={`w-14 h-14 rounded-full mx-auto md:block hidden`}
               src={logo}
               alt=""
             />
@@ -168,13 +168,13 @@ const NavBar = () => {
           {
            !dashboardLocation && user?.email && (
               <img
-                className="w-16 h-16 rounded-full md:block hidden"
+                className="w-12 h-12 rounded-full md:block hidden"
                 src={user?.photoURL}
                 alt=""
               />
             ) 
           }
-          <img className="w-16 h-16 rounded-md md:hidden " src={logo} alt="" />
+          <img className="w-14 h-14 rounded-md md:hidden " src={logo} alt="" />
         </div>
       </div>
     </div>
