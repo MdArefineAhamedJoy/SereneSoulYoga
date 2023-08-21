@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PageTitle from "../../../Components/PageTitle";
 import ReactPaginate from "react-paginate";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "tailwindcss/tailwind.css";
 
 const Instructor = () => {
@@ -39,39 +40,38 @@ const Instructor = () => {
           "Dedicated Professionals Committed to Elevating Your Yoga Journey, Nurturing Your Practice, and Enriching Your Overall Well-being"
         }
       />
-      <div className="grid grid-cols-2 gap-5 md:mx-10 py-20">
+      <TransitionGroup className="grid grid-cols-2 gap-5 md:mx-10 py-20">
         {currentInstructors.map((instructor) => (
-          <div
-            key={instructor._id}
-            className="card lg:card-side bg-base-100 shadow-[#227179] p-5 shadow-md"
-          >
-            <figure>
-              <img
-                className="w-40 h-40 rounded-full"
-                src={instructor.image}
-                alt="Album"
-              />
-            </figure>
-            <div className="card-body items-center">
-              <h2 className="card-title uppercase text-[#227179]">
-                {instructor.name}
-              </h2>
-              <h2 className="card-title font-light text-neutral-700">
-                {instructor.email}
-              </h2>
-              <div className="card-actions justify-center mt-4 space-x-4">
-                <button className="text-white bg-[#227179] hover:bg-[#227179]600 duration-300 py-1 px-4 rounded uppercase font-medium">
-                  Classes
-                </button>
-                <button className="text-white bg-[#227179] hover:bg-[#227179]600 duration-300 py-1 px-4 rounded uppercase font-medium">
-                  Details
-                </button>
+          <CSSTransition key={instructor._id} classNames="fade" timeout={300}>
+            <div className="card border-t border-[#227179] card-side bg-base-100 shadow-[#227179] p-5 shadow-md">
+              <figure>
+                <img
+                  className="w-40 h-40 rounded-full"
+                  src={instructor.image}
+                  alt="Album"
+                />
+              </figure>
+              <div className="card-body items-center">
+                <h2 className="card-title uppercase text-[#227179]">
+                  {instructor.name}
+                </h2>
+                <h2 className="card-title font-light text-neutral-700">
+                  {instructor.email}
+                </h2>
+                <div className="card-actions justify-center mt-4 space-x-4">
+                  <button className="text-white bg-[#227179] hover:bg-[#227179]600 duration-300 py-1 px-4 rounded uppercase font-medium">
+                    Classes
+                  </button>
+                  <button className="text-white bg-[#227179] hover:bg-[#227179]600 duration-300 py-1 px-4 rounded uppercase font-medium">
+                    Details
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
+          </CSSTransition>
         ))}
-      </div>
-      <div className="flex justify-end mt-2">
+      </TransitionGroup>
+      <div className="flex justify-end mt-2 ">
         <ReactPaginate
           previousLabel={"Previous"}
           nextLabel={"Next"}

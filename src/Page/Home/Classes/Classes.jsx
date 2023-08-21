@@ -8,7 +8,6 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import ClassesBanner from "./ClassesBanner";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
-
 const Classes = () => {
   const [allUser] = useUsers();
   const location = useLocation();
@@ -16,6 +15,7 @@ const Classes = () => {
   const navigator = useNavigate();
   const [userRoll, setUserRoll] = useState("student");
   const [loading, setLoading] = useState(true);
+  const [category, setCategory] = useState("");
 
   useEffect(() => {
     const findUser = allUser?.find((rolls) => rolls?.email === user?.email);
@@ -92,23 +92,6 @@ const Classes = () => {
           subTitle={`Welcome to Serene Soul Yoga, where tranquility and vitality converge. Our classes offer more than just physical postures, our skilled instructors guide you through a harmonious blend of poses, fostering strength, flexibility, and inner peace.`}
         ></PageTitle>
       </div>
-
-      <Tabs  className=" md:w-11/12 px-4 w-full mt-[-70px] mx-auto text-center">
-        <TabList className="flex pb-20 w-full gap-3 mx-auto">
-          <Tab className="w-3/12 bg-[#35575b] text-white focus:outline-pink-500 py-4 font-semibold uppercase rounded-md">Hatha Yoga</Tab>
-          <Tab className="w-3/12 bg-[#35575b] text-white focus:outline-pink-500 py-4 font-semibold uppercase rounded-md">Vinyasa Yoga</Tab>
-          <Tab className="w-3/12 bg-[#35575b] text-white focus:outline-pink-500 py-4 font-semibold uppercase rounded-md">Kundalini Yoga</Tab>
-          <Tab className="w-3/12 bg-[#35575b]  text-white focus:outline-4 focus:outline-pink-500 py-4 font-semibold uppercase rounded-md">Your Free Class  </Tab>
-        </TabList>
-{/* 
-        <TabPanel>
-          <h2>Any content 1</h2>
-        </TabPanel>
-        <TabPanel>
-          <h2>Any content 2</h2>
-        </TabPanel> */}
-      </Tabs>
-
       <div className="grid grid-cols-3 px-4 gap-7 md:w-11/12 w-full mx-auto">
         {data?.map((classes) => (
           <div
