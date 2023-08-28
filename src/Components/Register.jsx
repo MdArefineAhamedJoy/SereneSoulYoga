@@ -80,13 +80,13 @@ const Register = () => {
   return (
     <div>
       <div>
-        <div className="hero h-full py-20 bg-base-200">
+        <div className="hero h-full py-20">
           <div className="flex justify-center w-full">
-            <div className="card w-5/12 shadow-2xl bg-base-100">
+            <div className="card w-5/12 shadow-lg shadow-[#227179] bg-base-100 border-t-2 border-r-2  border-[#227179] ">
               <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Name</span>
+                    <span className="label-text  text-[#227179]  font-semibold">Name</span>
                   </label>
                   <input
                     {...register("name", { required: true })}
@@ -97,7 +97,7 @@ const Register = () => {
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Photo Url</span>
+                    <span className="label-text  text-[#227179]  font-semibold">Photo Url</span>
                   </label>
                   <input
                     {...register("photoUrl", { required: true })}
@@ -108,7 +108,7 @@ const Register = () => {
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Email</span>
+                    <span className="label-text  text-[#227179]  font-semibold">Email</span>
                   </label>
                   <input
                     {...register("email", { required: true })}
@@ -119,7 +119,7 @@ const Register = () => {
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Password</span>
+                    <span className="label-text  text-[#227179]  font-semibold">Password</span>
                   </label>
                   <input
                     type="password"
@@ -150,7 +150,7 @@ const Register = () => {
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Confirm Password</span>
+                    <span className="label-text  text-[#227179]  font-semibold">Confirm Password</span>
                   </label>
                   <input
                     type="password"
@@ -175,14 +175,14 @@ const Register = () => {
 
                 <div className="form-control mt-6">
                   <input
-                    className="btn btn-primary"
+                    className="btn bg-[#227179] hover:bg-[#123d42] text-white duration-500"
                     type="submit"
                     value="Register"
                   />
                 </div>
                 <span>
                   Already a user?{" "}
-                  <Link to="/login" className="link link-info">
+                  <Link to="/login" className="link link-warning">
                     Login
                   </Link>
                 </span>

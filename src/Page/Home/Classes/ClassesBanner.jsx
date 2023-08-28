@@ -12,6 +12,17 @@ import "swiper/css/autoplay";
 import { Autoplay, Navigation, Pagination } from "swiper";
 
 const ClassesBanner = () => {
+  const [responsiveWith, setResponsiveWith] = useState(window.innerWidth);
+ 
+  useEffect(() => {
+    const handleResize = () => {
+      setResponsiveWith(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const { data } = useQuery({
     queryKey: ["data"],
     queryFn: () =>
@@ -22,7 +33,7 @@ const ClassesBanner = () => {
   return (
     <div>
       <Swiper
-        slidesPerView={3}
+        slidesPerView={responsiveWith >= 576 ? 3 : 1}
         autoplay={{
           delay: 2,
           disableOnInteraction: false,

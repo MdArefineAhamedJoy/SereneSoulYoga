@@ -7,8 +7,24 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import { Autoplay, Navigation, Pagination } from "swiper";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const PopularInstructor = () => {
+  const [responsiveWith, setResponsiveWith] = useState(window.innerWidth);
+ 
+  useEffect(() => {
+    const handleResize = () => {
+      setResponsiveWith(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  console.log(responsiveWith)
+
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["data"],
     queryFn: () =>
@@ -24,7 +40,7 @@ const PopularInstructor = () => {
       ></PageTitle>
       <div className="w-11/12 mx-auto">
         <Swiper
-          slidesPerView={4}
+          slidesPerView={responsiveWith >= 576 ? 4 : 1}
           autoplay={{
             delay: 1,
             disableOnInteraction: false,
@@ -42,7 +58,7 @@ const PopularInstructor = () => {
               key={Instructor?._id}
               className="grid md:grid-cols-3 gap-3 rounded-none  group"
             >
-              <SwiperSlide>
+              <SwiperSlide   key={Instructor?._id}>
                 <motion.div
                   className=" shadow-xl text- duration-500 cursor-pointer h-full bg-white hover:text-[#2b666c] text-neutral-600  mx-1 rounded-md"
                   whileHover={{ scale: 1.01 }}
@@ -61,7 +77,7 @@ const PopularInstructor = () => {
                     </h2>
                     <h2 className="">{Instructor?.email}</h2>
                     <button className="bg-[#227179] mb-5  px-7 font-semibold hover:bg-[#153f44] duration-300  py-2 my-2 uppercase text-sm text-white rounded-ss-xl rounded-ee-xl">
-                      details 
+                      details
                     </button>
                   </div>
                 </motion.div>

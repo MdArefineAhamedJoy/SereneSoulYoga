@@ -40,15 +40,14 @@ const AllClasses = () => {
   return (
     <div className="w-full h-full">
       <div className="text-center pb-7 font-semibold ">
-        <h1 className=" text-2xl py-4">This Is All Classes Control Page </h1>
-        <p>Available Class : {data?.length} </p>
+        <h1 className=" text-2xl py-4 text-[#227179] ">This Is All Classes Control Page </h1>
+        <p className="w-60 mx-auto bg-[#227179]  rounded-se-3xl rounded-es-3xl px-10 text-white ">Available Class : {data?.length} </p>
       </div>
 
-      <div className="">
+      <div className="w-full ">
         <table className="table">
-          {/* head */}
-          <thead className="bg-[#c9a470]">
-            <tr className="font-bold text-xl border-b-4 text-center">
+          <thead className="bg-[#227179] text-white h-16 ">
+            <tr className="font-bold text-[15px] text-center">
               <th>#</th>
               <th>Image & Name</th>
               <th>Instructor Info </th>
@@ -58,7 +57,7 @@ const AllClasses = () => {
           </thead>
           {data?.map((allInfo, index) => (
             <tbody className=" text-center" key={allInfo._id}>
-              <tr className="border-b-4 border-bg-[#c9a470]">
+              <tr className="border-b border-[#227179]">
                 <th>{index + 1}</th>
                 <td>
                   <div className="rounded w-32 mx-auto h-20">

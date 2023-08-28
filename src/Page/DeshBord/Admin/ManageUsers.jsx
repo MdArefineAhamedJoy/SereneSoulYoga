@@ -5,41 +5,51 @@ import useUsers from "../../../Hooks/useUsers";
 
 const ManageUsers = () => {
   const [userRoll, setUserRoll] = useState("Student");
-  const [allUser , refetch] = useUsers();
+  const [allUser, refetch] = useUsers();
 
   const handelMakeRoll = (user, roll) => {
-    fetch(`https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/users/roll/${user._id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ role: `${roll}` }),
-    })
+    fetch(
+      `https://serene-soul-yoga-server-mdarefineahamedjoy.vercel.app/users/roll/${user._id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ role: `${roll}` }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
-        refetch()
+        refetch();
       });
   };
 
   return (
     <div className=" w-full h-full">
-      <h1 className="py-10 text-center font-semibold text-2xl">Available User {allUser?.length}</h1>
-      <div className="overflow-x-auto">
+      <div className="text-center pb-7 font-semibold ">
+        <h1 className="py-4 text-center font-semibold text-2xl text-[#227179] ">
+          All User Manage Panel{" "}
+        </h1>
+        <p className="w-60 mx-auto bg-[#227179]  rounded-ee-3xl rounded-ss-3xl px-10 text-white ">
+         Available Users {allUser?.length}
+        </p>
+      </div>
+      <div className="pt-5">
         <table className="table">
-          <thead className="bg-[#c9a470]">
-            <tr className="text-center font-bold text-xl border-b-4">
-              <th>Photo</th>
-              <th>User Info </th>
-              <th> Roll </th>
-              <th>Set Roll</th>
+          <thead className=" text-[#227179] border-y-2 border-[#227179] ">
+            <tr className="font-bold text-[16px] text-center  ">
+              <th className="  ">Photo</th>
+              <th className="bg-[#227179] text-white ">User Info </th>
+              <th > Roll </th>
+              <th className="bg-[#227179] text-white  ">Set Roll</th>
             </tr>
           </thead>
           {allUser?.map((user, index) => (
-            <tbody className="text-center text-lg" key={user._id}>
-              <tr className="border-b-4">
+            <tbody className="text-center text-lg text-[#2c5c64]" key={user._id}>
+              <tr className="border-b-2 border-b-[#2c5c64]">
                 <th>
                   <img
-                    className="w-20 h-20 mx-auto rounded-full"
+                    className="w-14 h-14 mx-auto rounded-full"
                     src={user.image}
                     alt=""
                   />
