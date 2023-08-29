@@ -53,17 +53,17 @@ const Banner = () => {
                 data-aos="fade-down"
                 data-aos-duration="1500"
               />
-              <div className="absolute w-5/7 mx-auto flex items-center justify-center bottom-0 left-0 right-0 top-0">
+              <div className="absolute w-10/12 left-[10%] top-[30%] ">
                 <div className="text-center">
                   <h2
                     data-aos="fade-down"
                     data-aos-easing="linear"
                     data-aos-duration="1500"
-                    className="text-2xl font-extrabold text-neutral-600 italic font-serif  w-4/5 mx-auto"
+                    className="text-2xl font-extrabold text-white italic font-serif mb-8  w-4/5 mx-auto"
                   >
                     {data.title}
                   </h2>
-                  <div className="text-xl text-center pt-5  text-neutral-600 font-semibold italic font-sans">
+                  <div className="text-xl text-center   mb-7 text-[#227179] font-semibold italic font-sans">
                     <p
                       data-aos="fade-down"
                       data-aos-easing="linear"

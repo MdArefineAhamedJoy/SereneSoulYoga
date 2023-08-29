@@ -23,7 +23,7 @@ const PopularInstructor = () => {
     };
   }, []);
 
-  console.log(responsiveWith)
+
 
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["data"],
@@ -38,7 +38,7 @@ const PopularInstructor = () => {
         title="Popular Instructor"
         subTitle="Popular instructor inspires students with engaging teaching methods, fostering a love for learning and nurturing their talents."
       ></PageTitle>
-      <div className="w-11/12 mx-auto">
+      <div className="w-11/12 mt-10 mx-auto">
         <Swiper
           slidesPerView={responsiveWith >= 576 ? 4 : 1}
           autoplay={{
@@ -48,10 +48,8 @@ const PopularInstructor = () => {
           speed={3000}
           loop={true}
           navigation={true}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Autoplay, Pagination, Navigation]}
+        
+          modules={[Autoplay,  Navigation]}
         >
           {data?.map((Instructor) => (
             <div

@@ -5,7 +5,7 @@ const PageTitle = ({ title, url, subTitle }) => {
     <div className="mt-24 pb-10 ">
       <div className="w-10/12 text-[#227179] mx-auto text-center ">
         <h1
-          style={{ wordSpacing: "2px", letterSpacing: "6px" }}
+          style={{ wordSpacing: "2px", letterSpacing: "3px" }}
           className=" text-2xl  font-bold  pb-3"
         >
           {title}
