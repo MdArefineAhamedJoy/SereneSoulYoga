@@ -32,7 +32,7 @@ const BenefitsYoga = () => {
         <div>
           <img className="w-full h-screen" src={imageUrl} alt="" />
         </div>
-        <div className="mx-auto">
+        <div className="mx-auto md:pt-0 pt-9">
             <p className="font-bold text-[#2c4e51] text-3xl mb-5">Benefited of Yoga </p>
           <ul >
             {benefits.map((benefit , index) => (

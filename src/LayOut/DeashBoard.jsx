@@ -61,7 +61,7 @@ const DeashBoard = () => {
         </div>
         <div className="drawer-side ">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-64 h-full bg-gradient-to-b from-sky-400 to-sky-900 text-white ">
+          <ul className="menu p-4 w-64 h-full bg-gradient-to-b from-[#3ab7c5] to-sky-800 text-white ">
             {/* Sidebar content here */}
             <div className="w-full flex flex-col justify-center mb-5 pt-8">
               <img
@@ -69,39 +69,39 @@ const DeashBoard = () => {
                 src={user?.photoURL}
                 alt=""
               />
-              <p className="mx-auto py-2">{user?.displayName}</p>
-              <p className="pb-2 mx-auto">{userRoll}</p>
+              <p className="mx-auto pt-3">{user?.displayName}</p>
+              <p className="pb-3 mx-auto">{userRoll}</p>
             </div>
-            <li className="text-lg font-semibold  flex">
+            <li className="  font-semibold  flex">
               <Link to="/">Home</Link>
             </li>
             {userRoll === "admin" ? (
               <>
-                <li className="text-lg font-semibold ">
+                <li className=" font-semibold uppercase  py-2 mt-1  ">
                   <Link to="/deashBoard/allClass">All Classes</Link>
                 </li>
-                <li className="text-lg font-semibold ">
+                <li className="  font-semibold uppercase  py-2 mt-1">
                   <Link to="/deashBoard/manageUser">Manage userRoll</Link>
                 </li>
               </>
             ) : userRoll === "instructor" ? (
               <>
-                <li className="text-lg font-semibold ">
+                <li className="  font-semibold uppercase  py-2 mt-1  ">
                   <Link to="/deashBoard/addClass">Add a Classes</Link>
                 </li>
-                <li className="text-lg font-semibold ">
+                <li className="  font-semibold uppercase  py-2 mt-1">
                   <Link to="/deashBoard/myClasses">My Classes</Link>
                 </li>
               </>
             ) : (
               <>
-                <li className="text-lg font-semibold ">
+                <li className="  font-semibold uppercase  py-2 mt-1 ">
                   <Link to="/deashBoard/selected">My Selected Classes</Link>
                 </li>
-                <li className="text-lg font-semibold ">
+                <li className="  font-semibold  uppercase  py-2 mt-1">
                   <Link to="/deashBoard/enroll">My Enrolled Classes</Link>
                 </li>
-                <li className="text-lg font-semibold ">
+                <li className="  font-semibold  uppercase  py-2 mt-1">
                   <Link to="/deashBoard/paymentHistory">Payment History</Link>
                 </li>
               </>

@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="md:mt-20 bg-neutral-900  text-white mt-20">
+    <footer className=" bg-neutral-900  text-white mt-24">
       <div>
-        <section className="grid md:grid-cols-3 md:p-5 p-3 md:py-24 py-10">
+        <section className="grid md:grid-cols-3 md:p-5 p-3 md:py-24 py-16 ">
           <div className=" md:px-3 px-0">
             <img className="w-12 h-8 inline-block " src={logo} alt="" />
             <span className="text-2xl font-semibold text-white ">
@@ -21,7 +21,7 @@ const Footer = () => {
               scelerisque faucibus.
             </p>
           </div>
-          <div className="md:px-9 px-0 pt-5 md:pt-0 ">
+          <div className="md:px-9 px-0 py-14 md:py-0 ">
             <h3 className="text-2xl font-semibold text-white ">Quick Links</h3>
             <div className=" md:pt-9 pt-3 flex justify-between gap-2">
               <div>
@@ -62,7 +62,7 @@ const Footer = () => {
               </p>
               <p className="ps-6">Dhaka Bangaladesh</p>
             </div>
-            <div className="py-2">
+            <div className="md:py-2 py-5">
               <p className="flex gap-2 items-center">
                 <MdEmail className="FaEmail" /> support@livecon.com{" "}
               </p>
@@ -78,7 +78,7 @@ const Footer = () => {
           <p className="txt-center text-white ">
             SereneSoulYoga © 2023. Made by DesignThemes copy right 2050.
           </p>
-          <div className="flex gap-5 md:pt-0 pt-5" >
+          <div className="flex gap-5 md:pt-0 pt-10" >
             <Link to={'https://github.com/MdArefineAhamedJoy/SereneSoulYoga'}><FaGithub className="w-5 h-5 rounded text-[#227179]"  /></Link>
             <Link><FaLinkedin className="w-5 h-5 rounded text-[#227179]"/></Link>
             <Link><FaEnvelope className="w-5 h-5 rounded text-[#227179]"/></Link>
