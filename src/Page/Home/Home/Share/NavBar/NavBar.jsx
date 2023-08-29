@@ -42,27 +42,27 @@ const NavBar = () => {
     <>
       <li>
         {" "}
-        <Link to="/" className="py-2 px-4 decoration-sky-800 ">
+        <Link to="/" className="md:py-2 py-4 px-4 decoration-sky-800 ">
           Home
         </Link>
       </li>
       <li>
 
-        <Link to="classes" className=" py-2 px-4 decoration-sky-800">
+        <Link to="classes" className=" md:py-2 py-4 px-4 decoration-sky-800">
      
           Classes
         </Link>
       </li>
       <li>
         {" "}
-        <Link to="instructor" className="py-2 px-4  ">
+        <Link to="instructor" className="md:py-2 py-4 px-4  ">
           {" "}
           Instructor
         </Link>
       </li>
       <li>
         {" "}
-        <Link to="services" className="py-2 px-4  ">
+        <Link to="services" className="md:py-2 py-4 px-4  ">
           {" "}
           Your Services 
         </Link>
@@ -71,7 +71,7 @@ const NavBar = () => {
         <>
           <li>
             {" "}
-            <Link to="/deashBoard" className="py-2 px-4 decoration-sky-800  ">
+            <Link to="/deashBoard" className="md:py-2 py-4 px-4 decoration-sky-800  ">
               Dashboard
             </Link>{" "}
           </li>
@@ -79,7 +79,7 @@ const NavBar = () => {
             {" "}
             <Link
               onClick={handelLogOut}
-              className="py-2 px-4 decoration-sky-800 "
+              className="md:py-2 py-4 px-4 decoration-sky-800 "
             >
               Log Out
             </Link>{" "}
@@ -89,13 +89,13 @@ const NavBar = () => {
         <>
           <li>
             {" "}
-            <Link to="/login" className="py-2 px-4 decoration-sky-800 ">
+            <Link to="/login" className="md:py-2 py-4 px-4 decoration-sky-800 ">
               Login
             </Link>{" "}
           </li>
           <li>
             {" "}
-            <Link to="/register" className="py-2 px-4 decoration-sky-800 ">
+            <Link to="/register" className="md:py-2 py-4 px-4 decoration-sky-800 ">
               Register
             </Link>{" "}
           </li>
@@ -126,7 +126,7 @@ const NavBar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm uppercase dropdown-content font-semibold mt-6 rounded-none w-60 z-50  bg-base-100 "
+              className="menu menu-sm uppercase dropdown-content font-semibold mt-1 ms-[-10px] rounded-none w-screen h-screen z-50  bg-[#227179] "
             >
               {navItem}
             </ul>

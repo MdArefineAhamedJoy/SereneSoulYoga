@@ -20,7 +20,7 @@ const MyClasses = () => {
 
   return (
     <div className="w-full h-full gap-4"> 
-      <h1 className="text-center my-10 font-semibold text-2xl">
+      <h1 className="text-center my-10 font-semibold text-2xl text-[#227179]">
         Total Enroll Student : {totalEnrollStudent}
       </h1>
       {classes.map((classData) => (
@@ -50,7 +50,7 @@ const MyClasses = () => {
             </p>
 
             <div className="card-actions mx-auto">
-              <button className="btn btn-primary"> Update</button>
+              <button className="btn  bg-[#227179] hover:bg-[#19555c] duration-300 text-white"> Update</button>
               <button
                 onClick={() => window.my_modal_1.showModal()}
                 disabled={
@@ -68,7 +68,7 @@ const MyClasses = () => {
                   </h3>
                   <p className="py-4">{classData?.feedback}</p>
                   <div className="modal-action">
-                    <button className="btn">Close</button>
+                    <button className="btn  bg-[#227179] hover:bg-[#19555c] duration-300 text-white">Close</button>
                   </div>
                 </form>
               </dialog>

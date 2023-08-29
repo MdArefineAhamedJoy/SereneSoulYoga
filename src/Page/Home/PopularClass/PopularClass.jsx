@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import PageTitle from "../../../Components/PageTitle";
 import { Link } from "react-router-dom";
-import { AiOutlineArrowRight} from "react-icons/ai";
+
 
 const PopularClass = () => {
   const {
@@ -24,12 +24,6 @@ const PopularClass = () => {
         subTitle="Discover the joy of yoga in our popular class. Strengthen your body, calm your mind, and find balance through invigorating poses and mindful practices. Join us on the mat today"
         url=""
       ></PageTitle>
-      <Link to={'classes'}>
-        <button className="absolute  flex items-center gap-1 bg-[#227179] text-white py-2 px-7 rounded-full md:top-[17%] top-[8%] left-5 z-10 ">
-          Browse All Class
-          <AiOutlineArrowRight></AiOutlineArrowRight>
-        </button>
-      </Link>
       <div className="flex  items-center justify-center md:mx-10 relative">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {popularClass?.map((classes) => (

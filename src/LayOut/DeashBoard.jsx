@@ -23,23 +23,16 @@ const DeashBoard = () => {
         const userStatus = findUser?.role;
         console.log(userStatus);
         setUserRoll(userStatus);
+        setLoading(false);
       });
   }, [user]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      const fetchedUserRoll = "admin";
-      setUserRoll(fetchedUserRoll);
-      setLoading(false);
-    }, 2000);
-  }, []);
 
   if (loading) {
     return <span className="loading loading-bars  loading-lg"></span>;
   }
-
   const dashboardHome = location.pathname.endsWith("/deashBoard");
-
+ console.log(userRoll)
   return (
     <div>
       <NavBar></NavBar>

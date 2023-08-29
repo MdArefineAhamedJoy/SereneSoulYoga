@@ -62,86 +62,87 @@ const AddClasses = () => {
       });
   };
 
+  console.log(user?.displayName)
   return (
-    <div className="w-full h-full">
-      <h1 className="text-center  font-semibold uppercase text-2xl mt-10 mb-7">Add Yoga  Class  </h1>
+    <div className="w-full h-full ">
+      <h1 className="text-center  font-semibold uppercase text-2xl mt-10 mb-7  text-[#227179]">Add Yoga  Class  </h1>
       <form onSubmit={handleSubmit(onSubmit)} className="card-body">
         <div className="md:flex gap-4">
           <div className="form-control w-1/2">
             <label className="label">
-              <span className="label-text">Instructor Name</span>
+              <span className="label-text text-[#227179] font-bold">Instructor Name</span>
             </label>
             <input
-              value={user?.displayName ? user?.displayName : "User Name"}
+              value={user?.displayName ? user?.displayName : "unkowne user"}
               {...register("name", { required: true })}
               type="text"
               placeholder="name"
-              className="input input-bordered"
+              className="input input-bordered  border-[#227179]"
               readOnly={true}
             />
           </div>
           <div className="form-control w-1/2">
             <label className="label">
-              <span className="label-text">Email</span>
+              <span className="label-text text-[#227179] font-bold">Email</span>
             </label>
             <input
               value={user?.email}
               {...register("email", { required: true })}
               type="text"
               placeholder="email"
-              className="input input-bordered"
+              className="input input-bordered  border-[#227179] "
               readOnly={true}
             />
           </div>
         </div>
         <div className="form-control ">
           <label className="label">
-            <span className="label-text">Class Name</span>
+            <span className="label-text text-[#227179] font-bold">Class Name</span>
           </label>
           <input
             {...register("className", { required: true })}
             type="text"
             placeholder="Class Name"
-            className="input input-bordered"
+            className="input input-bordered  border-[#227179]"
           />
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Class Photo</span>
+            <span className="label-text text-[#227179] font-bold">Class Photo</span>
           </label>
           <input
             {...register("classPhoto", { required: true })}
             type="file"
             placeholder="Class Photo "
-            className="input input-bordered"
+            className="input input-bordered  border-[#227179]"
           />
         </div>
         <div className="md:flex w-full mx-auto gap-10">
           <div className="form-control w-3/5">
             <label className="label">
-              <span className="label-text">Price</span>
+              <span className="label-text text-[#227179] font-bold">Price</span>
             </label>
             <input
               type="number"
               placeholder="Price"
-              className="input input-bordered"
+              className="input input-bordered border-[#227179] "
               {...register("price", { required: true })}
             />
           </div>
           <div className="form-control w-3/5">
             <label className="label">
-              <span className="label-text">Available Site</span>
+              <span className="label-text text-[#227179] font-bold">Available Site</span>
             </label>
             <input
               type="number"
               placeholder="Available Site"
-              className="input input-bordered"
+              className="input input-bordered border-[#227179]"
               {...register("availableSite", { required: true })}
             />
           </div>
         </div>
         <div className="form-control mt-6">
-          <input className="btn btn-primary" type="submit" value="Login" />
+          <input className="btn  bg-[#227179] hover:bg-[#19555c] duration-300 text-white" type="submit" value="Login" />
         </div>
       </form>
     </div>

@@ -35,13 +35,13 @@ const ManageUsers = () => {
         </p>
       </div>
       <div className="pt-5">
-        <table className="table">
-          <thead className=" text-[#227179] border-y-2 border-[#227179] ">
+        <table className="table text-[#227179] ">
+          <thead className=" border-y-2 bg-[#227179] text-white  ">
             <tr className="font-bold text-[16px] text-center  ">
               <th className="  ">Photo</th>
-              <th className="bg-[#227179] text-white ">User Info </th>
+              <th className=" ">User Info </th>
               <th > Roll </th>
-              <th className="bg-[#227179] text-white  ">Set Roll</th>
+              <th className=" ">Set Roll</th>
             </tr>
           </thead>
           {allUser?.map((user, index) => (

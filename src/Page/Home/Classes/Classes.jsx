@@ -2,11 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import useUsers from "../../../Hooks/useUsers";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import PageTitle from "../../../Components/PageTitle";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import ClassesBanner from "./ClassesBanner";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 const Classes = () => {
   const [allUser] = useUsers();
@@ -91,8 +91,14 @@ const Classes = () => {
           title={"Your  SereneSoul Yoga Class "}
           subTitle={`Welcome to Serene Soul Yoga, where tranquility and vitality converge. Our classes offer more than just physical postures, our skilled instructors guide you through a harmonious blend of poses, fostering strength, flexibility, and inner peace.`}
         ></PageTitle>
+        <Link className="flex justify-center" to={"/deashBoard/selected"}>
+          <button className="  flex items-center gap-1 bg-[#227179] text-white py-2 px-7 rounded-full md:top-[17%] top-[8%] left-5 z-10 ">
+            See Your Selected Class
+            <AiOutlineArrowRight></AiOutlineArrowRight>
+          </button>
+        </Link>
       </div>
-      <div className="grid grid-cols-3 px-4 gap-7 md:w-11/12 w-full mx-auto">
+      <div className="grid md:grid-cols-3 px-4 gap-7 md:w-11/12 w-full mx-auto">
         {data?.map((classes) => (
           <div
             key={classes?._id}

@@ -166,7 +166,7 @@ const CheckoutForm = ({ selectedClass }) => {
           },
         }}
       />
-      <button className="btn btn-primary w-1/2" type="submit" disabled={!stripe}>
+      <button className="btn bg-[#227179] hover:bg-[#184f55] duration-300 w-1/2" type="submit" disabled={!stripe}>
         Pay
       </button>
       {paymentError && <div>{paymentError}</div>}
