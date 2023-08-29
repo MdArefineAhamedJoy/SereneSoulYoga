@@ -28,7 +28,7 @@ const FeedBack = () => {
         }
         subTitle={'Discover the transformative journeys of our cherished patrons as they reflect on their profound encounters with us. Uncover a tapestry of heartwarming stories that illuminate the power of our offerings in their lives.  '}
       ></PageTitle>
-      <section className="w-11/12 mx-auto bg-slate-100 rounded">
+      <section className="md:w-11/12 w-full mx-auto bg-slate-100 rounded">
         <Swiper
           slidesPerView={1}
           centeredSlides={false}
@@ -57,7 +57,7 @@ const FeedBack = () => {
           {userFeedBack.map((feedback) => (
             <SwiperSlide key={feedback?.id}>
               <div
-                className="h-80 shadow shadow-[#227179] border-b-8 border-[#227179] rounded-md
+                className="md:h-80 shadow shadow-[#227179] border-b-8 border-[#227179] rounded-md
                 bg-base-100 p-10 mx-4 my-14 text-[#227179]"
               >
                 <div className="w-full h-full rounded-lg">

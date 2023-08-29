@@ -25,7 +25,7 @@ const PopularClass = () => {
         url=""
       ></PageTitle>
       <Link to={'classes'}>
-        <button className="absolute  flex items-center gap-1 bg-[#227179] text-white py-2 px-7 rounded-full top-[17%] left-5 z-10 ">
+        <button className="absolute  flex items-center gap-1 bg-[#227179] text-white py-2 px-7 rounded-full md:top-[17%] top-[8%] left-5 z-10 ">
           Browse All Class
           <AiOutlineArrowRight></AiOutlineArrowRight>
         </button>
