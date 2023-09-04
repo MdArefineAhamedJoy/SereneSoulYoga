@@ -6,7 +6,6 @@ import PopularInstructor from '../PopularInstructor/PopularInstructor';
 import MemberShip from '../MemberShip/MemberShip';
 import BenefitsYoga from '../BenefitsYoga/BenefitsYoga';
 import Information from '../Information/Information ';
-import YogaExperienceSection from '../YogExpreance/YogaExperienceSection';
 import FeedBack from '../FeedBack/FeedBack';
 import ModernYoga from '../ModernYoga/ModernYoga';
 
@@ -23,7 +22,6 @@ const Home = () => {
             <ModernYoga></ModernYoga>
             <PopularInstructor></PopularInstructor>
             <Information></Information>
-            <YogaExperienceSection></YogaExperienceSection>
             <FeedBack></FeedBack>
         </div>
     );
