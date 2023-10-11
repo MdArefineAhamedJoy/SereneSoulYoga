@@ -1,0 +1,113 @@
+[
+    {
+      "image": "https://plus.unsplash.com/premium_photo-1661308240023-01db31be661f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fFlvZ2ElMjBKb3VybmV5fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60",
+      "author": {
+        "name": "John Doe",
+        "image": "https://i.ibb.co/LSSsNRZ/download.jpg"
+      },
+      "title": "Yoga Basics: A Beginner's Guide",
+      "article": "Explore the fundamentals of yoga and its benefits for physical and mental well-being.",
+      "publishDate": "2023-01-15",
+      "blogName": "Yoga Journey"
+    },
+    {
+      "image": "https://media.istockphoto.com/id/112156170/photo/woman-practicing-yoga-on-pier.jpg?s=612x612&w=0&k=20&c=xSjyP-bt1-K5gTqj_hMwgJXR20NKYYF-IRp1IiAxEKI=",
+      "author": {
+        "name": "Jane Smith",
+        "image": "https://i.ibb.co/mCtqH0v/download-1.jpg"
+      },
+      "title": "10 Essential Yoga Poses for Beginners",
+      "article": "Step-by-step guide with illustrations for a strong start in yoga practice.",
+      "publishDate": "2023-02-05",
+      "blogName": "Yoga Bliss"
+    },
+    {
+      "image": "https://media.istockphoto.com/id/536509961/photo/yoga-on-lake.jpg?s=612x612&w=0&k=20&c=6LES_VWqf1bWaa4Vo3S0QqRBPnWCmw0ijGHBpH0Bhwc=",
+      "author": {
+        "name": "Emily Johnson",
+        "image": "https://images.unsplash.com/photo-1566501206188-5dd0cf160a0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHlvZ2F8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
+      },
+      "title": "Mindfulness and Yoga: How practicing yoga enhances mindfulness and promotes mental clarity.",
+      "article": "Mindfulness and Yoga: How practicing yoga enhances mindfulness and promotes mental clarity.",
+      "publishDate": "2023-03-10",
+      "blogName": "Zen Yoga Life"
+    },
+    {
+      "image": "https://media.istockphoto.com/id/1174472274/photo/connection-with-nature.webp?b=1&s=170667a&w=0&k=20&c=fhlXUt7l-R9PqvEPAHr8fzRQghUVrSDyYCGWtJMZFHM=",
+      "author": {
+        "name": "Michael Brown",
+        "image": "https://media.istockphoto.com/id/1291508069/photo/youtuber-teaching-yoga-in-front-of-camera.webp?b=1&s=170667a&w=0&k=20&c=ddmoicMY89uMZtBku6ibrjdoIZ72kM4OEYD7y6xh87s="
+      },
+      "title": "Yoga and Stress Relief: Effective yoga techniques to manage stress and promote relaxation.",
+      "article": "Yoga and Stress Relief: Effective yoga techniques to manage stress and promote relaxation.",
+      "publishDate": "2023-04-20",
+      "blogName": "Tranquil Asanas"
+    },
+    {
+      "image": "https://media.istockphoto.com/id/1500873493/photo/photo-of-pretty-adorable-girl-dressed-sportive-suit-sitting-mat-practicing-yoga-asana-closed.webp?b=1&s=170667a&w=0&k=20&c=TmpYf1hkMijXOHlqe0_Yxpkh2R8E-Z0dk5oUctywlgU=",
+      "author": {
+        "name": "Sarah Lee",
+        "image": "https://media.istockphoto.com/id/485627174/photo/young-woman-relaxing-after-workout-at-home-lying-on-yoga.jpg?s=612x612&w=0&k=20&c=OmIMGLi6zaSkXZ7y8JSxLTx2X4pL71HtJkxOaCDvU5A="
+      },
+      "title": "Yoga for Better Sleep: Explore yoga poses and routines to improve sleep quality and overall restfulness.",
+      "article": "Yoga for Better Sleep: Explore yoga poses and routines to improve sleep quality and overall restfulness.",
+      "publishDate": "2023-05-12",
+      "blogName": "Serenity Yoga Haven"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fEhlYWx0aHklMjBZb2dpJTIweW9nYSUyMGJsb2clMjBiYW5uZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60",
+      "author": {
+        "name": "David Clark",
+        "image": "https://images.unsplash.com/photo-1562038969-e85c13ecb2ac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8RGF2aWQlMjBDbGFyayUyMG1hbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60"
+      },
+      "title": "Nutrition and Yoga: How proper nutrition complements your yoga practice for overall wellness.",
+      "article": "Nutrition and Yoga: How proper nutrition complements your yoga practice for overall wellness.",
+      "publishDate": "2023-06-08",
+      "blogName": "Healthy Yogi"
+    },
+    {
+      "image": "https://i.ibb.co/X72Z3cS/download-2.jpg",
+      "author": {
+        "name": "Linda Wilson",
+        "image": "https://images.unsplash.com/photo-1573583804458-d4f9be45fd84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fExpbmRhJTIwV2lsc29uJTIweW9nYXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60"
+      },
+      "title": "Yoga and Flexibility: Tips and yoga poses to enhance flexibility and prevent injuries.",
+      "article": "Yoga and Flexibility: Tips and yoga poses to enhance flexibility and prevent injuries.",
+      "publishDate": "2023-07-17",
+      "blogName": "FlexiYoga"
+    },
+    {
+      "image": "https://media.istockphoto.com/id/1141689090/photo/meditating-close-up-female-hands-prayer.webp?b=1&s=170667a&w=0&k=20&c=PyMjfCki2xGi6xMBtljah7ulbUHDQ0cyhnJ5-YjiAqk=",
+      "author": {
+        "name": "Mark Turner",
+        "image": "https://media.istockphoto.com/id/1480334257/photo/latino-doing-parivritta-parsvakonasana-during-group-yoga-training.jpg?s=612x612&w=0&k=20&c=LONvtbpwndCOtySzthd5Iswp-VgE1C_iP9qkmlSZ7jw="
+      },
+      "title": "The Spiritual Aspect of Yoga: Exploring the connection between yoga, spirituality, and inner peace.",
+      "article": "The Spiritual Aspect of Yoga: Exploring the connection between yoga, spirituality, and inner peace.",
+      "publishDate": "2023-08-29",
+      "blogName": "Spiritual Asanas"
+    },
+    {
+      "image": "https://media.istockphoto.com/id/1392675723/photo/beautiful-multiracial-woman-doing-breathing-exercise-at-home.webp?b=1&s=170667a&w=0&k=20&c=0THCiPswL3ztQTK2MiM3S1RHkZwVV5WI6HpI7V51v18=",
+      "author": {
+        "name": "Rachel White",
+        "image": "https://media.istockphoto.com/id/1131361813/photo/portrait-of-young-smiling-attractive-yogi-teacher-woman-practicing-yoga-standing-in-namaste.jpg?s=612x612&w=0&k=20&c=2iHAO10u9Ln9O_C-2i-ya_khE82HOhFG00Qv5dgMyCM="
+      },
+      "title": "Yoga and Breathing Techniques: Learn the art of pranayama and its benefits for holistic well-being.",
+      "article": "Yoga and Breathing Techniques: Learn the art of pranayama and its benefits for holistic well-being.",
+      "publishDate": "2023-09-14",
+      "blogName": "Breath of Yoga"
+    },
+    {
+      "image": "https://media.istockphoto.com/id/898979332/photo/female-fitness-model-in-white-top-and-black-leggings-is-posing-near-the-big-windows-in-studio.webp?b=1&s=170667a&w=0&k=20&c=dBtvSCSIn_UthnXNqDmmCk5iQEw9oE76A_Tj2VsN3PI=",
+      "author": {
+        "name": "Chris Evans",
+        "image": "https://i.ibb.co/JQ5Wpsb/download-3.jpg"
+      },
+      "title": "Yoga for Weight Loss: Combining yoga, diet, and exercise for effective and sustainable weight loss.",
+      "article": "Yoga for Weight Loss: Combining yoga, diet, and exercise for effective and sustainable weight loss.",
+      "publishDate": "2023-10-05",
+      "blogName": "YogaSlim"
+    }
+  ]
+  

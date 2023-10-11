@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
-import { Autoplay, Navigation, Pagination } from "swiper";
+import { Autoplay, Navigation, Pagination , Keyboard} from "swiper";
 
 const Banner = () => {
   const [creosol, setCresol] = useState([]);
@@ -29,19 +29,21 @@ const Banner = () => {
   return (
     <>
       <Swiper
-        className="h-screen"
-        slidesPerView={1}
-        autoplay={{
-          delay: 500,
-          disableOnInteraction: false,
-        }}
-        speed={2000}
-        loop={true}
-        navigation={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Autoplay, Pagination, Navigation]}
+          slidesPerView={1}
+          centeredSlides={false}
+          slidesPerGroupSkip={1}
+          grabCursor={true}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          keyboard={{
+            enabled: true,
+          }}
+          navigation={true}
+
+          modules={[Keyboard,  Navigation,  Autoplay]}
+          className="mySwiper h-screen"
       >
         {creosol.map((data) => (
           <SwiperSlide key={data._id}>

@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Keyboard, Scrollbar, Navigation, Pagination , Autoplay } from "swiper";
+import { Keyboard,  Navigation, Pagination , Autoplay } from "swiper";
 import { useEffect } from "react";
 import "swiper/css/autoplay";
 
