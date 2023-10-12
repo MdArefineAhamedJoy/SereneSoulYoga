@@ -9,6 +9,7 @@ import Information from "../Information/Information ";
 import FeedBack from "../FeedBack/FeedBack";
 import ModernYoga from "../ModernYoga/ModernYoga";
 import YogaBlog from "./YogaBlog/YogaBlog";
+import CalculatorContainer from "./CalculatorContainer/CalculatorContainer";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <PopularInstructor></PopularInstructor>
       <Information></Information>
       <YogaBlog></YogaBlog>
+      <CalculatorContainer></CalculatorContainer>
       <FeedBack></FeedBack>
     </div>
   );
