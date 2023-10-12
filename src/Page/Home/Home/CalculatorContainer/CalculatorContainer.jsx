@@ -18,7 +18,7 @@ const CalculatorContainer = () => {
     }
   }
   return (
-    <div className="flex  my-40 bg-slate-100 mx-10 justify-center py-32  rounded-sm  ">
+    <div className="flex  w-11/12 bg-slate-100 mx-10 justify-center py-32  rounded-sm border-2 border-[#227179]  ">
       <div className="w-4/12">
         <p className="text-[#227179]">Compute BMI</p>
         <h3 className="text-3xl font-semibold pt-2">
@@ -32,15 +32,15 @@ const CalculatorContainer = () => {
               placeholder="FT"
               type="text"
               onChange={(e) => setFeet(e.target.value)}
-              className="mx-2 focus:outline-none border-2 text-center font-semibold rounded border-[#227179]  p-2 py-4  w-20 "
+              className=" focus:outline-none border-2 text-center font-semibold rounded border-[#227179]  p-2 py-4  w-20 "
             />
             <input
               type="text"
               placeholder="IN"
               onChange={(e) => setInches(e.target.value)}
-              className="mx-2 focus:outline-none border-2 text-center font-semibold rounded border-[#227179]  p-2 py-4  w-20 "
+              className="ms-3 focus:outline-none border-2 text-center font-semibold rounded border-[#227179]  p-2 py-4  w-20 "
             />
-            <p className="ms-2 font-semibold ">Wight</p>
+             <p className="font-semibold">Hight</p>
           </form>
           <div>
             <from className="flex ga-5">
@@ -61,7 +61,7 @@ const CalculatorContainer = () => {
                 Calculate
               </button>
             </from>
-            <p className="font-semibold">Hight</p>
+            <p className=" font-semibold ">Wight</p>
           </div>
         </div>
         {countBMI && (

@@ -1,0 +1,92 @@
+[
+    {
+      "id": 1,
+      "title": "Strategies",
+      "logo": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTSRDkqWBXDtEi_hNrleE4k_cSkHcjwNHIes_MQGII6CnJ78quf",
+      "image": "https://i.ibb.co/q5M09WC/service-01-770x350.jpg",
+      "topic": " Nutrition Strategies",
+      "description": "Delve into the world of nutrition, exploring the science of food and its impact on health. Provide comprehensive knowledge about macronutrients, micronutrients, dietary guidelines, and their roles in supporting bodily functions. Encourage mindful eating habits, emphasizing the importance of a balanced and varied diet to meet nutritional needs. Empower individuals to make informed food choices, promoting overall well-being and vitality."
+
+    },
+    {
+      "id": 2,
+      "title": "Fitness",
+      "logo": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ_5aMl73z00JucIYCPdsvHHe6rtyJL7iKKaeXIEUhb8zPj-IOq",
+      "image": "https://i.ibb.co/Ch6Tsqp/service-02-770x350.jpg",
+      "topic": "Fitness & Performance",
+      "description": "Focus on optimizing physical fitness and performance through tailored exercise routines and nutrition plans. Emphasize the synergy between targeted workouts, balanced nutrition, and adequate rest for enhancing endurance, strength, and overall athletic performance. Provide guidance on pre- and post-workout nutrition, recovery strategies, and injury prevention, empowering individuals to achieve their fitness goals and reach peak performance levels."
+
+    },
+    {
+      "id": 3,
+      "title": "Hydrate Wellness",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE0xXYPqpRZKyu9cWvHozyEfPtlGjYIRBTTA&usqp=CAU",
+      "image": "https://media.istockphoto.com/id/1132783785/photo/cute-girl-like-hate-milk.jpg?s=612x612&w=0&k=20&c=UdimsHTQTkltAGuk9OY4PS8CzpQM5l5XnbkiseBJFMk=",
+      "topic": "Adequate Hydration",
+      "description": "Emphasize the significance of staying properly hydrated by consuming an adequate amount of water throughout the day. Educate about the essential role of hydration in maintaining bodily functions, regulating body temperature, and supporting overall health. Provide practical tips for recognizing dehydration, encouraging individuals to drink water regularly, and incorporating hydrating foods and beverages into their diet for optimal well-being."
+
+    },
+    {
+      "id": 4,
+      "title": "Protein",
+      "logo": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTbnJN1PWMyVawnFEtNQ2J9Tcx-lJhJzJ8bEmjIW0_JxYwl58Dp",
+      "image": "https://i.ibb.co/cNtBVWC/service-03-770x350.jpg",
+      "topic": "Diet & Fitness ",
+      "description": "Integrate a harmonious balance between dietary choices and physical activity for optimal health and fitness. Emphasize the importance of aligning nutritional intake with exercise routines, focusing on fueling the body with the right nutrients to enhance performance and recovery. Provide guidance on meal timing, macronutrient distribution, and hydration, ensuring that diet complements fitness goals. Encourage a holistic approach to well-being by combining the power of nutritious eating and regular physical activity."
+
+    },
+    {
+      "id": 5,
+      "title": "Diet",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDgbIXwOdR8Z0NjYzOe0I_js401gRma0TJbHl08u7lI6H8LK0j ",
+      "image": "https://i.ibb.co/LkY3L06/service-04-770x350.jpg",
+      "topic": "Balanced Diet",
+      "description": "Promote a well-rounded and varied eating pattern that includes a mix of fruits, vegetables, whole grains, lean proteins, and healthy fats. Emphasize portion control, mindful eating, and moderation to achieve nutritional balance. Encourage individuals to meet their body's nutritional needs, supporting overall health, energy levels, and the prevention of chronic diseases. Advocate for a sustainable and diverse food intake to nourish the body and mind."
+
+    },
+    {
+      "id": 6,
+      "title": "Heath",
+      "logo": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSmRWksesF_bdWDiml9m9uasW2kZmY1ky8x_IvligLUagjIyw8B",
+      "image": "https://media.istockphoto.com/id/1386172063/photo/close-up-cute-little-girl-enjoy-eating-cereal-with-milk-for-morning-breakfast-with-appetite.jpg?s=612x612&w=0&k=20&c=baWYjXy-sDLrOtV8KtWosdWB4BO35zLFBuz6yMCixy8=",
+      "topic": "Child Nutation",
+      "description": "Address the unique nutritional needs of children, ensuring their growth and development through a balanced and diverse diet. Emphasize the importance of age-appropriate portion sizes, essential vitamins, and minerals. Provide guidance to parents on creating a positive mealtime environment, encouraging healthy eating habits, and introducing a variety of nutritious foods to support children's overall well-being."
+    },
+    {
+      "id": 7,
+      "title": "Advised",
+      "logo": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTzo-iwc7KZMwtmkN8DDsg2x2fuIEmSEKCg1Am-0mKFO8z5hnwi",
+      "image": "https://i.ibb.co/ZVsLSCN/service-08-770x350.jpg",
+      "topic": "Diabetes Nutrition",
+      "description": "Focus on nutrition strategies specifically designed for individuals with diabetes, emphasizing balanced carbohydrate intake, portion control, and glycemic index awareness. Provide education on blood sugar management, meal planning, and making healthier food choices to support overall health and maintain stable glucose levels. Encourage a well-rounded approach to diabetes management through proper nutrition."
+
+    },
+    {
+      "id": 8,
+      "title": "Mindful Wellness",
+      "logo": "https://i.ibb.co/1zyct10/download.png",
+      "image": "https://media.istockphoto.com/id/1410795105/photo/human-brain.webp?b=1&s=170667a&w=0&k=20&c=Y-FJUXh5oBr1VEK4QgPhCPqwQXEGRg96V2dSd446PsI=",
+      "topic": "Mental Health Support",
+      "description": "Address the crucial topic of mental health, focusing on emotional well-being, stress management, and psychological resilience. Provide information about mental health disorders, coping mechanisms, therapy options, and the significance of seeking professional help when needed. Encourage self-care practices, mindfulness, and fostering supportive social connections. Promote a holistic approach to mental wellness, acknowledging the interconnection between mental and physical health."
+
+    },
+    {
+      "id": 9,
+      "title": "Diet",
+      "logo": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTUJIvgwMSksLSaUPk4taMlGQPR3-yYr0UNXZwCD_jmAPsS8Clz",
+      "image": "https://plus.unsplash.com/premium_photo-1661688377143-8d8d1632942a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8V2VpZ2h0JTIwTG9zc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60",
+      "topic": "Weight Loss",
+      "description": "Empower individuals with effective strategies for healthy weight loss, emphasizing balanced nutrition, regular exercise, and mindful eating habits. Provide guidance on setting realistic goals, tracking progress, and maintaining a positive body image throughout the journey."
+
+    },
+    {
+      "id": 10,
+      "title": "Fitness",
+      "logo": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQTaPbqEYBpzaVmlDhJ0kTxXTz5VPMTnRJGUyh4dEDbFKUxyQna",
+      "image": "https://i.ibb.co/z7f5hBx/service-07-770x350.jpg",
+      "topic": "Personalized Nutrition ",
+      "description": "Explore the world of personalized nutrition, tailoring dietary choices to individual needs and preferences. Provide guidance on optimizing health through customized meal plans, emphasizing bio-individuality and considering factors like metabolism, allergies, and lifestyle. Encourage mindful eating habits, fostering a holistic approach to well-being."
+
+    }
+  ]
+  

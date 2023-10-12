@@ -10,6 +10,7 @@ import FeedBack from "../FeedBack/FeedBack";
 import ModernYoga from "../ModernYoga/ModernYoga";
 import YogaBlog from "./YogaBlog/YogaBlog";
 import CalculatorContainer from "./CalculatorContainer/CalculatorContainer";
+import HealthService from "./HealthService/HealthService";
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
       <PopularInstructor></PopularInstructor>
       <Information></Information>
       <YogaBlog></YogaBlog>
+      <HealthService></HealthService>
       <CalculatorContainer></CalculatorContainer>
       <FeedBack></FeedBack>
     </div>
